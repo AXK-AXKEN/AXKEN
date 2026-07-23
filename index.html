@@ -341,26 +341,18 @@ section{
     font-size: 15px;
 }
 
-/* Espacio donde carga el iframe publicitario */
+/* Espacio donde carga el anuncio directo de Adsterra */
 .ad-space {
     background: rgba(255, 255, 255, 0.03);
     border: 1px dashed rgba(255, 255, 255, 0.15);
     border-radius: 12px;
-    padding: 5px;
+    padding: 10px;
     margin: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 140px;
+    min-height: 130px;
     overflow: hidden;
-}
-
-.ad-frame {
-    width: 100%;
-    height: 130px;
-    border: none;
-    overflow: hidden;
-    background: transparent;
 }
 
 .btn-modal-action {
@@ -518,7 +510,6 @@ section{
 
         <div class="video-grid">
             
-            <!-- TARJETA CON MONETIZACIÓN INTEGRADA -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe 
@@ -593,9 +584,10 @@ section{
         <h3>⏳ Generando Enlace Seguro</h3>
         <p>Tu archivo se está preparando. Por favor, espera unos segundos...</p>
 
-        <!-- CONTENEDOR IFRAME AISLADO PARA PUBLICIDAD ADSTERRA -->
-        <div class="ad-space" id="adSpace">
-            <!-- Se llena dinámicamente -->
+        <!-- CÓDIGO NATIVO DIRECTO DE ADSTERRA -->
+        <div class="ad-space">
+            <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
+            <div id="container-16fa8571b1eee7681486dc9444354e1e"></div>
         </div>
 
         <button id="btnModalDownload" class="btn-modal-action" disabled>
@@ -607,7 +599,7 @@ section{
 </div>
 
 
-<!-- SCRIPT DE NAVEGACIÓN Y CARGA AISLADA -->
+<!-- SCRIPT DE NAVEGACIÓN Y MANEJO DEL MODAL -->
 <script>
     let tiempoRestante = 10;
     let intervaloTimer = null;
@@ -640,38 +632,14 @@ section{
         const modal = document.getElementById('modalEspera');
         const contadorSpan = document.getElementById('contadorSegundos');
         const btnModal = document.getElementById('btnModalDownload');
-        const adSpace = document.getElementById('adSpace');
 
-        // Carga el anuncio dentro de un iframe aislado para evitar bloqueos de document.write
-        const htmlAnuncio = `
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <style>
-                    body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; background: transparent; overflow: hidden; }
-                </style>
-            </head>
-            <body>
-                <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"><\/script>
-                <div id="container-16fa8571b1eee7681486dc9444354e1e"></div>
-            </body>
-            </html>
-        `;
-
-        adSpace.innerHTML = `<iframe class="ad-frame" id="adIframe" frameborder="0" scrolling="no"></iframe>`;
-        const frame = document.getElementById('adIframe');
-        const frameDoc = frame.contentWindow || frame.contentDocument.document || frame.contentDocument;
-        frameDoc.document.open();
-        frameDoc.document.write(htmlAnuncio);
-        frameDoc.document.close();
-
-        // Configura el botón y abre el modal
+        // Prepara el botón y muestra el modal
         btnModal.disabled = true;
         btnModal.classList.remove('ready');
         btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
         modal.style.display = 'flex';
 
-        // Contador
+        // Contador regresivo
         clearInterval(intervaloTimer);
         intervaloTimer = setInterval(() => {
             tiempoRestante--;
@@ -694,7 +662,6 @@ section{
     function cerrarModal() {
         clearInterval(intervaloTimer);
         document.getElementById('modalEspera').style.display = 'none';
-        document.getElementById('adSpace').innerHTML = '';
     }
 </script>
 
