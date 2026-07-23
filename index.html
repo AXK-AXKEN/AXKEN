@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AXKEN Minecraft Academy</title>
+<title>AXKEN Minecraft Academy - Selector de Versión</title>
 
 <!-- SCRIPT DEL BANNER NATIVO (DENTRO DEL MODAL) -->
 <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
@@ -444,7 +444,7 @@ section{
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 14.5px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.25s ease;
@@ -491,183 +491,170 @@ section{
 <!-- MENÚ DE NAVEGACIÓN -->
 <nav>
     <a onclick="mostrarVista('inicio')" id="tab-inicio" class="active-tab">Inicio</a>
-    <a onclick="mostrarVista('tutoriales')" id="tab-tutoriales">Tutoriales</a>
-    <a onclick="mostrarVista('mods')" id="tab-mods">Mods</a>
-    <a onclick="mostrarVista('shaders')" id="tab-shaders">Shaders</a>
-    <a onclick="mostrarVista('packs')" id="tab-packs">Packs</a>
+    
+    <!-- PESTAÑAS DE JAVA -->
+    <a onclick="mostrarVista('java-tutoriales')" id="tab-java-tutoriales">Java: Tutoriales</a>
+    <a onclick="mostrarVista('java-mods')" id="tab-java-mods">Java: Mods</a>
+    <a onclick="mostrarVista('java-optimizacion')" id="tab-java-optimizacion">Java: Optimización</a>
+    
+    <!-- PESTAÑAS DE BEDROCK -->
+    <a onclick="mostrarVista('bedrock-tutoriales')" id="tab-bedrock-tutoriales">Bedrock: Guías</a>
+    <a onclick="mostrarVista('bedrock-addons')" id="tab-bedrock-addons">Bedrock: Add-ons</a>
+    
     <a onclick="mostrarVista('comunidad')" id="tab-comunidad">Comunidad</a>
 </nav>
 
 
-<!-- ================= VISTA: INICIO ================= -->
+<!-- ================= VISTA: INICIO / SELECTOR ================= -->
 <div id="vista-inicio" class="view active">
     
     <div class="hero">
         <img src="logo.png" class="logo" alt="Logo AXKEN">
         <h1>AXKEN</h1>
         <h2>Minecraft Academy</h2>
-        <p>Aprende Minecraft con tutoriales paso a paso, mods, shaders y recursos de alta calidad completamente gratis.</p>
-        <a class="btn" href="https://www.youtube.com/@Axken00" target="_blank">▶ Canal de YouTube</a>
+        <p>Selecciona la versión de Minecraft en la que deseas explorar tutoriales, modificaciones y recursos exclusivos.</p>
     </div>
 
     <div class="categories-grid">
-        <div class="category-card" onclick="mostrarVista('tutoriales')">
-            <h3>🎮 Tutoriales</h3>
-            <p>Guías paso a paso y archivos de instalación.</p>
-            <button class="btn-download" style="margin-top:10px;">Entrar</button>
+        <!-- TARJETA JAVA -->
+        <div class="category-card" onclick="mostrarVista('java-tutoriales')" style="border-color: rgba(124, 58, 237, 0.4);">
+            <h3>💻 Minecraft Java</h3>
+            <p>Tutoriales, Forge/Fabric, mods clásicos, texturas y optimización con FPS Boost.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Versión Java</button>
         </div>
 
-        <div class="category-card" onclick="mostrarVista('mods')">
-            <h3>🧩 Mods</h3>
-            <p>Sodium, Iris, Fabric y optimización total.</p>
-            <button class="btn-download" style="margin-top:10px;">Entrar</button>
-        </div>
-
-        <div class="category-card" onclick="mostrarVista('shaders')">
-            <h3>🌈 Shaders</h3>
-            <p>Mejora los gráficos y la luz de tu juego.</p>
-            <button class="btn-download" style="margin-top:10px;">Entrar</button>
-        </div>
-
-        <div class="category-card" onclick="mostrarVista('packs')">
-            <h3>🎨 Texture Packs</h3>
-            <p>Packs de texturas PvP y realistas.</p>
-            <button class="btn-download" style="margin-top:10px;">Entrar</button>
+        <!-- TARJETA BEDROCK -->
+        <div class="category-card" onclick="mostrarVista('bedrock-tutoriales')" style="border-color: rgba(74, 222, 128, 0.4);">
+            <h3>📱 Minecraft Bedrock</h3>
+            <p>Guías para PC/Móvil, add-ons personalizados, gráficos Render_Dragon y packs PvP.</p>
+            <button class="btn-download" style="margin-top:10px; background: linear-gradient(135deg, #059669, #10b981);">Ver Versión Bedrock</button>
         </div>
     </div>
 
 </div>
 
 
-<!-- ================= VISTA: TUTORIALES ================= -->
-<div id="vista-tutoriales" class="view">
+<!-- ================= VISTA: JAVA - TUTORIALES ================= -->
+<div id="vista-java-tutoriales" class="view">
     <section>
-        <h2 class="section-title">🎮 Academy Tutoriales</h2>
-        <p class="section-desc">
-            Bienvenido al centro de guías. Encuentra los videos explicativos y descarga los archivos requeridos de forma segura.
-        </p>
+        <h2 class="section-title">💻 Tutoriales Minecraft Java</h2>
+        <p class="section-desc">Aprende a configurar tu entorno, instalar launchers y preparar el juego para modificaciones en PC.</p>
 
         <div class="video-grid">
-            
-            <!-- TUTORIAL 1 -->
             <div class="video-card">
                 <div class="video-wrapper">
-                    <iframe 
-                        src="https://www.youtube.com/embed/K4pkbwErShk" 
-                        title="Cómo Instalar SHADERS en Minecraft Java" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Tutorial Java" frameborder="0" allowfullscreen></iframe>
                 </div>
-                
-                <span class="badge">🌈 Gráficos & Shaders</span>
-                <h3>Cómo Instalar SHADERS en Minecraft Java (Se Ve INCREÍBLE)</h3>
-                <p>Aprende a instalar Sodium, Iris y tus shaders favoritos con todos los complementos listos en una sola carpeta.</p>
-
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
-                    📥 Descargar Complementos (ZIP)
-                </button>
-            </div>
-
-            <!-- TUTORIAL 2 -->
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe 
-                        src="https://www.youtube.com/embed/2x0azN_Jv80" 
-                        title="Cómo instalar Mods y Skins en Minecraft Java" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                
-                <span class="badge">✨ Guía Completa Java</span>
-                <h3>Cómo instalar Mods y Skins en Minecraft Java</h3>
-                <p>Aprende a configurar Fabric, poner tus skins personalizadas y todos los archivos listos en una sola carpeta.</p>
-
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/b6fjz03v0ogtkl6/MODS.zip/file')">
-                    📥 Descargar Todos los Mods (ZIP)
-                </button>
-            </div>
-
-            <!-- TUTORIAL 3 -->
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe 
-                        src="https://www.youtube.com/embed/-_EOdMxyV28" 
-                        title="Cómo descargar Minecraft Bedrock gratis en PC" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                
-                <span class="badge">🔥 Tutorial Destacado</span>
-                <h3>Minecraft Bedrock para PC (Método Actualizado)</h3>
-                <p>Aprende a instalar y configurar Minecraft Bedrock en Windows con todos los archivos requeridos.</p>
-
+                <span class="badge">💻 Java Edition</span>
+                <h3>Cómo instalar Forge y Fabric correctamente en Java</h3>
+                <p>Guía definitiva para preparar tu versión de Minecraft Java e instalar cualquier tipo de mod.</p>
                 <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
-                    📥 Descargar Llave de Desbloqueo
+                    📥 Descargar Archivos Base Java
                 </button>
             </div>
-
         </div>
 
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
     </section>
 </div>
 
 
-<!-- ================= VISTA: MODS ================= -->
-<div id="vista-mods" class="view">
+<!-- ================= VISTA: JAVA - MODS ================= -->
+<div id="vista-java-mods" class="view">
     <section>
-        <h2 class="section-title">🧩 Módulo de Mods</h2>
-        <p class="section-desc">Muy pronto agregaremos las guías para los mejores mods.</p>
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: SHADERS ================= -->
-<div id="vista-shaders" class="view">
-    <section>
-        <h2 class="section-title">🌈 Módulo de Shaders</h2>
-        <p class="section-desc">Instala tus shaders preferidos y optimiza los gráficos al máximo con los complementos necesarios.</p>
+        <h2 class="section-title">⚔️ Mods para Minecraft Java</h2>
+        <p class="section-desc">Los mejores complementos, optimizaciones y añadidos para la versión de PC.</p>
 
         <div class="video-grid">
             <div class="video-card">
                 <div class="video-wrapper">
-                    <iframe 
-                        src="https://www.youtube.com/embed/K4pkbwErShk" 
-                        title="Cómo Instalar SHADERS en Minecraft Java" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Mods Java" frameborder="0" allowfullscreen></iframe>
                 </div>
-                
-                <span class="badge">🌈 Shaders & Complementos</span>
-                <h3>Cómo Instalar SHADERS en Minecraft Java (Se Ve INCREÍBLE)</h3>
-                <p>Aprende a instalar Sodium, Iris y tus shaders favoritos con todos los complementos listos en una sola carpeta.</p>
-
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
-                    📥 Descargar Complementos (ZIP)
+                <span class="badge">⚔️ Modpacks</span>
+                <h3>Mejores Mods de Rendimiento y Contenido para Java</h3>
+                <p>Pack esencial de modificaciones para exprimir al máximo tu experiencia de supervivencia.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
+                    📥 Descargar Pack de Mods Java
                 </button>
             </div>
         </div>
 
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
     </section>
 </div>
 
 
-<!-- ================= VISTA: PACKS ================= -->
-<div id="vista-packs" class="view">
+<!-- ================= VISTA: JAVA - OPTIMIZACIÓN ================= -->
+<div id="vista-java-optimizacion" class="view">
     <section>
-        <h2 class="section-title">🎨 Texture Packs</h2>
-        <p class="section-desc">Próximamente los mejores paquetes de texturas.</p>
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+        <h2 class="section-title">🚀 Optimización Java (FPS Boost)</h2>
+        <p class="section-desc">Saca la máxima cantidad de fotogramas por segundo en ordenadores de bajos recursos.</p>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Optimizacion Java" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">🚀 FPS Boost</span>
+                <h3>Sodium, Iris y Ajustes para Eliminar el Lag en Java</h3>
+                <p>Guía completa de optimización visual y de rendimiento para PCs de gama baja.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
+                    📥 Descargar Optimizador Java
+                </button>
+            </div>
+        </div>
+
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTA: BEDROCK - GUÍAS ================= -->
+<div id="vista-bedrock-tutoriales" class="view">
+    <section>
+        <h2 class="section-title">📱 Guías Minecraft Bedrock</h2>
+        <p class="section-desc">Tutoriales especializados y archivos de descarga seguros para tu versión Bedrock en PC o móvil.</p>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Bedrock Guia" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">🔥 Bedrock Edition</span>
+                <h3>Minecraft Bedrock para PC (Método Actualizado)</h3>
+                <p>Aprende a instalar y configurar Minecraft Bedrock en Windows con todos los archivos requeridos paso a paso.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
+                    📥 Descargar Llave de Desbloqueo Bedrock
+                </button>
+            </div>
+        </div>
+
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTA: BEDROCK - ADD-ONS ================= -->
+<div id="vista-bedrock-addons" class="view">
+    <section>
+        <h2 class="section-title">🧩 Add-ons Bedrock</h2>
+        <p class="section-desc">Instala complementos, comportamientos y recursos personalizados para tus mundos Bedrock.</p>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Bedrock Addons" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">🧩 Complementos</span>
+                <h3>Cómo Instalar Add-ons en Bedrock (Fácil y Rápido)</h3>
+                <p>Guía definitiva para importar paquetes de comportamientos y texturas sin errores en tus mundos.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
+                    📥 Descargar Pack Base Bedrock (ZIP)
+                </button>
+            </div>
+        </div>
+
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
     </section>
 </div>
 
@@ -684,7 +671,7 @@ section{
             <a href="https://discord.gg/TU_LINK_DE_DISCORD" target="_blank" class="btn-social">Discord</a>
         </div>
         <br>
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
     </section>
 </div>
 
