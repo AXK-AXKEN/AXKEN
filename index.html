@@ -16,8 +16,8 @@
 
 body{
     margin:0;
-    font-family:Arial, sans-serif;
-    background: radial-gradient(circle at top,#2563eb,#050505 55%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top,#1e40af,#050505 60%);
     color:white;
     min-height: 100vh;
 }
@@ -29,93 +29,98 @@ nav{
     display:flex;
     justify-content:center;
     gap:20px;
-    padding:20px;
-    background:rgba(0,0,0,.5);
-    backdrop-filter:blur(10px);
+    padding:18px 20px;
+    background:rgba(10, 10, 15, 0.75);
+    backdrop-filter:blur(12px);
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 nav a{
-    color:white;
+    color:#e2e8f0;
     text-decoration:none;
-    font-weight:bold;
+    font-weight:600;
+    font-size: 15px;
     transition:.3s;
     cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
 }
 
 nav a:hover, nav a.active-tab {
     color:#4ade80;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(74, 222, 128, 0.12);
 }
 
 
-/* CONTROL DE VISTAS (PÁGINAS) */
+/* CONTROL DE VISTAS */
 
 .view {
-    display: none; /* Por defecto todas las vistas están ocultas */
-    animation: fadeIn 0.4s ease-in-out;
+    display: none;
+    animation: fadeIn 0.4s ease-out;
 }
 
 .view.active {
-    display: block; /* Solo la vista activa se muestra */
+    display: block;
 }
 
 
-/* HERO / PÁGINA DE INICIO */
+/* HERO / INICIO */
 
 .hero{
     text-align:center;
-    padding:40px 20px 20px;
+    padding:50px 20px 20px;
 }
 
 .logo{
-    width:170px;
-    height:170px;
+    width:160px;
+    height:160px;
     border-radius:50%;
     object-fit:cover;
-    box-shadow:
-    0 0 25px #7c3aed,
-    0 0 50px #2563eb;
-    animation:entrada 1s;
+    box-shadow: 0 0 35px rgba(124, 58, 237, 0.6), 0 0 60px rgba(37, 99, 235, 0.4);
+    animation:entrada 1s ease-out;
 }
 
 h1{
-    font-size:55px;
+    font-size:52px;
     margin:20px 0 5px;
+    letter-spacing: 1px;
 }
 
 .hero h2{
     color:#4ade80;
+    font-weight: 600;
 }
 
 .hero p{
-    font-size:20px;
+    font-size:19px;
+    color: #cbd5e1;
 }
 
 .btn{
     display:inline-block;
     margin-top:15px;
-    padding:14px 30px;
-    background:#7c3aed;
+    padding:14px 32px;
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
     color:white;
     border-radius:12px;
     text-decoration:none;
     font-weight:bold;
     transition:.3s;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
 }
 
 .btn:hover{
-    background:#4ade80;
+    background: #4ade80;
     color:black;
-    transform:scale(1.05);
+    transform:translateY(-3px);
+    box-shadow: 0 6px 25px rgba(74, 222, 128, 0.5);
 }
 
 
-/* TARJETAS DE CATEGORÍA EN EL INICIO */
+/* CATEGORÍAS */
 
 .categories-grid {
     display: flex;
@@ -129,19 +134,20 @@ h1{
 
 .category-card {
     width: 250px;
-    background: rgba(255,255,255,.08);
+    background: rgba(255,255,255,.05);
     border-radius: 20px;
     padding: 25px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.12);
     text-align: center;
     transition: .3s;
     cursor: pointer;
 }
 
 .category-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 30px #4ade80;
+    transform: translateY(-8px);
+    border-color: rgba(74, 222, 128, 0.5);
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.25);
 }
 
 .category-card h3 {
@@ -150,74 +156,101 @@ h1{
 }
 
 
-/* SECCIONES APARTADAS */
+/* SECCIÓN TUTORIALES Y DISEÑO DE TARJETA MEJORADO */
 
 section{
     padding:40px 20px;
     text-align:center;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .section-title {
-    color: #4ade80;
-    font-size: 36px;
-    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .section-desc{
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-    color: #ccc;
-    font-size: 16px;
-    line-height: 1.5;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    color: #94a3b8;
+    font-size: 17px;
+    line-height: 1.6;
 }
-
-
-/* REPRODUCTOR Y TARJETAS DE VIDEO */
 
 .video-grid{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 35px;
     padding: 10px;
 }
 
+/* TARJETA DE VIDEO REDISEÑADA */
+
 .video-card{
-    width: 360px;
-    background: rgba(255, 255, 255, .08);
-    border-radius: 20px;
-    padding: 18px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, .15);
+    width: 420px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+    border-radius: 24px;
+    padding: 20px;
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     text-align: left;
-    transition: .3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
 }
 
 .video-card:hover{
-    transform: translateY(-8px);
-    box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
+    transform: translateY(-6px);
+    border-color: rgba(74, 222, 128, 0.4);
+    box-shadow: 0 15px 35px rgba(74, 222, 128, 0.2);
+}
+
+/* Badge / Etiqueta Nuevo */
+.badge {
+    display: inline-block;
+    background: rgba(74, 222, 128, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .video-card h3{
-    color: #4ade80;
-    font-size: 18px;
-    margin: 15px 0 8px 0;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 .video-card p{
-    font-size: 14px;
-    color: #ddd;
-    margin-bottom: 15px;
+    font-size: 14.5px;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+    line-height: 1.5;
 }
 
+/* Marco del Video */
 .video-wrapper{
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    margin-bottom: 15px;
 }
 
 .video-wrapper iframe{
@@ -228,31 +261,48 @@ section{
     height: 100%;
 }
 
-button{
+/* Botón de Descarga Destacado */
+.btn-download {
     width: 100%;
-    background:#7c3aed;
-    color:white;
-    border:0;
-    padding:12px 20px;
-    border-radius:10px;
-    cursor:pointer;
+    background: linear-gradient(135deg, #7c3aed, #6366f1);
+    color: white;
+    border: 0;
+    padding: 14px 20px;
+    border-radius: 12px;
+    cursor: pointer;
     font-weight: bold;
     font-size: 15px;
-    transition: .3s;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
 }
 
-button:hover{
-    background:#4ade80;
-    color:black;
-    transform:scale(1.03);
+.btn-download:hover {
+    background: #4ade80;
+    color: #050505;
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
 }
 
 .btn-back {
-    margin-top: 30px;
+    margin-top: 40px;
     width: auto;
     display: inline-block;
-    padding: 10px 25px;
-    background: rgba(255, 255, 255, 0.15);
+    padding: 12px 28px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 
@@ -260,8 +310,9 @@ button:hover{
 
 .community{
     background:rgba(0,0,0,.4);
-    border-radius: 20px;
-    margin-top: 40px;
+    border-radius: 24px;
+    padding: 40px 20px;
+    margin-top: 20px;
 }
 
 .social-links{
@@ -273,13 +324,13 @@ button:hover{
 }
 
 .btn-social{
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 12px 24px;
+    border-radius: 10px;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    background: rgba(255,255,255,.1);
-    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
     transition: .3s;
 }
 
@@ -292,12 +343,12 @@ button:hover{
 /* ANIMACIONES */
 
 @keyframes entrada{
-    from{ opacity:0; transform:scale(.5); }
+    from{ opacity:0; transform:scale(.6); }
     to{ opacity:1; transform:scale(1); }
 }
 
 @keyframes fadeIn{
-    from{ opacity:0; transform: translateY(10px); }
+    from{ opacity:0; transform: translateY(12px); }
     to{ opacity:1; transform: translateY(0); }
 }
 
@@ -306,7 +357,7 @@ button:hover{
 
 @media(max-width:600px){
     h1{ font-size:38px; }
-    nav{ flex-wrap:wrap; gap: 10px; }
+    nav{ flex-wrap:wrap; gap: 8px; }
     .logo{ width:130px; height:130px; }
     .video-card{ width: 100%; }
 }
@@ -318,7 +369,7 @@ button:hover{
 
 <body>
 
-<!-- MENÚ DE NAVEGACIÓN PRINCIPAL -->
+<!-- MENÚ DE NAVEGACIÓN -->
 <nav>
     <a onclick="mostrarVista('inicio')" id="tab-inicio" class="active-tab">Inicio</a>
     <a onclick="mostrarVista('tutoriales')" id="tab-tutoriales">Tutoriales</a>
@@ -336,50 +387,51 @@ button:hover{
         <img src="logo.png" class="logo" alt="Logo AXKEN">
         <h1>AXKEN</h1>
         <h2>Minecraft Academy</h2>
-        <p>Aprende Minecraft con tutoriales, mods, shaders y recursos.</p>
-        <a class="btn" href="https://www.youtube.com/@Axken00" target="_blank">▶ Mi YouTube</a>
+        <p>Aprende Minecraft con tutoriales paso a paso, mods, shaders y recursos gratis.</p>
+        <a class="btn" href="https://www.youtube.com/@Axken00" target="_blank">▶ Canal de YouTube</a>
     </div>
 
-    <!-- BOTONES DE CATEGORÍAS -->
+    <!-- TARJETAS DE CATEGORÍA -->
     <div class="categories-grid">
         <div class="category-card" onclick="mostrarVista('tutoriales')">
             <h3>🎮 Tutoriales</h3>
-            <p>Guías en video paso a paso y archivos necesarios.</p>
-            <button>Entrar</button>
+            <p>Guías paso a paso y archivos de instalación.</p>
+            <button class="btn-download" style="margin-top:15px;">Entrar</button>
         </div>
 
         <div class="category-card" onclick="mostrarVista('mods')">
             <h3>🧩 Mods</h3>
-            <p>Sodium, Iris, Fabric y optimización.</p>
-            <button>Entrar</button>
+            <p>Sodium, Iris, Fabric y optimización total.</p>
+            <button class="btn-download" style="margin-top:15px;">Entrar</button>
         </div>
 
         <div class="category-card" onclick="mostrarVista('shaders')">
             <h3>🌈 Shaders</h3>
-            <p>Mejora los gráficos de tu Minecraft.</p>
-            <button>Entrar</button>
+            <p>Mejora los gráficos y la luz de tu juego.</p>
+            <button class="btn-download" style="margin-top:15px;">Entrar</button>
         </div>
 
         <div class="category-card" onclick="mostrarVista('packs')">
             <h3>🎨 Texture Packs</h3>
-            <p>Packs PvP y texturas realistas.</p>
-            <button>Entrar</button>
+            <p>Packs de texturas PvP y realistas.</p>
+            <button class="btn-download" style="margin-top:15px;">Entrar</button>
         </div>
     </div>
 
 </div>
 
 
-<!-- ================= VISTA: TUTORIALES (APARTADO EXCLUSIVO) ================= -->
+<!-- ================= VISTA: TUTORIALES (APARTADO DEDICADO) ================= -->
 <div id="vista-tutoriales" class="view">
     <section>
-        <h2 class="section-title">🎮 Apartado de Tutoriales</h2>
+        <h2 class="section-title">🎮 Academy Tutoriales</h2>
         <p class="section-desc">
-            En este apartado encontrarás únicamente las guías en video y sus enlaces de descarga directa o monetizados.
+            Bienvenido al centro de guías. Aquí encontrarás los videos instructivos completos junto con sus archivos de descarga oficiales. Mira la guía rápida y descarga los componentes necesarios abajo.
         </p>
 
         <div class="video-grid">
-            <!-- TARJETA TUTORIAL MINECRAFT BEDROCK -->
+            
+            <!-- TARJETA DEL TUTORIAL DE MINECRAFT BEDROCK -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe 
@@ -390,13 +442,16 @@ button:hover{
                         allowfullscreen>
                     </iframe>
                 </div>
-                <h3>Descargar Minecraft Bedrock Gratis en PC</h3>
-                <p>Método actualizado paso a paso para instalar y activar Minecraft Bedrock en Windows.</p>
                 
-                <button onclick="descargarRecurso('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
-                    📥 Descargar Llave de Desbloqueo (MediaFire)
+                <span class="badge">🔥 Tutorial Destacado</span>
+                <h3>Minecraft Bedrock para PC (Método Actualizado)</h3>
+                <p>Aprende a instalar y configurar Minecraft Bedrock en Windows con todos los archivos requeridos de manera rápida y segura.</p>
+                
+                <button class="btn-download" onclick="descargarRecurso('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
+                    📥 Descargar Llave de Desbloqueo
                 </button>
             </div>
+
         </div>
 
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
@@ -407,8 +462,8 @@ button:hover{
 <!-- ================= VISTA: MODS ================= -->
 <div id="vista-mods" class="view">
     <section>
-        <h2 class="section-title">🧩 Apartado de Mods</h2>
-        <p class="section-desc">Próximamente encontrarás aquí las guías y links de los mejores mods.</p>
+        <h2 class="section-title">🧩 Módulo de Mods</h2>
+        <p class="section-desc">Muy pronto agregaremos las guías y enlaces para los mejores mods de rendimiento y jugabilidad.</p>
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </section>
 </div>
@@ -417,8 +472,8 @@ button:hover{
 <!-- ================= VISTA: SHADERS ================= -->
 <div id="vista-shaders" class="view">
     <section>
-        <h2 class="section-title">🌈 Apartado de Shaders</h2>
-        <p class="section-desc">Próximamente encontrarás aquí los mejores shaders probados.</p>
+        <h2 class="section-title">🌈 Módulo de Shaders</h2>
+        <p class="section-desc">Muy pronto recomendaremos y compartiremos los paquetes de sombras e iluminación más optimizados.</p>
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </section>
 </div>
@@ -427,8 +482,8 @@ button:hover{
 <!-- ================= VISTA: PACKS ================= -->
 <div id="vista-packs" class="view">
     <section>
-        <h2 class="section-title">🎨 Apartado de Texture Packs</h2>
-        <p class="section-desc">Próximamente podrás descargar packs de texturas aquí.</p>
+        <h2 class="section-title">🎨 Texture Packs</h2>
+        <p class="section-desc">Próximamente los mejores paquetes de texturas PvP, medievales y fotorrealistas.</p>
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </section>
 </div>
@@ -438,7 +493,7 @@ button:hover{
 <div id="vista-comunidad" class="view">
     <section class="community">
         <h2 class="section-title">⚡ Comunidad AXKEN</h2>
-        <p>Sígueme en nuestras redes para no perderte ningún contenido:</p>
+        <p class="section-desc">Forma parte de la comunidad en nuestras redes sociales y no te pierdas las novedades.</p>
 
         <div class="social-links">
             <a href="https://www.youtube.com/@Axken00" target="_blank" class="btn-social">YouTube</a>
@@ -451,30 +506,25 @@ button:hover{
 </div>
 
 
-<!-- JAVASCRIPT PARA CAMBIAR ENTRE APARTADOS -->
+<!-- SCRIPT DE NAVEGACIÓN -->
 <script>
     function mostrarVista(nombreVista) {
-        // 1. Ocultar todas las vistas
         const vistas = document.querySelectorAll('.view');
         vistas.forEach(v => v.classList.remove('active'));
 
-        // 2. Remover la pestaña activa del menú
         const tabs = document.querySelectorAll('nav a');
         tabs.forEach(t => t.classList.remove('active-tab'));
 
-        // 3. Mostrar únicamente la vista seleccionada
         const vistaSeleccionada = document.getElementById('vista-' + nombreVista);
         if (vistaSeleccionada) {
             vistaSeleccionada.classList.add('active');
         }
 
-        // 4. Marcar como activa la pestaña correspondiente en el menú
         const tabSeleccionado = document.getElementById('tab-' + nombreVista);
         if (tabSeleccionado) {
             tabSeleccionado.classList.add('active-tab');
         }
 
-        // 5. Subir la pantalla al inicio
         window.scrollTo(0, 0);
     }
 
