@@ -341,7 +341,7 @@ section{
     font-size: 15px;
 }
 
-/* Espacio donde carga el anuncio de Adsterra */
+/* Espacio donde carga dinámicamente el anuncio */
 .ad-space {
     background: rgba(255, 255, 255, 0.03);
     border: 1px dashed rgba(255, 255, 255, 0.15);
@@ -526,7 +526,6 @@ section{
                 <h3>Minecraft Bedrock para PC (Método Actualizado)</h3>
                 <p>Aprende a instalar y configurar Minecraft Bedrock en Windows con todos los archivos requeridos.</p>
                 
-                <!-- Abre la ventana de conteo y monetización -->
                 <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
                     📥 Descargar Llave de Desbloqueo
                 </button>
@@ -586,11 +585,8 @@ section{
         <h3>⏳ Generando Enlace Seguro</h3>
         <p>Tu archivo se está preparando. Por favor, espera unos segundos...</p>
 
-        <!-- CÓDIGO DE ANUNCIO ADSTERRA INTEGRADO -->
-        <div class="ad-space">
-            <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
-            <div id="container-16fa8571b1eee7681486dc9444354e1e"></div>
-        </div>
+        <!-- ESPACIO DE PUBLICIDAD DINÁMICA DE ADSTERRA -->
+        <div class="ad-space" id="adContainer"></div>
 
         <button id="btnModalDownload" class="btn-modal-action" disabled>
             Espera <span id="contadorSegundos">10</span> segundos...
@@ -601,7 +597,7 @@ section{
 </div>
 
 
-<!-- SCRIPT DE NAVEGACIÓN Y CONTEO -->
+<!-- SCRIPT DE NAVEGACIÓN Y MONETIZACIÓN DINÁMICA -->
 <script>
     let tiempoRestante = 10;
     let intervaloTimer = null;
@@ -627,7 +623,7 @@ section{
         window.scrollTo(0, 0);
     }
 
-    // FUNCIÓN DE MONETIZACIÓN CON TIEMPO DE ESPERA
+    // FUNCIÓN DE MONETIZACIÓN CON CARGA DINÁMICA DE PUBLICIDAD
     function iniciarEspera(urlMediafire) {
         urlDestinoFinal = urlMediafire;
         tiempoRestante = 10;
@@ -635,13 +631,29 @@ section{
         const modal = document.getElementById('modalEspera');
         const contadorSpan = document.getElementById('contadorSegundos');
         const btnModal = document.getElementById('btnModalDownload');
+        const adContainer = document.getElementById('adContainer');
 
+        // 1. Inyecta el anuncio de Adsterra dinámicamente al abrir el modal
+        adContainer.innerHTML = ''; 
+
+        let scriptAd = document.createElement('script');
+        scriptAd.async = true;
+        scriptAd.setAttribute('data-cfasync', 'false');
+        scriptAd.src = 'https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js';
+
+        let divAd = document.createElement('div');
+        divAd.id = 'container-16fa8571b1eee7681486dc9444354e1e';
+
+        adContainer.appendChild(scriptAd);
+        adContainer.appendChild(divAd);
+
+        // 2. Muestra el modal en pantalla
         btnModal.disabled = true;
         btnModal.classList.remove('ready');
         btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
         modal.style.display = 'flex';
 
-        // Inicia el contador regresivo
+        // 3. Inicia el contador regresivo
         clearInterval(intervaloTimer);
         intervaloTimer = setInterval(() => {
             tiempoRestante--;
@@ -664,6 +676,7 @@ section{
     function cerrarModal() {
         clearInterval(intervaloTimer);
         document.getElementById('modalEspera').style.display = 'none';
+        document.getElementById('adContainer').innerHTML = ''; // Limpia el anuncio para la siguiente apertura
     }
 </script>
 
