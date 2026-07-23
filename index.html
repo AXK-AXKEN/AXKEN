@@ -581,13 +581,13 @@ section{
 </div>
 
 
-<!-- SCRIPT LÓGICO -->
+<!-- SCRIPT DE NAVEGACIÓN Y MANEJO DEL MODAL -->
 <script>
     let tiempoRestante = 10;
     let intervaloTimer = null;
     let urlDestinoFinal = "";
     
-    // Tu Smartlink generado en Adsterra:
+    // Tu Smartlink de Adsterra
     const adsterraSmartlink = "https://www.effectivecpmnetwork.com/ze9k3h53?key=558404d7c28a7c5fdbd9e30621a5edae";
 
     function mostrarVista(nombreVista) {
@@ -614,12 +614,18 @@ section{
         urlDestinoFinal = urlMediafire;
         tiempoRestante = 10;
 
-        // 1. Abre el Smartlink de Adsterra en una pestaña nueva
+        // 1. Crear un enlace dinámico para forzar la apertura limpia del Smartlink en nueva pestaña sin ser bloqueado por Chrome
         if (adsterraSmartlink) {
-            window.open(adsterraSmartlink, '_blank');
+            let a = document.createElement('a');
+            a.href = adsterraSmartlink;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         }
 
-        // 2. Muestra el modal en la página actual
+        // 2. Muestra el modal en la ventana actual con el contador
         const modal = document.getElementById('modalEspera');
         const contadorSpan = document.getElementById('contadorSegundos');
         const btnModal = document.getElementById('btnModalDownload');
@@ -629,7 +635,7 @@ section{
         btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
         modal.style.display = 'flex';
 
-        // 3. Inicia la cuenta regresiva hacia MediaFire
+        // 3. Cuenta regresiva hacia MediaFire
         clearInterval(intervaloTimer);
         intervaloTimer = setInterval(() => {
             tiempoRestante--;
