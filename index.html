@@ -12,423 +12,320 @@
 
 *{
     box-sizing:border-box;
+    scroll-behavior: smooth;
 }
 
 body{
-
     margin:0;
     font-family:Arial, sans-serif;
-    background:
-    radial-gradient(circle at top,#2563eb,#050505 55%);
+    background: radial-gradient(circle at top,#2563eb,#050505 55%);
     color:white;
-
 }
 
 
-/* MENU */
+/* NAVEGACIÓN */
 
 nav{
-
     display:flex;
     justify-content:center;
     gap:25px;
     padding:20px;
     background:rgba(0,0,0,.5);
     backdrop-filter:blur(10px);
-
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-
 nav a{
-
     color:white;
     text-decoration:none;
     font-weight:bold;
     transition:.3s;
-
 }
-
 
 nav a:hover{
-
     color:#4ade80;
-
 }
-
 
 
 /* HERO */
 
 .hero{
-
     text-align:center;
     padding:50px 20px;
-
 }
 
-
 .logo{
-
     width:170px;
     height:170px;
     border-radius:50%;
     object-fit:cover;
-
     box-shadow:
     0 0 25px #7c3aed,
     0 0 50px #2563eb;
-
     animation:entrada 1s;
-
 }
-
-
 
 h1{
-
     font-size:55px;
     margin:20px 0 5px;
-
 }
-
 
 .hero h2{
-
     color:#4ade80;
-
 }
-
-
 
 .hero p{
-
     font-size:20px;
-
 }
 
-
-
-/* BOTON */
-
-
 .btn{
-
     display:inline-block;
     margin-top:20px;
     padding:14px 30px;
-
     background:#7c3aed;
     color:white;
-
     border-radius:12px;
-
     text-decoration:none;
     font-weight:bold;
-
     transition:.3s;
-
 }
-
 
 .btn:hover{
-
     background:#4ade80;
     color:black;
-
     transform:scale(1.05);
-
 }
 
 
-
-/* TARJETAS */
-
+/* SECCIONES Y CONTENIDO */
 
 section{
-
     padding:40px 20px;
     text-align:center;
-
 }
 
-
-.cards{
-
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:25px;
-
+.section-desc{
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-
-
-.card{
-
-    width:280px;
-
-    background:rgba(255,255,255,.08);
-
-    border-radius:20px;
-
-    padding:25px;
-
-    backdrop-filter:blur(10px);
-
-    border:1px solid rgba(255,255,255,.15);
-
-    transition:.3s;
-
+.video-grid{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 10px;
 }
 
-
-
-.card:hover{
-
-    transform:translateY(-12px);
-
-    box-shadow:0 0 30px #4ade80;
-
+.video-card{
+    width: 360px;
+    background: rgba(255, 255, 255, .08);
+    border-radius: 20px;
+    padding: 18px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    text-align: left;
+    transition: .3s;
 }
 
-
-
-.card h3{
-
-    color:#4ade80;
-
+.video-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
 }
 
+.video-card h3{
+    color: #4ade80;
+    font-size: 18px;
+    margin: 15px 0 8px 0;
+}
 
+.video-card p{
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.video-wrapper{
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.video-wrapper iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 button{
-
+    width: 100%;
     background:#7c3aed;
     color:white;
-
     border:0;
-
-    padding:12px 25px;
-
+    padding:12px 20px;
     border-radius:10px;
-
     cursor:pointer;
-
+    font-weight: bold;
+    font-size: 15px;
+    transition: .3s;
 }
 
+button:hover{
+    background:#4ade80;
+    color:black;
+    transform:scale(1.03);
+}
 
 
 /* COMUNIDAD */
 
-
 .community{
-
     background:rgba(0,0,0,.4);
+}
 
+.social-links{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-social{
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.2);
+    transition: .3s;
+}
+
+.btn-social:hover{
+    background: #4ade80;
+    color: black;
 }
 
 
-
-/* ANIMACION */
-
+/* ANIMACIÓN */
 
 @keyframes entrada{
-
-from{
-
-opacity:0;
-transform:scale(.5);
-
-}
-
-to{
-
-opacity:1;
-transform:scale(1);
-
-}
-
+    from{
+        opacity:0;
+        transform:scale(.5);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
 }
 
 
-
-/* CELULAR */
-
+/* RESPONSIVE */
 
 @media(max-width:600px){
-
-
-h1{
-
-font-size:38px;
-
+    h1{
+        font-size:38px;
+    }
+    nav{
+        flex-wrap:wrap;
+    }
+    .logo{
+        width:130px;
+        height:130px;
+    }
+    .video-card{
+        width: 100%;
+    }
 }
-
-
-nav{
-
-flex-wrap:wrap;
-
-}
-
-
-.logo{
-
-width:130px;
-height:130px;
-
-}
-
-
-}
-
-
 
 </style>
-
 
 </head>
 
 
 <body>
 
-
+<!-- MENÚ SUPERO -->
 <nav>
-
-<a href="#">Inicio</a>
-<a href="#">Tutoriales</a>
-<a href="#">Mods</a>
-<a href="#">Shaders</a>
-<a href="#">Packs</a>
-
+    <a href="#inicio">Inicio</a>
+    <a href="#tutoriales">Tutoriales</a>
+    <a href="#comunidad">Comunidad</a>
 </nav>
 
 
-
-<div class="hero">
-
-
-<img src="logo.png" class="logo">
-
-
-<h1>AXKEN</h1>
-
-<h2>Minecraft Academy</h2>
-
-
-<p>
-Aprende Minecraft con tutoriales,
-mods, shaders y recursos.
-</p>
-
-
-<a class="btn" href="https://www.youtube.com/@Axken00" target="_blank">
-▶ Mi YouTube
-</a>
-
-
+<!-- HERO / PRINCIPAL -->
+<div class="hero" id="inicio">
+    <img src="logo.png" class="logo" alt="Logo AXKEN">
+    <h1>AXKEN</h1>
+    <h2>Minecraft Academy</h2>
+    <p>Aprende Minecraft con tutoriales, mods, shaders y recursos.</p>
+    <a class="btn" href="https://www.youtube.com/@Axken00" target="_blank">▶ Mi YouTube</a>
 </div>
 
 
+<!-- SECCIÓN TUTORIALES Y RECURSOS -->
+<section id="tutoriales">
+    <h2>🎮 Tutoriales y Recursos</h2>
+    <p class="section-desc">
+        Encuentra las guías en video y descarga los archivos correspondientes a cada tutorial.
+    </p>
 
+    <div class="video-grid">
 
-<section>
+        <!-- TARJETA: TUTORIAL MINECRAFT BEDROCK -->
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/-_EOdMxyV28" 
+                    title="Cómo descargar Minecraft Bedrock gratis en PC" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <h3>Descargar Minecraft Bedrock Gratis en PC</h3>
+            <p>Método actualizado paso a paso para instalar y activar Minecraft Bedrock en Windows.</p>
+            
+            <button onclick="descargarRecurso('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
+                📥 Descargar Llave de Desbloqueo (MediaFire)
+            </button>
+        </div>
 
-
-<h2>🎮 Contenido</h2>
-
-
-<div class="cards">
-
-
-
-<div class="card">
-
-<h3>🎮 Tutoriales</h3>
-
-<p>
-Guías de Minecraft Java y Bedrock.
-</p>
-
-<button>
-Ver tutoriales
-</button>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>🧩 Mods</h3>
-
-<p>
-Sodium, Iris, Fabric y más.
-</p>
-
-<button>
-Ver Mods
-</button>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>🌈 Shaders</h3>
-
-<p>
-Mejora los gráficos de Minecraft.
-</p>
-
-<button>
-Ver Shaders
-</button>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>🎨 Texture Packs</h3>
-
-<p>
-Packs PvP y realistas.
-</p>
-
-<button>
-Ver Packs
-</button>
-
-</div>
-
-
-
-</div>
-
-
+    </div>
 </section>
 
 
+<!-- COMUNIDAD -->
+<section class="community" id="comunidad">
+    <h2>⚡ Comunidad AXKEN</h2>
+    <p>Sígueme en nuestras redes para no perderte ningún contenido:</p>
 
-
-<section class="community">
-
-
-<h2>⚡ Comunidad AXKEN</h2>
-
-<p>
-
-Sígueme en YouTube, TikTok y Discord
-
-</p>
-
-
+    <div class="social-links">
+        <a href="https://www.youtube.com/@Axken00" target="_blank" class="btn-social">YouTube</a>
+        <a href="https://www.tiktok.com/@axken00" target="_blank" class="btn-social">TikTok</a>
+        <a href="https://discord.gg/TU_LINK_DE_DISCORD" target="_blank" class="btn-social">Discord</a>
+    </div>
 </section>
 
 
+<!-- SCRIPT DE NAVEGACIÓN Y DESCARGAS -->
+<script>
+    function descargarRecurso(url) {
+        // Abre el link (directo o monetizado) en una nueva pestaña
+        window.open(url, '_blank');
+    }
+</script>
 
 </body>
 
