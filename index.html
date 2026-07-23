@@ -696,7 +696,35 @@ section{
 <div id="vista-bedrock-textures" class="view">
     <section>
         <h2 class="section-title">🎨 Texture Packs Bedrock</h2>
-        <p class="section-desc">Cambia el estilo visual de tu juego móvil o de PC con texturas personalizadas.</p>
+        <p class="section-desc">Cambia el estilo visual de tu juego móvil o de PC con texturas personalizadas y de PvP.</p>
+
+        <div class="video-grid">
+            <!-- TEXTURE PACK 1 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/rR3FO6JudCc" title="Lyro PvP Ultimate" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">🎨 Texture Pack Bedrock</span>
+                <h3>Lyro PvP Ultimate Texture Pack</h3>
+                <p>Mejora tu rendimiento y visuales en combates PvP para Minecraft Bedrock.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://mcpedl.com/lyro-pvp-ultimate/')">
+                    📥 Descargar Lyro PvP Ultimate
+                </button>
+            </div>
+
+            <!-- TEXTURE PACK 2 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/rR3FO6JudCc" title="Venom Texture Pack" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">🎨 Texture Pack Bedrock</span>
+                <h3>Venom Texture Pack</h3>
+                <p>Impresionante paquete de texturas inspirado en Venom para tus mundos Bedrock.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://mcpedl.com/venom/')">
+                    📥 Descargar Venom Pack
+                </button>
+            </div>
+        </div>
 
         <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
     </section>
@@ -778,8 +806,8 @@ section{
         window.scrollTo(0, 0);
     }
 
-    function iniciarEspera(urlMediafire) {
-        urlDestinoFinal = urlMediafire;
+    function iniciarEspera(urlDestino) {
+        urlDestinoFinal = urlDestino;
         tiempoRestante = 10;
 
         const modal = document.getElementById('modalEspera');
@@ -801,7 +829,7 @@ section{
                 clearInterval(intervaloTimer);
                 btnModal.disabled = false;
                 btnModal.classList.add('ready');
-                btnModal.innerText = '🚀 ¡Ir a MediaFire!';
+                btnModal.innerText = '🚀 ¡Ir al Enlace!';
                 btnModal.onclick = function() {
                     window.open(urlDestinoFinal, '_blank');
                     cerrarModal();
