@@ -10,122 +10,203 @@
 
 <style>
 
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: radial-gradient(circle at top, #312e81, #050505 60%);
-    color: white;
-}
+body{
 
-
-/* PORTADA */
-
-header {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-
-.logo {
-
-    width: 160px;
-    height: 160px;
-
-    border-radius: 50%;
-
-    object-fit: cover;
-
-    box-shadow: 0 0 35px #8b5cf6;
-
-    animation: aparecer 1s ease;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:
+    radial-gradient(circle at top,#2563eb,#050505 55%);
+    color:white;
 
 }
 
 
-h1 {
+/* MENU */
 
-    font-size: 55px;
-    margin: 20px 0 5px;
+nav{
+
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:20px;
+    background:rgba(0,0,0,.5);
+    backdrop-filter:blur(10px);
+
+}
+
+
+nav a{
+
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
 
 }
 
 
-h2 {
+nav a:hover{
 
-    color: #a78bfa;
+    color:#4ade80;
+
+}
+
+
+
+/* HERO */
+
+.hero{
+
+    text-align:center;
+    padding:50px 20px;
 
 }
 
 
-p {
+.logo{
 
-    font-size: 18px;
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+
+    box-shadow:
+    0 0 25px #7c3aed,
+    0 0 50px #2563eb;
+
+    animation:entrada 1s;
 
 }
+
+
+
+h1{
+
+    font-size:55px;
+    margin:20px 0 5px;
+
+}
+
+
+.hero h2{
+
+    color:#4ade80;
+
+}
+
+
+
+.hero p{
+
+    font-size:20px;
+
+}
+
+
+
+/* BOTON */
+
+
+.btn{
+
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 30px;
+
+    background:#7c3aed;
+    color:white;
+
+    border-radius:12px;
+
+    text-decoration:none;
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+.btn:hover{
+
+    background:#4ade80;
+    color:black;
+
+    transform:scale(1.05);
+
+}
+
 
 
 /* TARJETAS */
 
 
-.container {
+section{
+
+    padding:40px 20px;
+    text-align:center;
+
+}
+
+
+.cards{
 
     display:flex;
-
     justify-content:center;
-
     flex-wrap:wrap;
-
     gap:25px;
-
-    padding:30px;
 
 }
 
 
 
-.card {
-
-    background:rgba(255,255,255,0.08);
-
-    backdrop-filter: blur(10px);
+.card{
 
     width:280px;
 
-    padding:25px;
+    background:rgba(255,255,255,.08);
 
     border-radius:20px;
 
-    text-align:center;
+    padding:25px;
 
-    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
 
-    transition:0.3s;
+    border:1px solid rgba(255,255,255,.15);
 
-}
-
-
-
-.card:hover {
-
-    transform:translateY(-10px);
-
-    box-shadow:0 0 25px #7c3aed;
+    transition:.3s;
 
 }
 
 
 
-button {
+.card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 0 30px #4ade80;
+
+}
+
+
+
+.card h3{
+
+    color:#4ade80;
+
+}
+
+
+
+button{
 
     background:#7c3aed;
-
     color:white;
 
-    border:none;
+    border:0;
 
     padding:12px 25px;
 
@@ -133,15 +214,16 @@ button {
 
     cursor:pointer;
 
-    font-size:16px;
-
 }
 
 
 
-button:hover {
+/* COMUNIDAD */
 
-    background:#a855f7;
+
+.community{
+
+    background:rgba(0,0,0,.4);
 
 }
 
@@ -150,21 +232,18 @@ button:hover {
 /* ANIMACION */
 
 
-@keyframes aparecer {
+@keyframes entrada{
 
-from {
+from{
 
 opacity:0;
-
-transform:scale(0.5);
+transform:scale(.5);
 
 }
 
-
-to {
+to{
 
 opacity:1;
-
 transform:scale(1);
 
 }
@@ -179,23 +258,30 @@ transform:scale(1);
 @media(max-width:600px){
 
 
-h1 {
+h1{
 
-font-size:40px;
+font-size:38px;
 
 }
 
 
-.logo {
+nav{
+
+flex-wrap:wrap;
+
+}
+
+
+.logo{
 
 width:130px;
-
 height:130px;
 
 }
 
 
 }
+
 
 
 </style>
@@ -207,7 +293,19 @@ height:130px;
 <body>
 
 
-<header>
+<nav>
+
+<a href="#">Inicio</a>
+<a href="#">Tutoriales</a>
+<a href="#">Mods</a>
+<a href="#">Shaders</a>
+<a href="#">Packs</a>
+
+</nav>
+
+
+
+<div class="hero">
 
 
 <img src="logo.png" class="logo">
@@ -215,25 +313,38 @@ height:130px;
 
 <h1>AXKEN</h1>
 
-
 <h2>Minecraft Academy</h2>
 
 
 <p>
-Tutoriales • Mods • Shaders • Texture Packs
+Aprende Minecraft con tutoriales,
+mods, shaders y recursos.
 </p>
 
 
-</header>
+<a class="btn" href="#">
+▶ Mi YouTube
+</a>
+
+
+</div>
 
 
 
-<div class="container">
+
+<section>
+
+
+<h2>🎮 Contenido</h2>
+
+
+<div class="cards">
+
 
 
 <div class="card">
 
-<h2>🎮 Tutoriales</h2>
+<h3>🎮 Tutoriales</h3>
 
 <p>
 Guías de Minecraft Java y Bedrock.
@@ -249,7 +360,7 @@ Ver tutoriales
 
 <div class="card">
 
-<h2>🧩 Mods</h2>
+<h3>🧩 Mods</h3>
 
 <p>
 Sodium, Iris, Fabric y más.
@@ -265,10 +376,10 @@ Ver Mods
 
 <div class="card">
 
-<h2>🌈 Shaders</h2>
+<h3>🌈 Shaders</h3>
 
 <p>
-Los mejores shaders para Minecraft.
+Mejora los gráficos de Minecraft.
 </p>
 
 <button>
@@ -281,7 +392,7 @@ Ver Shaders
 
 <div class="card">
 
-<h2>🎨 Texture Packs</h2>
+<h3>🎨 Texture Packs</h3>
 
 <p>
 Packs PvP y realistas.
@@ -294,7 +405,29 @@ Ver Packs
 </div>
 
 
+
 </div>
+
+
+</section>
+
+
+
+
+<section class="community">
+
+
+<h2>⚡ Comunidad AXKEN</h2>
+
+<p>
+
+Sígueme en YouTube, TikTok y Discord
+
+</p>
+
+
+</section>
+
 
 
 </body>
