@@ -23,7 +23,7 @@ body{
 }
 
 
-/* NAVEGACIÓN */
+/* NAVEGACIÓN (MENÚ COMPLETO) */
 
 nav{
     display:flex;
@@ -99,11 +99,17 @@ h1{
 }
 
 
-/* SECCIONES Y CONTENIDO */
+/* SECCIONES DE CONTENIDO */
 
 section{
-    padding:40px 20px;
+    padding:50px 20px;
     text-align:center;
+}
+
+.section-title {
+    color: #4ade80;
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
 .section-desc{
@@ -239,6 +245,7 @@ button:hover{
     }
     nav{
         flex-wrap:wrap;
+        gap: 15px;
     }
     .logo{
         width:130px;
@@ -256,15 +263,18 @@ button:hover{
 
 <body>
 
-<!-- MENÚ SUPERO -->
+<!-- MENÚ COMPLETO RESTAURADO -->
 <nav>
     <a href="#inicio">Inicio</a>
     <a href="#tutoriales">Tutoriales</a>
+    <a href="#mods">Mods</a>
+    <a href="#shaders">Shaders</a>
+    <a href="#packs">Packs</a>
     <a href="#comunidad">Comunidad</a>
 </nav>
 
 
-<!-- HERO / PRINCIPAL -->
+<!-- INICIO / HERO -->
 <div class="hero" id="inicio">
     <img src="logo.png" class="logo" alt="Logo AXKEN">
     <h1>AXKEN</h1>
@@ -274,16 +284,16 @@ button:hover{
 </div>
 
 
-<!-- SECCIÓN TUTORIALES Y RECURSOS -->
+<!-- SECCIÓN: TUTORIALES -->
 <section id="tutoriales">
-    <h2>🎮 Tutoriales y Recursos</h2>
+    <h2 class="section-title">🎮 Tutoriales</h2>
     <p class="section-desc">
-        Encuentra las guías en video y descarga los archivos correspondientes a cada tutorial.
+        Aprende paso a paso con las guías en video y descarga los archivos necesarios para cada tutorial.
     </p>
 
     <div class="video-grid">
 
-        <!-- TARJETA: TUTORIAL MINECRAFT BEDROCK -->
+        <!-- TARJETA DEL TUTORIAL DE MINECRAFT BEDROCK -->
         <div class="video-card">
             <div class="video-wrapper">
                 <iframe 
@@ -306,9 +316,39 @@ button:hover{
 </section>
 
 
-<!-- COMUNIDAD -->
+<!-- SECCIÓN: MODS -->
+<section id="mods">
+    <h2 class="section-title">🧩 Mods</h2>
+    <p class="section-desc">Optimizaciones y mods para mejorar tu experiencia en Minecraft Java y Bedrock.</p>
+    <div class="video-grid">
+        <!-- Aquí irán tus futuras tarjetas de Mods -->
+    </div>
+</section>
+
+
+<!-- SECCIÓN: SHADERS -->
+<section id="shaders">
+    <h2 class="section-title">🌈 Shaders</h2>
+    <p class="section-desc">Packs de iluminación y sombreado listos para descargar.</p>
+    <div class="video-grid">
+        <!-- Aquí irán tus futuras tarjetas de Shaders -->
+    </div>
+</section>
+
+
+<!-- SECCIÓN: PACKS -->
+<section id="packs">
+    <h2 class="section-title">🎨 Texture Packs</h2>
+    <p class="section-desc">Texturas PvP y realistas recomendadas.</p>
+    <div class="video-grid">
+        <!-- Aquí irán tus futuras tarjetas de Texture Packs -->
+    </div>
+</section>
+
+
+<!-- SECCIÓN: COMUNIDAD -->
 <section class="community" id="comunidad">
-    <h2>⚡ Comunidad AXKEN</h2>
+    <h2 class="section-title">⚡ Comunidad AXKEN</h2>
     <p>Sígueme en nuestras redes para no perderte ningún contenido:</p>
 
     <div class="social-links">
@@ -319,10 +359,9 @@ button:hover{
 </section>
 
 
-<!-- SCRIPT DE NAVEGACIÓN Y DESCARGAS -->
+<!-- SCRIPT DE DESCARGAS -->
 <script>
     function descargarRecurso(url) {
-        // Abre el link (directo o monetizado) en una nueva pestaña
         window.open(url, '_blank');
     }
 </script>
