@@ -504,21 +504,21 @@ section{
         <img src="logo.png" class="logo" alt="Logo AXKEN">
         <h1>AXKEN</h1>
         <h2>Minecraft Academy</h2>
-        <p>Selecciona tu versión favorita para explorar todo el contenido especializado en tutoriales, add-ons y shaders.</p>
+        <p>Selecciona tu versión favorita para explorar todo el contenido especializado en tutoriales, add-ons, texture packs y shaders.</p>
     </div>
 
     <div class="categories-grid">
         <!-- TARJETA JAVA -->
         <div class="category-card" onclick="mostrarVista('menu-java')" style="border-color: rgba(124, 58, 237, 0.4);">
             <h3>💻 Minecraft Java</h3>
-            <p>Contenido para PC: Mods, Shaders, Tutoriales y optimización de rendimiento.</p>
+            <p>Contenido para PC: Mods, Shaders, Texture Packs, Tutoriales y optimización.</p>
             <button class="btn-download" style="margin-top:10px;">Entrar a Java</button>
         </div>
 
         <!-- TARJETA BEDROCK -->
         <div class="category-card" onclick="mostrarVista('menu-bedrock')" style="border-color: rgba(74, 222, 128, 0.4);">
             <h3>📱 Minecraft Bedrock</h3>
-            <p>Contenido para Móvil y PC: Add-ons, Shaders, Tutoriales y mundos personalizados.</p>
+            <p>Contenido para Móvil y PC: Add-ons, Shaders, Texture Packs y Tutoriales.</p>
             <button class="btn-download" style="margin-top:10px; background: linear-gradient(135deg, #059669, #10b981);">Entrar a Bedrock</button>
         </div>
     </div>
@@ -547,6 +547,12 @@ section{
             <h3>🧩 Mods</h3>
             <p>Modificaciones, paquetes de mods y contenido extra.</p>
             <button class="btn-download" style="margin-top:10px;">Ver Mods</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('java-textures')">
+            <h3>🎨 Texture Packs</h3>
+            <p>Paquetes de texturas y recursos visuales para Java.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Texture Packs</button>
         </div>
 
         <div class="category-card" onclick="mostrarVista('java-shaders')">
@@ -586,6 +592,12 @@ section{
             <button class="btn-download" style="margin-top:10px;">Ver Add-ons</button>
         </div>
 
+        <div class="category-card" onclick="mostrarVista('bedrock-textures')">
+            <h3>🎨 Texture Packs</h3>
+            <p>Paquetes de texturas optimizados para Bedrock.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Texture Packs</button>
+        </div>
+
         <div class="category-card" onclick="mostrarVista('bedrock-shaders')">
             <h3>🌈 Shaders</h3>
             <p>Gráficos optimizados compatibles con Render_Dragon.</p>
@@ -605,8 +617,6 @@ section{
     <section>
         <h2 class="section-title">📖 Tutoriales Minecraft Java</h2>
         <p class="section-desc">Próximamente agregaremos tutoriales exclusivos y específicos para Minecraft Java.</p>
-
-        <!-- Video eliminado por ser de Bedrock. Puedes agregar nuevos videos de Java aquí cuando los tengas -->
 
         <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
     </section>
@@ -629,6 +639,31 @@ section{
                 <p>Pack esencial de modificaciones para exprimir al máximo tu experiencia de supervivencia.</p>
                 <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
                     📥 Descargar Pack de Mods Java
+                </button>
+            </div>
+        </div>
+
+        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTA: JAVA - TEXTURE PACKS ================= -->
+<div id="vista-java-textures" class="view">
+    <section>
+        <h2 class="section-title">🎨 Texture Packs para Minecraft Java</h2>
+        <p class="section-desc">Renueva la apariencia visual de tus bloques y objetos en la versión de PC.</p>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Texture Packs Java" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">🎨 Recursos</span>
+                <h3>Mejores Texture Packs PvP y Survival para Java</h3>
+                <p>Paquetes de texturas optimizados para mejorar la claridad visual y el rendimiento.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
+                    📥 Descargar Texture Pack Java
                 </button>
             </div>
         </div>
@@ -704,6 +739,31 @@ section{
                 <p>Guía definitiva para importar paquetes de comportamiento sin errores en tus mundos.</p>
                 <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
                     📥 Descargar Pack Base Bedrock (ZIP)
+                </button>
+            </div>
+        </div>
+
+        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTA: BEDROCK - TEXTURE PACKS ================= -->
+<div id="vista-bedrock-textures" class="view">
+    <section>
+        <h2 class="section-title">🎨 Texture Packs Bedrock</h2>
+        <p class="section-desc">Cambia el estilo visual de tu juego móvil o de PC con texturas personalizadas.</p>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Texture Packs Bedrock" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">🎨 Apariencia</span>
+                <h3>Mejores Texture Packs y Paquetes Visuales para Bedrock</h3>
+                <p>Personaliza tu interfaz, bloques y herramientas con la máxima compatibilidad.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
+                    📥 Descargar Texture Pack Bedrock
                 </button>
             </div>
         </div>
