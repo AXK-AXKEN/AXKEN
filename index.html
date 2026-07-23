@@ -8,6 +8,9 @@
 
 <title>AXKEN Minecraft Academy</title>
 
+<!-- SCRIPT DE PUBLICIDAD DE ADSTERRA -->
+<script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
+
 <style>
 
 *{
@@ -322,8 +325,8 @@ section{
     background: #0f172a;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    padding: 30px 25px;
-    max-width: 450px;
+    padding: 25px 20px;
+    max-width: 480px;
     width: 100%;
     text-align: center;
     box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
@@ -334,33 +337,27 @@ section{
     color: #4ade80;
     font-size: 22px;
     margin-top: 0;
+    margin-bottom: 8px;
 }
 
 .modal-card p {
     color: #94a3b8;
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 15px;
 }
 
-.btn-sponsor {
-    display: block;
-    width: 100%;
+/* CONTENEDOR PUBLICITARIO DE ADSTERRA */
+.ad-box {
     margin: 15px 0;
-    padding: 14px;
-    background: linear-gradient(135deg, #22c55e, #16a34a);
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
-    transition: 0.3s;
-}
-
-.btn-sponsor:hover {
-    transform: scale(1.02);
-    background: #4ade80;
-    color: #000;
+    overflow: hidden;
 }
 
 .btn-modal-action {
@@ -590,12 +587,12 @@ section{
 <div class="modal-overlay" id="modalEspera">
     <div class="modal-card">
         <h3>⏳ Generando Enlace Seguro</h3>
-        <p>Haz clic en el botón de patrocinador para apoyar el canal y habilitar la descarga:</p>
+        <p>Tu archivo se está preparando. El botón de descarga se habilitará al finalizar el contador:</p>
 
-        <!-- Botón directo de publicidad (sin bloqueos de pop-up) -->
-        <a id="btnSmartlink" href="https://www.effectivecpmnetwork.com/ze9k3h53?key=558404d7c28a7c5fdbd9e30621a5edae" target="_blank" class="btn-sponsor" onclick="registrarClicSponsor()">
-            ⭐ 1. Ver Anuncio / Patrocinador
-        </a>
+        <!-- BANNER PUBLICITARIO DE ADSTERRA -->
+        <div class="ad-box">
+            <div id="container-16fa8571b1eee7681486dc9444354e1e"></div>
+        </div>
 
         <button id="btnModalDownload" class="btn-modal-action" disabled>
             Espera <span id="contadorSegundos">10</span> segundos...
@@ -646,7 +643,7 @@ section{
         btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
         modal.style.display = 'flex';
 
-        // Inicia el temporizador de 10 segundos
+        // Inicia la cuenta regresiva de 10 segundos
         clearInterval(intervaloTimer);
         intervaloTimer = setInterval(() => {
             tiempoRestante--;
@@ -657,7 +654,7 @@ section{
                 clearInterval(intervaloTimer);
                 btnModal.disabled = false;
                 btnModal.classList.add('ready');
-                btnModal.innerText = '🚀 2. ¡Ir a MediaFire!';
+                btnModal.innerText = '🚀 ¡Ir a MediaFire!';
                 btnModal.onclick = function() {
                     window.open(urlDestinoFinal, '_blank');
                     cerrarModal();
