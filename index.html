@@ -156,7 +156,7 @@ h1{
 }
 
 
-/* SECCIÓN TUTORIALES Y DISEÑO DE TARJETA MEJORADO */
+/* SECCIÓN TUTORIALES */
 
 section{
     padding:40px 20px;
@@ -189,8 +189,6 @@ section{
     padding: 10px;
 }
 
-/* TARJETA DE VIDEO REDISEÑADA */
-
 .video-card{
     width: 420px;
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
@@ -211,7 +209,6 @@ section{
     box-shadow: 0 15px 35px rgba(74, 222, 128, 0.2);
 }
 
-/* Badge / Etiqueta Nuevo */
 .badge {
     display: inline-block;
     background: rgba(74, 222, 128, 0.15);
@@ -241,7 +238,6 @@ section{
     line-height: 1.5;
 }
 
-/* Marco del Video */
 .video-wrapper{
     position: relative;
     padding-bottom: 56.25%;
@@ -261,7 +257,6 @@ section{
     height: 100%;
 }
 
-/* Botón de Descarga Destacado */
 .btn-download {
     width: 100%;
     background: linear-gradient(135deg, #7c3aed, #6366f1);
@@ -303,6 +298,88 @@ section{
 
 .btn-back:hover {
     background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* VENTANA MONETIZADA DE ESPERA (MODAL) */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-card {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-card h3 {
+    color: #4ade80;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.modal-card p {
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+/* Espacio donde puedes colocar banners o anuncios */
+.ad-space {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.btn-modal-action {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: not-allowed;
+    background: #334155;
+    color: #94a3b8;
+    transition: 0.3s;
+}
+
+.btn-modal-action.ready {
+    background: #4ade80;
+    color: #000;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+}
+
+.btn-close-modal {
+    margin-top: 15px;
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: underline;
 }
 
 
@@ -391,7 +468,6 @@ section{
         <a class="btn" href="https://www.youtube.com/@Axken00" target="_blank">▶ Canal de YouTube</a>
     </div>
 
-    <!-- TARJETAS DE CATEGORÍA -->
     <div class="categories-grid">
         <div class="category-card" onclick="mostrarVista('tutoriales')">
             <h3>🎮 Tutoriales</h3>
@@ -421,17 +497,17 @@ section{
 </div>
 
 
-<!-- ================= VISTA: TUTORIALES (APARTADO DEDICADO) ================= -->
+<!-- ================= VISTA: TUTORIALES ================= -->
 <div id="vista-tutoriales" class="view">
     <section>
         <h2 class="section-title">🎮 Academy Tutoriales</h2>
         <p class="section-desc">
-            Bienvenido al centro de guías. Aquí encontrarás los videos instructivos completos junto con sus archivos de descarga oficiales. Mira la guía rápida y descarga los componentes necesarios abajo.
+            Bienvenido al centro de guías. Encuentra los videos explicativos y descarga los archivos requeridos de forma segura.
         </p>
 
         <div class="video-grid">
             
-            <!-- TARJETA DEL TUTORIAL DE MINECRAFT BEDROCK -->
+            <!-- TARJETA CON MONETIZACIÓN INTEGRADA -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe 
@@ -445,9 +521,10 @@ section{
                 
                 <span class="badge">🔥 Tutorial Destacado</span>
                 <h3>Minecraft Bedrock para PC (Método Actualizado)</h3>
-                <p>Aprende a instalar y configurar Minecraft Bedrock en Windows con todos los archivos requeridos de manera rápida y segura.</p>
+                <p>Aprende a instalar y configurar Minecraft Bedrock en Windows con todos los archivos requeridos.</p>
                 
-                <button class="btn-download" onclick="descargarRecurso('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
+                <!-- Al presionar, abre el tiempo de espera -->
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
                     📥 Descargar Llave de Desbloqueo
                 </button>
             </div>
@@ -459,41 +536,35 @@ section{
 </div>
 
 
-<!-- ================= VISTA: MODS ================= -->
+<!-- ================= VISTAS ADICIONALES ================= -->
 <div id="vista-mods" class="view">
     <section>
         <h2 class="section-title">🧩 Módulo de Mods</h2>
-        <p class="section-desc">Muy pronto agregaremos las guías y enlaces para los mejores mods de rendimiento y jugabilidad.</p>
+        <p class="section-desc">Muy pronto agregaremos las guías para los mejores mods.</p>
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </section>
 </div>
 
-
-<!-- ================= VISTA: SHADERS ================= -->
 <div id="vista-shaders" class="view">
     <section>
         <h2 class="section-title">🌈 Módulo de Shaders</h2>
-        <p class="section-desc">Muy pronto recomendaremos y compartiremos los paquetes de sombras e iluminación más optimizados.</p>
+        <p class="section-desc">Muy pronto compartiremos los paquetes de sombras más optimizados.</p>
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </section>
 </div>
 
-
-<!-- ================= VISTA: PACKS ================= -->
 <div id="vista-packs" class="view">
     <section>
         <h2 class="section-title">🎨 Texture Packs</h2>
-        <p class="section-desc">Próximamente los mejores paquetes de texturas PvP, medievales y fotorrealistas.</p>
+        <p class="section-desc">Próximamente los mejores paquetes de texturas.</p>
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </section>
 </div>
 
-
-<!-- ================= VISTA: COMUNIDAD ================= -->
 <div id="vista-comunidad" class="view">
     <section class="community">
         <h2 class="section-title">⚡ Comunidad AXKEN</h2>
-        <p class="section-desc">Forma parte de la comunidad en nuestras redes sociales y no te pierdas las novedades.</p>
+        <p class="section-desc">Forma parte de la comunidad en nuestras redes sociales:</p>
 
         <div class="social-links">
             <a href="https://www.youtube.com/@Axken00" target="_blank" class="btn-social">YouTube</a>
@@ -506,8 +577,34 @@ section{
 </div>
 
 
-<!-- SCRIPT DE NAVEGACIÓN -->
+<!-- ================= VENTANA FLOTANTE DE MONETIZACIÓN (MODAL) ================= -->
+<div class="modal-overlay" id="modalEspera">
+    <div class="modal-card">
+        <h3>⏳ Generando Enlace Seguro</h3>
+        <p>Tu archivo se está preparando. Por favor, espera unos segundos...</p>
+
+        <!-- ESPACIO DE PUBLICIDAD / MONETIZACIÓN -->
+        <div class="ad-space">
+            📢 <b>Anuncio / Promoción:</b><br>
+            ¡Sígueme en TikTok y YouTube para más tutoriales semanales!
+            <!-- Aquí puedes pegar códigos de banners publicitarios (ej. Adsterra, Monetag, Google AdSense) -->
+        </div>
+
+        <button id="btnModalDownload" class="btn-modal-action" disabled>
+            Espera <span id="contadorSegundos">10</span> segundos...
+        </button>
+
+        <button class="btn-close-modal" onclick="cerrarModal()">Cancelar</button>
+    </div>
+</div>
+
+
+<!-- SCRIPT DE NAVEGACIÓN Y CONTEO -->
 <script>
+    let tiempoRestante = 10;
+    let intervaloTimer = null;
+    let urlDestinoFinal = "";
+
     function mostrarVista(nombreVista) {
         const vistas = document.querySelectorAll('.view');
         vistas.forEach(v => v.classList.remove('active'));
@@ -528,8 +625,43 @@ section{
         window.scrollTo(0, 0);
     }
 
-    function descargarRecurso(url) {
-        window.open(url, '_blank');
+    // FUNCIÓN DE MONETIZACIÓN CON TIEMPO DE ESPERA
+    function iniciarEspera(urlMediafire) {
+        urlDestinoFinal = urlMediafire;
+        tiempoRestante = 10; // Cambia este valor si quieres más o menos segundos
+
+        const modal = document.getElementById('modalEspera');
+        const contadorSpan = document.getElementById('contadorSegundos');
+        const btnModal = document.getElementById('btnModalDownload');
+
+        btnModal.disabled = true;
+        btnModal.classList.remove('ready');
+        btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
+        modal.style.display = 'flex';
+
+        // Inicia el contador regresivo
+        clearInterval(intervaloTimer);
+        intervaloTimer = setInterval(() => {
+            tiempoRestante--;
+            contadorSpan.innerText = tiempoRestante;
+            btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
+
+            if (tiempoRestante <= 0) {
+                clearInterval(intervaloTimer);
+                btnModal.disabled = false;
+                btnModal.classList.add('ready');
+                btnModal.innerText = '🚀 ¡Ir a MediaFire!';
+                btnModal.onclick = function() {
+                    window.open(urlDestinoFinal, '_blank');
+                    cerrarModal();
+                };
+            }
+        }, 1000);
+    }
+
+    function cerrarModal() {
+        clearInterval(intervaloTimer);
+        document.getElementById('modalEspera').style.display = 'none';
     }
 </script>
 
