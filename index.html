@@ -8,8 +8,11 @@
 
 <title>AXKEN Minecraft Academy</title>
 
-<!-- SCRIPT DE PUBLICIDAD DE ADSTERRA -->
+<!-- SCRIPT DEL BANNER NATIVO (DENTRO DEL MODAL) -->
 <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
+
+<!-- SCRIPT DE TU SOCIAL BAR -->
+<script src="https://pl30504966.effectivecpmnetwork.com/8a/be/bb/8abebb4ed787cdd852523a03ef63786e.js"></script>
 
 <style>
 
@@ -347,17 +350,18 @@ section{
     margin-bottom: 15px;
 }
 
-/* CONTENEDOR PUBLICITARIO DE ADSTERRA */
+/* CONTENEDOR PUBLICITARIO OPTIMIZADO */
 .ad-box {
-    margin: 15px 0;
-    min-height: 250px;
+    margin: 10px 0;
+    max-height: 220px;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     background: rgba(255, 255, 255, 0.03);
     border: 1px dashed rgba(255, 255, 255, 0.15);
     border-radius: 12px;
-    overflow: hidden;
+    padding: 5px;
 }
 
 .btn-modal-action {
@@ -425,7 +429,7 @@ section{
 }
 
 
-/* ANIMACIONES */
+/* ANIMACIONES Y RESPONSIVE */
 
 @keyframes entrada{
     from{ opacity:0; transform:scale(.6); }
@@ -437,14 +441,20 @@ section{
     to{ opacity:1; transform: translateY(0); }
 }
 
-
-/* RESPONSIVE */
-
 @media(max-width:600px){
     h1{ font-size:38px; }
     nav{ flex-wrap:wrap; gap: 8px; }
     .logo{ width:130px; height:130px; }
     .video-card{ width: 100%; }
+    .modal-card {
+        padding: 15px 12px;
+        max-width: 92%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    .ad-box {
+        max-height: 180px;
+    }
 }
 
 </style>
@@ -633,7 +643,6 @@ section{
         urlDestinoFinal = urlMediafire;
         tiempoRestante = 10;
 
-        // Muestra el modal
         const modal = document.getElementById('modalEspera');
         const contadorSpan = document.getElementById('contadorSegundos');
         const btnModal = document.getElementById('btnModalDownload');
@@ -643,7 +652,6 @@ section{
         btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
         modal.style.display = 'flex';
 
-        // Inicia la cuenta regresiva de 10 segundos
         clearInterval(intervaloTimer);
         intervaloTimer = setInterval(() => {
             tiempoRestante--;
