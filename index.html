@@ -298,6 +298,7 @@ section{
     justify-content: center;
     gap: 8px;
     box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    margin-top: 10px;
 }
 
 .btn-download:hover {
@@ -696,32 +697,26 @@ section{
 <div id="vista-bedrock-textures" class="view">
     <section>
         <h2 class="section-title">🎨 Texture Packs Bedrock</h2>
-        <p class="section-desc">Cambia el estilo visual de tu juego móvil o de PC con texturas personalizadas y de PvP.</p>
+        <p class="section-desc">Paquetes de texturas y recursos visuales presentados en video para Minecraft Bedrock.</p>
 
         <div class="video-grid">
-            <!-- TEXTURE PACK 1 -->
+            <!-- TARJETA ÚNICA CON EL VIDEO Y SUS DOS BOTONES DE DESCARGA -->
             <div class="video-card">
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/rR3FO6JudCc" title="Lyro PvP Ultimate" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/rR3FO6JudCc" title="Texture Packs PvP Bedrock" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <span class="badge">🎨 Texture Pack Bedrock</span>
-                <h3>Lyro PvP Ultimate Texture Pack</h3>
-                <p>Mejora tu rendimiento y visuales en combates PvP para Minecraft Bedrock.</p>
+                <span class="badge">🎨 Texture Packs Bedrock</span>
+                <h3>Texture Packs PvP (Lyro PvP Ultimate & Venom)</h3>
+                <p>Descarga los paquetes de texturas reseñados en este video para mejorar tus partidas.</p>
+                
+                <!-- BOTÓN 1 -->
                 <button class="btn-download" onclick="iniciarEspera('https://mcpedl.com/lyro-pvp-ultimate/')">
-                    📥 Descargar Lyro PvP Ultimate
+                    📥 Descargar #1: Lyro PvP Ultimate
                 </button>
-            </div>
 
-            <!-- TEXTURE PACK 2 -->
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/rR3FO6JudCc" title="Venom Texture Pack" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <span class="badge">🎨 Texture Pack Bedrock</span>
-                <h3>Venom Texture Pack</h3>
-                <p>Impresionante paquete de texturas inspirado en Venom para tus mundos Bedrock.</p>
+                <!-- BOTÓN 2 -->
                 <button class="btn-download" onclick="iniciarEspera('https://mcpedl.com/venom/')">
-                    📥 Descargar Venom Pack
+                    📥 Descargar #2: Venom Pack
                 </button>
             </div>
         </div>
