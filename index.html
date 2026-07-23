@@ -322,8 +322,8 @@ section{
     background: #0f172a;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    padding: 30px;
-    max-width: 450px;
+    padding: 25px;
+    max-width: 480px;
     width: 100%;
     text-align: center;
     box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
@@ -341,15 +341,18 @@ section{
     font-size: 15px;
 }
 
-/* Espacio donde puedes colocar banners o anuncios */
+/* Espacio donde carga el anuncio de Adsterra */
 .ad-space {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px dashed rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
     border-radius: 12px;
-    padding: 20px;
+    padding: 10px;
     margin: 20px 0;
-    color: #cbd5e1;
-    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    overflow: hidden;
 }
 
 .btn-modal-action {
@@ -523,7 +526,7 @@ section{
                 <h3>Minecraft Bedrock para PC (Método Actualizado)</h3>
                 <p>Aprende a instalar y configurar Minecraft Bedrock en Windows con todos los archivos requeridos.</p>
                 
-                <!-- Al presionar, abre el tiempo de espera -->
+                <!-- Abre la ventana de conteo y monetización -->
                 <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
                     📥 Descargar Llave de Desbloqueo
                 </button>
@@ -583,11 +586,10 @@ section{
         <h3>⏳ Generando Enlace Seguro</h3>
         <p>Tu archivo se está preparando. Por favor, espera unos segundos...</p>
 
-        <!-- ESPACIO DE PUBLICIDAD / MONETIZACIÓN -->
+        <!-- CÓDIGO DE ANUNCIO ADSTERRA INTEGRADO -->
         <div class="ad-space">
-            📢 <b>Anuncio / Promoción:</b><br>
-            ¡Sígueme en TikTok y YouTube para más tutoriales semanales!
-            <!-- Aquí puedes pegar códigos de banners publicitarios (ej. Adsterra, Monetag, Google AdSense) -->
+            <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
+            <div id="container-16fa8571b1eee7681486dc9444354e1e"></div>
         </div>
 
         <button id="btnModalDownload" class="btn-modal-action" disabled>
@@ -628,7 +630,7 @@ section{
     // FUNCIÓN DE MONETIZACIÓN CON TIEMPO DE ESPERA
     function iniciarEspera(urlMediafire) {
         urlDestinoFinal = urlMediafire;
-        tiempoRestante = 10; // Cambia este valor si quieres más o menos segundos
+        tiempoRestante = 10;
 
         const modal = document.getElementById('modalEspera');
         const contadorSpan = document.getElementById('contadorSegundos');
