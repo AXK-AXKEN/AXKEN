@@ -1,185 +1,750 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AXKEN Minecraft Academy</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        header {
-            background-color: #1e1e1e;
-            padding: 15px 30px;
-            border-bottom: 2px solid #ff5722;
-        }
+<title>AXKEN Minecraft Academy</title>
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+<!-- SCRIPT DEL BANNER NATIVO (DENTRO DEL MODAL) -->
+<script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
 
-        .logo {
-            color: #ff5722;
-            font-size: 1.5rem;
-        }
+<!-- SCRIPT DE TU SOCIAL BAR -->
+<script src="https://pl30504966.effectivecpmnetwork.com/8a/be/bb/8abebb4ed787cdd852523a03ef63786e.js"></script>
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+<style>
 
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
+*{
+    box-sizing:border-box;
+}
 
-        nav ul li a:hover {
-            color: #ff5722;
-        }
+body{
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top,#1e40af,#050505 60%);
+    color:white;
+    min-height: 100vh;
+}
 
-        .content-section {
-            display: none;
-            padding: 40px;
-        }
 
-        .content-section.active {
-            display: block;
-        }
+/* MENÚ DE NAVEGACIÓN */
 
-        .card-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
+nav{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:18px 20px;
+    background:rgba(10, 10, 15, 0.75);
+    backdrop-filter:blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-        .card {
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            padding: 20px;
-            width: 350px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
+nav a{
+    color:#e2e8f0;
+    text-decoration:none;
+    font-weight:600;
+    font-size: 15px;
+    transition:.3s;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
 
-        .card h3 {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
+nav a:hover, nav a.active-tab {
+    color:#4ade80;
+    background: rgba(74, 222, 128, 0.12);
+}
 
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
-            height: 0;
-            margin-bottom: 15px;
-        }
 
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 4px;
-        }
+/* CONTROL DE VISTAS */
 
-        .download-btn {
-            display: block;
-            text-align: center;
-            background-color: #ff5722;
-            color: white;
-            padding: 12px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: background 0.3s;
-        }
+.view {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
 
-        .download-btn:hover {
-            background-color: #e64a19;
-        }
-    </style>
+.view.active {
+    display: block;
+}
+
+
+/* HERO / INICIO */
+
+.hero{
+    text-align:center;
+    padding:50px 20px 20px;
+}
+
+.logo{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow: 0 0 35px rgba(124, 58, 237, 0.6), 0 0 60px rgba(37, 99, 235, 0.4);
+    animation:entrada 1s ease-out;
+}
+
+h1{
+    font-size:52px;
+    margin:20px 0 5px;
+    letter-spacing: 1px;
+}
+
+.hero h2{
+    color:#4ade80;
+    font-weight: 600;
+}
+
+.hero p{
+    font-size:19px;
+    color: #cbd5e1;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:14px 32px;
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    color:white;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+}
+
+.btn:hover{
+    background: #4ade80;
+    color:black;
+    transform:translateY(-3px);
+    box-shadow: 0 6px 25px rgba(74, 222, 128, 0.5);
+}
+
+
+/* CATEGORÍAS */
+
+.categories-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    width: 250px;
+    background: rgba(255,255,255,.05);
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.12);
+    text-align: center;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(74, 222, 128, 0.5);
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.25);
+}
+
+.category-card h3 {
+    color: #4ade80;
+    margin-top: 0;
+}
+
+
+/* SECCIÓN TUTORIALES */
+
+section{
+    padding:40px 20px;
+    text-align:center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.section-desc{
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    color: #94a3b8;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.video-grid{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 10px;
+}
+
+.video-card{
+    width: 420px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+    border-radius: 24px;
+    padding: 20px;
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    text-align: left;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.video-card:hover{
+    transform: translateY(-6px);
+    border-color: rgba(74, 222, 128, 0.4);
+    box-shadow: 0 15px 35px rgba(74, 222, 128, 0.2);
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(74, 222, 128, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.video-card h3{
+    color: #ffffff;
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.video-card p{
+    font-size: 14.5px;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.video-wrapper{
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    margin-bottom: 15px;
+}
+
+.video-wrapper iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-download {
+    width: 100%;
+    background: linear-gradient(135deg, #7c3aed, #6366f1);
+    color: white;
+    border: 0;
+    padding: 14px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+
+.btn-download:hover {
+    background: #4ade80;
+    color: #050505;
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+}
+
+.btn-back {
+    margin-top: 40px;
+    width: auto;
+    display: inline-block;
+    padding: 12px 28px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* VENTANA FLOTANTE DE MONETIZACIÓN (MODAL) */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-card {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px 20px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-card h3 {
+    color: #4ade80;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.modal-card p {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* CONTENEDOR PUBLICITARIO OPTIMIZADO */
+.ad-box {
+    margin: 10px 0;
+    max-height: 220px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.btn-modal-action {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: not-allowed;
+    background: #334155;
+    color: #94a3b8;
+    transition: 0.3s;
+}
+
+.btn-modal-action.ready {
+    background: #4ade80;
+    color: #000;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+}
+
+.btn-close-modal {
+    margin-top: 15px;
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+
+/* COMUNIDAD */
+
+.community{
+    background:rgba(0,0,0,.4);
+    border-radius: 24px;
+    padding: 40px 20px;
+    margin-top: 20px;
+}
+
+.social-links{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-social{
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    transition: .3s;
+}
+
+.btn-social:hover{
+    background: #4ade80;
+    color: black;
+}
+
+
+/* ANIMACIONES Y RESPONSIVE */
+
+@keyframes entrada{
+    from{ opacity:0; transform:scale(.6); }
+    to{ opacity:1; transform:scale(1); }
+}
+
+@keyframes fadeIn{
+    from{ opacity:0; transform: translateY(12px); }
+    to{ opacity:1; transform: translateY(0); }
+}
+
+@media(max-width:600px){
+    h1{ font-size:38px; }
+    nav{ flex-wrap:wrap; gap: 8px; }
+    .logo{ width:130px; height:130px; }
+    .video-card{ width: 100%; }
+    .modal-card {
+        padding: 15px 12px;
+        max-width: 92%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    .ad-box {
+        max-height: 180px;
+    }
+}
+
+</style>
+
 </head>
+
+
 <body>
 
-    <!-- Navegación -->
-    <header>
-        <nav>
-            <h1 class="logo">AXKEN Academy</h1>
-            <ul>
-                <li><a onclick="showSection('inicio')">Inicio</a></li>
-                <li><a onclick="showSection('tutoriales')">Tutoriales</a></li>
-                <li><a onclick="showSection('shaders')">Shaders</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- MENÚ DE NAVEGACIÓN -->
+<nav>
+    <a onclick="mostrarVista('inicio')" id="tab-inicio" class="active-tab">Inicio</a>
+    <a onclick="mostrarVista('tutoriales')" id="tab-tutoriales">Tutoriales</a>
+    <a onclick="mostrarVista('mods')" id="tab-mods">Mods</a>
+    <a onclick="mostrarVista('shaders')" id="tab-shaders">Shaders</a>
+    <a onclick="mostrarVista('packs')" id="tab-packs">Packs</a>
+    <a onclick="mostrarVista('comunidad')" id="tab-comunidad">Comunidad</a>
+</nav>
 
-    <!-- Contenido Principal -->
-    <main>
-        <!-- Sección de Inicio -->
-        <section id="inicio" class="content-section active">
-            <h2>Bienvenido a AXKEN Minecraft Academy</h2>
-            <p>El lugar donde aprenderás a optimizar, modificar y llevar tu Minecraft al siguiente nivel.</p>
-        </section>
 
-        <!-- Sección de Tutoriales -->
-        <section id="tutoriales" class="content-section">
-            <h2>Tutoriales</h2>
-            <div class="card-container">
-                <div class="card">
-                    <h3>Cómo Instalar Shaders en Minecraft Java (2026)</h3>
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/K4pkbwErShk" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <p>Aprende a instalar Sodium, Iris Shaders y configura tus gráficos paso a paso.</p>
-                    <a href="https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file" target="_blank" class="download-btn">Descargar Complementos.zip</a>
+<!-- ================= VISTA: INICIO ================= -->
+<div id="vista-inicio" class="view active">
+    
+    <div class="hero">
+        <img src="logo.png" class="logo" alt="Logo AXKEN">
+        <h1>AXKEN</h1>
+        <h2>Minecraft Academy</h2>
+        <p>Aprende Minecraft con tutoriales paso a paso, mods, shaders y recursos gratis.</p>
+        <a class="btn" href="https://www.youtube.com/@Axken00" target="_blank">▶ Canal de YouTube</a>
+    </div>
+
+    <div class="categories-grid">
+        <div class="category-card" onclick="mostrarVista('tutoriales')">
+            <h3>🎮 Tutoriales</h3>
+            <p>Guías paso a paso y archivos de instalación.</p>
+            <button class="btn-download" style="margin-top:15px;">Entrar</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('mods')">
+            <h3>🧩 Mods</h3>
+            <p>Sodium, Iris, Fabric y optimización total.</p>
+            <button class="btn-download" style="margin-top:15px;">Entrar</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('shaders')">
+            <h3>🌈 Shaders</h3>
+            <p>Mejora los gráficos y la luz de tu juego.</p>
+            <button class="btn-download" style="margin-top:15px;">Entrar</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('packs')">
+            <h3>🎨 Texture Packs</h3>
+            <p>Packs de texturas PvP y realistas.</p>
+            <button class="btn-download" style="margin-top:15px;">Entrar</button>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ================= VISTA: TUTORIALES ================= -->
+<div id="vista-tutoriales" class="view">
+    <section>
+        <h2 class="section-title">🎮 Academy Tutoriales</h2>
+        <p class="section-desc">
+            Bienvenido al centro de guías. Encuentra los videos explicativos y descarga los archivos requeridos de forma segura.
+        </p>
+
+        <div class="video-grid">
+            
+            <!-- TUTORIAL 1: Shaders en Minecraft Java -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/K4pkbwErShk" 
+                        title="Cómo Instalar SHADERS en Minecraft Java" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
-            </div>
-        </section>
+                
+                <span class="badge">🌈 Gráficos & Shaders</span>
+                <h3>Cómo Instalar SHADERS en Minecraft Java (Se Ve INCREÍBLE)</h3>
+                <p>Aprende a instalar Sodium, Iris y tus shaders favoritos con todos los complementos listos en una sola carpeta.</p>
 
-        <!-- Sección de Shaders -->
-        <section id="shaders" class="content-section">
-            <h2>Shaders y Complementos</h2>
-            <div class="card-container">
-                <div class="card">
-                    <h3>Cómo Instalar Shaders en Minecraft Java (2026)</h3>
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/K4pkbwErShk" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <p>Video oficial y enlace directo para descargar el pack de complementos y shaders.</p>
-                    <a href="https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file" target="_blank" class="download-btn">Descargar Complementos.zip</a>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
+                    📥 Descargar Complementos (ZIP)
+                </button>
+            </div>
+
+            <!-- TUTORIAL 2: Mods y Skins en Minecraft Java -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/2x0azN_Jv80" 
+                        title="Cómo instalar Mods y Skins en Minecraft Java" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
+                
+                <span class="badge">✨ Guía Completa Java</span>
+                <h3>Cómo instalar Mods y Skins en Minecraft Java</h3>
+                <p>Aprende a configurar Fabric, poner tus skins personalizadas y todos los archivos listos en una sola carpeta.</p>
+
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/b6fjz03v0ogtkl6/MODS.zip/file')">
+                    📥 Descargar Todos los Mods (ZIP)
+                </button>
             </div>
-        </section>
-    </main>
 
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
+            <!-- TUTORIAL 3: Minecraft Bedrock -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/-_EOdMxyV28" 
+                        title="Cómo descargar Minecraft Bedrock gratis en PC" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <span class="badge">🔥 Tutorial Destacado</span>
+                <h3>Minecraft Bedrock para PC (Método Actualizado)</h3>
+                <p>Aprende a instalar y configurar Minecraft Bedrock en Windows con todos los archivos requeridos.</p>
 
-            const activeSection = document.getElementById(sectionId);
-            if (activeSection) {
-                activeSection.classList.add('active');
-            }
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
+                    📥 Descargar Llave de Desbloqueo
+                </button>
+            </div>
+
+        </div>
+
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTAS ADICIONALES ================= -->
+<div id="vista-mods" class="view">
+    <section>
+        <h2 class="section-title">🧩 Módulo de Mods</h2>
+        <p class="section-desc">Muy pronto agregaremos las guías para los mejores mods.</p>
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+    </section>
+</div>
+
+<!-- ================= VISTA: SHADERS ================= -->
+<div id="vista-shaders" class="view">
+    <section>
+        <h2 class="section-title">🌈 Módulo de Shaders</h2>
+        <p class="section-desc">Instala tus shaders preferidos y optimiza los gráficos al máximo con los complementos necesarios.</p>
+
+        <div class="video-grid">
+            <!-- VIDEO DE SHADERS AGREGADO EN SU APARTADO -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/K4pkbwErShk" 
+                        title="Cómo Instalar SHADERS en Minecraft Java" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <span class="badge">🌈 Shaders & Complementos</span>
+                <h3>Cómo Instalar SHADERS en Minecraft Java (Se Ve INCREÍBLE)</h3>
+                <p>Aprende a instalar Sodium, Iris y tus shaders favoritos con todos los complementos listos en una sola carpeta.</p>
+
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
+                    📥 Descargar Complementos (ZIP)
+                </button>
+            </div>
+        </div>
+
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+    </section>
+</div>
+
+<div id="vista-packs" class="view">
+    <section>
+        <h2 class="section-title">🎨 Texture Packs</h2>
+        <p class="section-desc">Próximamente los mejores paquetes de texturas.</p>
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+    </section>
+</div>
+
+<div id="vista-comunidad" class="view">
+    <section class="community">
+        <h2 class="section-title">⚡ Comunidad AXKEN</h2>
+        <p class="section-desc">Forma parte de la comunidad en nuestras redes sociales:</p>
+
+        <div class="social-links">
+            <a href="https://www.youtube.com/@Axken00" target="_blank" class="btn-social">YouTube</a>
+            <a href="https://www.tiktok.com/@axken00" target="_blank" class="btn-social">TikTok</a>
+            <a href="https://discord.gg/TU_LINK_DE_DISCORD" target="_blank" class="btn-social">Discord</a>
+        </div>
+        <br>
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+    </section>
+</div>
+
+
+<!-- ================= VENTANA FLOTANTE DE MONETIZACIÓN (MODAL) ================= -->
+<div class="modal-overlay" id="modalEspera">
+    <div class="modal-card">
+        <h3>⏳ Generando Enlace Seguro</h3>
+        <p>Tu archivo se está preparando. El botón de descarga se habilitará al finalizar el contador:</p>
+
+        <!-- BANNER PUBLICITARIO DE ADSTERRA -->
+        <div class="ad-box">
+            <div id="container-16fa8571b1eee7681486dc9444354e1e"></div>
+        </div>
+
+        <button id="btnModalDownload" class="btn-modal-action" disabled>
+            Espera <span id="contadorSegundos">10</span> segundos...
+        </button>
+
+        <button class="btn-close-modal" onclick="cerrarModal()">Cancelar</button>
+    </div>
+</div>
+
+
+<!-- SCRIPT DE NAVEGACIÓN Y MANEJO DEL MODAL -->
+<script>
+    let tiempoRestante = 10;
+    let intervaloTimer = null;
+    let urlDestinoFinal = "";
+
+    function mostrarVista(nombreVista) {
+        const vistas = document.querySelectorAll('.view');
+        vistas.forEach(v => v.classList.remove('active'));
+
+        const tabs = document.querySelectorAll('nav a');
+        tabs.forEach(t => t.classList.remove('active-tab'));
+
+        const vistaSeleccionada = document.getElementById('vista-' + nombreVista);
+        if (vistaSeleccionada) {
+            vistaSeleccionada.classList.add('active');
         }
-    </script>
+
+        const tabSeleccionado = document.getElementById('tab-' + nombreVista);
+        if (tabSeleccionado) {
+            tabSeleccionado.classList.add('active-tab');
+        }
+
+        window.scrollTo(0, 0);
+    }
+
+    function iniciarEspera(urlMediafire) {
+        urlDestinoFinal = urlMediafire;
+        tiempoRestante = 10;
+
+        const modal = document.getElementById('modalEspera');
+        const contadorSpan = document.getElementById('contadorSegundos');
+        const btnModal = document.getElementById('btnModalDownload');
+
+        btnModal.disabled = true;
+        btnModal.classList.remove('ready');
+        btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
+        modal.style.display = 'flex';
+
+        clearInterval(intervaloTimer);
+        intervaloTimer = setInterval(() => {
+            tiempoRestante--;
+            if (contadorSpan) contadorSpan.innerText = tiempoRestante;
+            btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
+
+            if (tiempoRestante <= 0) {
+                clearInterval(intervaloTimer);
+                btnModal.disabled = false;
+                btnModal.classList.add('ready');
+                btnModal.innerText = '🚀 ¡Ir a MediaFire!';
+                btnModal.onclick = function() {
+                    window.open(urlDestinoFinal, '_blank');
+                    cerrarModal();
+                };
+            }
+        }, 1000);
+    }
+
+    function cerrarModal() {
+        clearInterval(intervaloTimer);
+        document.getElementById('modalEspera').style.display = 'none';
+    }
+</script>
+
 </body>
+
 </html>
