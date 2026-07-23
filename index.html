@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AXKEN Minecraft Academy - Selector de Versión</title>
+<title>AXKEN Minecraft Academy</title>
 
 <!-- SCRIPT DEL BANNER NATIVO (DENTRO DEL MODAL) -->
 <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
@@ -488,47 +488,113 @@ section{
 
 <body>
 
-<!-- MENÚ DE NAVEGACIÓN -->
+<!-- MENÚ DE NAVEGACIÓN PRINCIPAL -->
 <nav>
     <a onclick="mostrarVista('inicio')" id="tab-inicio" class="active-tab">Inicio</a>
-    
-    <!-- PESTAÑAS DE JAVA -->
-    <a onclick="mostrarVista('java-tutoriales')" id="tab-java-tutoriales">Java: Tutoriales</a>
-    <a onclick="mostrarVista('java-mods')" id="tab-java-mods">Java: Mods</a>
-    <a onclick="mostrarVista('java-optimizacion')" id="tab-java-optimizacion">Java: Optimización</a>
-    
-    <!-- PESTAÑAS DE BEDROCK -->
-    <a onclick="mostrarVista('bedrock-tutoriales')" id="tab-bedrock-tutoriales">Bedrock: Guías</a>
-    <a onclick="mostrarVista('bedrock-addons')" id="tab-bedrock-addons">Bedrock: Add-ons</a>
-    
+    <a onclick="mostrarVista('menu-java')" id="tab-menu-java">Minecraft Java</a>
+    <a onclick="mostrarVista('menu-bedrock')" id="tab-menu-bedrock">Minecraft Bedrock</a>
     <a onclick="mostrarVista('comunidad')" id="tab-comunidad">Comunidad</a>
 </nav>
 
 
-<!-- ================= VISTA: INICIO / SELECTOR ================= -->
+<!-- ================= VISTA: INICIO (SELECTOR PRINCIPAL) ================= -->
 <div id="vista-inicio" class="view active">
     
     <div class="hero">
         <img src="logo.png" class="logo" alt="Logo AXKEN">
         <h1>AXKEN</h1>
         <h2>Minecraft Academy</h2>
-        <p>Selecciona la versión de Minecraft en la que deseas explorar tutoriales, modificaciones y recursos exclusivos.</p>
+        <p>Selecciona tu versión favorita para explorar todo el contenido especializado en tutoriales, add-ons y shaders.</p>
     </div>
 
     <div class="categories-grid">
         <!-- TARJETA JAVA -->
-        <div class="category-card" onclick="mostrarVista('java-tutoriales')" style="border-color: rgba(124, 58, 237, 0.4);">
+        <div class="category-card" onclick="mostrarVista('menu-java')" style="border-color: rgba(124, 58, 237, 0.4);">
             <h3>💻 Minecraft Java</h3>
-            <p>Tutoriales, Forge/Fabric, mods clásicos, texturas y optimización con FPS Boost.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Versión Java</button>
+            <p>Contenido para PC: Mods, Shaders, Tutoriales y optimización de rendimiento.</p>
+            <button class="btn-download" style="margin-top:10px;">Entrar a Java</button>
         </div>
 
         <!-- TARJETA BEDROCK -->
-        <div class="category-card" onclick="mostrarVista('bedrock-tutoriales')" style="border-color: rgba(74, 222, 128, 0.4);">
+        <div class="category-card" onclick="mostrarVista('menu-bedrock')" style="border-color: rgba(74, 222, 128, 0.4);">
             <h3>📱 Minecraft Bedrock</h3>
-            <p>Guías para PC/Móvil, add-ons personalizados, gráficos Render_Dragon y packs PvP.</p>
-            <button class="btn-download" style="margin-top:10px; background: linear-gradient(135deg, #059669, #10b981);">Ver Versión Bedrock</button>
+            <p>Contenido para Móvil y PC: Add-ons, Shaders, Tutoriales y mundos personalizados.</p>
+            <button class="btn-download" style="margin-top:10px; background: linear-gradient(135deg, #059669, #10b981);">Entrar a Bedrock</button>
         </div>
+    </div>
+
+</div>
+
+
+<!-- ================= VISTA: SUBMENÚ MINECRAFT JAVA ================= -->
+<div id="vista-menu-java" class="view">
+    
+    <div class="hero">
+        <img src="logo.png" class="logo" alt="Logo AXKEN">
+        <h1>Minecraft Java</h1>
+        <h2>Panel de Contenido PC</h2>
+        <p>Elige qué tipo de contenido deseas consultar para tu versión Java.</p>
+    </div>
+
+    <div class="categories-grid">
+        <div class="category-card" onclick="mostrarVista('java-tutoriales')">
+            <h3>📖 Tutoriales</h3>
+            <p>Guías de instalación, launchers y configuración general.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Tutoriales</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('java-mods')">
+            <h3>🧩 Mods</h3>
+            <p>Modificaciones, paquetes de mods y contenido extra.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Mods</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('java-shaders')">
+            <h3>🌈 Shaders</h3>
+            <p>Mejoras visuales y sombreadores avanzados para PC.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Shaders</button>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector de Versiones</button>
+    </div>
+
+</div>
+
+
+<!-- ================= VISTA: SUBMENÚ MINECRAFT BEDROCK ================= -->
+<div id="vista-menu-bedrock" class="view">
+    
+    <div class="hero">
+        <img src="logo.png" class="logo" alt="Logo AXKEN">
+        <h1>Minecraft Bedrock</h1>
+        <h2>Panel de Contenido Móvil / PC</h2>
+        <p>Elige qué tipo de contenido deseas consultar para tu versión Bedrock.</p>
+    </div>
+
+    <div class="categories-grid">
+        <div class="category-card" onclick="mostrarVista('bedrock-tutoriales')">
+            <h3>📖 Tutoriales</h3>
+            <p>Guías paso a paso para Bedrock sin errores.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Tutoriales</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('bedrock-addons')">
+            <h3>🧩 Add-ons</h3>
+            <p>Paquetes de comportamientos y complementos oficiales.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Add-ons</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('bedrock-shaders')">
+            <h3>🌈 Shaders</h3>
+            <p>Gráficos optimizados compatibles con Render_Dragon.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Shaders</button>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector de Versiones</button>
     </div>
 
 </div>
@@ -537,8 +603,8 @@ section{
 <!-- ================= VISTA: JAVA - TUTORIALES ================= -->
 <div id="vista-java-tutoriales" class="view">
     <section>
-        <h2 class="section-title">💻 Tutoriales Minecraft Java</h2>
-        <p class="section-desc">Aprende a configurar tu entorno, instalar launchers y preparar el juego para modificaciones en PC.</p>
+        <h2 class="section-title">📖 Tutoriales Minecraft Java</h2>
+        <p class="section-desc">Aprende a configurar tu entorno y preparar tu juego.</p>
 
         <div class="video-grid">
             <div class="video-card">
@@ -554,7 +620,7 @@ section{
             </div>
         </div>
 
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
+        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
     </section>
 </div>
 
@@ -562,8 +628,8 @@ section{
 <!-- ================= VISTA: JAVA - MODS ================= -->
 <div id="vista-java-mods" class="view">
     <section>
-        <h2 class="section-title">⚔️ Mods para Minecraft Java</h2>
-        <p class="section-desc">Los mejores complementos, optimizaciones y añadidos para la versión de PC.</p>
+        <h2 class="section-title">🧩 Mods para Minecraft Java</h2>
+        <p class="section-desc">Los mejores complementos y añadidos para la versión de PC.</p>
 
         <div class="video-grid">
             <div class="video-card">
@@ -579,41 +645,41 @@ section{
             </div>
         </div>
 
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
+        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
     </section>
 </div>
 
 
-<!-- ================= VISTA: JAVA - OPTIMIZACIÓN ================= -->
-<div id="vista-java-optimizacion" class="view">
+<!-- ================= VISTA: JAVA - SHADERS ================= -->
+<div id="vista-java-shaders" class="view">
     <section>
-        <h2 class="section-title">🚀 Optimización Java (FPS Boost)</h2>
-        <p class="section-desc">Saca la máxima cantidad de fotogramas por segundo en ordenadores de bajos recursos.</p>
+        <h2 class="section-title">🌈 Shaders para Minecraft Java</h2>
+        <p class="section-desc">Transforma el aspecto visual de tu juego con sombreadores increíbles.</p>
 
         <div class="video-grid">
             <div class="video-card">
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Optimizacion Java" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Shaders Java" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <span class="badge">🚀 FPS Boost</span>
-                <h3>Sodium, Iris y Ajustes para Eliminar el Lag en Java</h3>
-                <p>Guía completa de optimización visual y de rendimiento para PCs de gama baja.</p>
+                <span class="badge">✨ Sombreadores</span>
+                <h3>Instalación de Shaders con Iris / Optifine en Java</h3>
+                <p>Guía para colocar los mejores gráficos realistas en tu PC sin perder rendimiento excesivo.</p>
                 <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
-                    📥 Descargar Optimizador Java
+                    📥 Descargar Pack de Shaders Java
                 </button>
             </div>
         </div>
 
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
+        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
     </section>
 </div>
 
 
-<!-- ================= VISTA: BEDROCK - GUÍAS ================= -->
+<!-- ================= VISTA: BEDROCK - TUTORIALES ================= -->
 <div id="vista-bedrock-tutoriales" class="view">
     <section>
-        <h2 class="section-title">📱 Guías Minecraft Bedrock</h2>
-        <p class="section-desc">Tutoriales especializados y archivos de descarga seguros para tu versión Bedrock en PC o móvil.</p>
+        <h2 class="section-title">📖 Tutoriales Minecraft Bedrock</h2>
+        <p class="section-desc">Guías especializadas y descargas para tu versión Bedrock.</p>
 
         <div class="video-grid">
             <div class="video-card">
@@ -622,14 +688,14 @@ section{
                 </div>
                 <span class="badge">🔥 Bedrock Edition</span>
                 <h3>Minecraft Bedrock para PC (Método Actualizado)</h3>
-                <p>Aprende a instalar y configurar Minecraft Bedrock en Windows con todos los archivos requeridos paso a paso.</p>
+                <p>Aprende a instalar y configurar Minecraft Bedrock en Windows con todos los archivos requeridos.</p>
                 <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
                     📥 Descargar Llave de Desbloqueo Bedrock
                 </button>
             </div>
         </div>
 
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
+        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
     </section>
 </div>
 
@@ -638,7 +704,7 @@ section{
 <div id="vista-bedrock-addons" class="view">
     <section>
         <h2 class="section-title">🧩 Add-ons Bedrock</h2>
-        <p class="section-desc">Instala complementos, comportamientos y recursos personalizados para tus mundos Bedrock.</p>
+        <p class="section-desc">Complementos y comportamientos personalizados para tus mundos.</p>
 
         <div class="video-grid">
             <div class="video-card">
@@ -647,14 +713,39 @@ section{
                 </div>
                 <span class="badge">🧩 Complementos</span>
                 <h3>Cómo Instalar Add-ons en Bedrock (Fácil y Rápido)</h3>
-                <p>Guía definitiva para importar paquetes de comportamientos y texturas sin errores en tus mundos.</p>
+                <p>Guía definitiva para importar paquetes de comportamiento sin errores en tus mundos.</p>
                 <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
                     📥 Descargar Pack Base Bedrock (ZIP)
                 </button>
             </div>
         </div>
 
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
+        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTA: BEDROCK - SHADERS ================= -->
+<div id="vista-bedrock-shaders" class="view">
+    <section>
+        <h2 class="section-title">🌈 Shaders Bedrock</h2>
+        <p class="section-desc">Mejora visualmente tu juego con configuraciones adaptadas a Render_Dragon.</p>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Bedrock Shaders" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">🌈 Render_Dragon</span>
+                <h3>Mejores Shaders e Iluminación para Bedrock</h3>
+                <p>Aprende a instalar gráficos avanzados manteniendo una excelente fluidez.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
+                    📥 Descargar Shaders Bedrock
+                </button>
+            </div>
+        </div>
+
+        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
     </section>
 </div>
 
@@ -671,7 +762,7 @@ section{
             <a href="https://discord.gg/TU_LINK_DE_DISCORD" target="_blank" class="btn-social">Discord</a>
         </div>
         <br>
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </section>
 </div>
 
@@ -714,6 +805,7 @@ section{
             vistaSeleccionada.classList.add('active');
         }
 
+        // Marcar la pestaña correspondiente en el menú superior si existe
         const tabSeleccionado = document.getElementById('tab-' + nombreVista);
         if (tabSeleccionado) {
             tabSeleccionado.classList.add('active-tab');
