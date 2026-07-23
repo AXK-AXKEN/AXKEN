@@ -342,9 +342,29 @@ section{
     line-height: 1.5;
 }
 
+.btn-sponsor {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 14px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+    transition: 0.3s;
+}
+
+.btn-sponsor:hover {
+    transform: scale(1.02);
+    background: #4ade80;
+    color: #000;
+}
+
 .btn-modal-action {
     width: 100%;
-    margin-top: 15px;
     padding: 14px;
     border-radius: 12px;
     border: none;
@@ -570,7 +590,12 @@ section{
 <div class="modal-overlay" id="modalEspera">
     <div class="modal-card">
         <h3>⏳ Generando Enlace Seguro</h3>
-        <p>Tu archivo se está preparando. Por favor, espera a que finalice el contador para continuar.</p>
+        <p>Haz clic en el botón de patrocinador para apoyar el canal y habilitar la descarga:</p>
+
+        <!-- Botón directo de publicidad (sin bloqueos de pop-up) -->
+        <a id="btnSmartlink" href="https://www.effectivecpmnetwork.com/ze9k3h53?key=558404d7c28a7c5fdbd9e30621a5edae" target="_blank" class="btn-sponsor" onclick="registrarClicSponsor()">
+            ⭐ 1. Ver Anuncio / Patrocinador
+        </a>
 
         <button id="btnModalDownload" class="btn-modal-action" disabled>
             Espera <span id="contadorSegundos">10</span> segundos...
@@ -586,9 +611,6 @@ section{
     let tiempoRestante = 10;
     let intervaloTimer = null;
     let urlDestinoFinal = "";
-    
-    // Tu Smartlink de Adsterra
-    const adsterraSmartlink = "https://www.effectivecpmnetwork.com/ze9k3h53?key=558404d7c28a7c5fdbd9e30621a5edae";
 
     function mostrarVista(nombreVista) {
         const vistas = document.querySelectorAll('.view');
@@ -614,18 +636,7 @@ section{
         urlDestinoFinal = urlMediafire;
         tiempoRestante = 10;
 
-        // 1. Crear un enlace dinámico para forzar la apertura limpia del Smartlink en nueva pestaña sin ser bloqueado por Chrome
-        if (adsterraSmartlink) {
-            let a = document.createElement('a');
-            a.href = adsterraSmartlink;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
-
-        // 2. Muestra el modal en la ventana actual con el contador
+        // Muestra el modal
         const modal = document.getElementById('modalEspera');
         const contadorSpan = document.getElementById('contadorSegundos');
         const btnModal = document.getElementById('btnModalDownload');
@@ -635,7 +646,7 @@ section{
         btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
         modal.style.display = 'flex';
 
-        // 3. Cuenta regresiva hacia MediaFire
+        // Inicia el temporizador de 10 segundos
         clearInterval(intervaloTimer);
         intervaloTimer = setInterval(() => {
             tiempoRestante--;
@@ -646,7 +657,7 @@ section{
                 clearInterval(intervaloTimer);
                 btnModal.disabled = false;
                 btnModal.classList.add('ready');
-                btnModal.innerText = '🚀 ¡Ir a MediaFire!';
+                btnModal.innerText = '🚀 2. ¡Ir a MediaFire!';
                 btnModal.onclick = function() {
                     window.open(urlDestinoFinal, '_blank');
                     cerrarModal();
