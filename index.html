@@ -620,6 +620,7 @@ section{
         <p class="section-desc">Guías de instalación y tutoriales en video para la versión de PC.</p>
 
         <div class="video-grid">
+            <!-- VIDEO 1 (NUEVO) -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/2x0azN_Jv80" title="Tutorial y Mods Java" frameborder="0" allowfullscreen></iframe>
@@ -627,6 +628,19 @@ section{
                 <span class="badge">📖 Tutorial Java</span>
                 <h3>Tutorial de Instalación y Uso de Mods</h3>
                 <p>Aprende paso a paso cómo instalar y configurar tus complementos y mods correctamente en Minecraft Java.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
+                    📥 Descargar Complementos (ZIP)
+                </button>
+            </div>
+
+            <!-- VIDEO 2 (ANTERIOR) -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Tutorial Java Anterior" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">📖 Tutorial Java</span>
+                <h3>Guía y Configuración Adicional para Java</h3>
+                <p>Tutorial adicional de complemento y optimización para tu versión de Minecraft Java.</p>
                 <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
                     📥 Descargar Complementos (ZIP)
                 </button>
@@ -645,6 +659,7 @@ section{
         <p class="section-desc">Los mejores complementos, mods y añadidos para la versión de PC.</p>
 
         <div class="video-grid">
+            <!-- MOD / VIDEO 1 (NUEVO) -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/2x0azN_Jv80" title="Mods Complementos Java" frameborder="0" allowfullscreen></iframe>
@@ -652,6 +667,19 @@ section{
                 <span class="badge">🧩 Mods Java</span>
                 <h3>Paquete de Mods y Complementos Java</h3>
                 <p>Descarga el archivo completo de complementos y mods reseñados en el video para mejorar tu experiencia en Java.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
+                    📥 Descargar Complementos (ZIP)
+                </button>
+            </div>
+
+            <!-- MOD / VIDEO 2 (ANTERIOR) -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Mods Java Anterior" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">🧩 Mods Java</span>
+                <h3>Complementos y Añadidos Esenciales Java</h3>
+                <p>Explora este segundo tutorial y descarga los archivos necesarios para complementar tus partidas en PC.</p>
                 <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
                     📥 Descargar Complementos (ZIP)
                 </button>
@@ -692,7 +720,6 @@ section{
         <p class="section-desc">Guías paso a paso y archivos de descarga para tu versión Bedrock.</p>
 
         <div class="video-grid">
-            <!-- TUTORIAL: LLAVE PARA DESBLOQUEAR -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Llave para desbloquear" frameborder="0" allowfullscreen></iframe>
@@ -743,7 +770,6 @@ section{
         <p class="section-desc">Paquetes de texturas y recursos visuales presentados en video para Minecraft Bedrock.</p>
 
         <div class="video-grid">
-            <!-- TARJETA ÚNICA CON EL VIDEO Y SUS DOS BOTONES DE DESCARGA -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/rR3FO6JudCc" title="Texture Packs PvP Bedrock" frameborder="0" allowfullscreen></iframe>
@@ -752,12 +778,10 @@ section{
                 <h3>Texture Packs PvP (Lyro PvP Ultimate & Venom)</h3>
                 <p>Descarga los paquetes de texturas reseñados en este video para mejorar tus partidas.</p>
                 
-                <!-- BOTÓN 1 -->
                 <button class="btn-download" onclick="iniciarEspera('https://mcpedl.com/lyro-pvp-ultimate/')">
                     📥 Descargar #1: Lyro PvP Ultimate
                 </button>
 
-                <!-- BOTÓN 2 -->
                 <button class="btn-download" onclick="iniciarEspera('https://mcpedl.com/venom/')">
                     📥 Descargar #2: Venom Pack
                 </button>
@@ -835,7 +859,6 @@ section{
             vistaSeleccionada.classList.add('active');
         }
 
-        // Marcar la pestaña correspondiente en el menú superior si existe
         const tabSeleccionado = document.getElementById('tab-' + nombreVista);
         if (tabSeleccionado) {
             tabSeleccionado.classList.add('active-tab');
