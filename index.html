@@ -301,7 +301,7 @@ section{
 }
 
 
-/* VENTANA MONETIZADA DE ESPERA (MODAL) */
+/* VENTANA FLOTANTE DE MONETIZACIÓN (MODAL) */
 
 .modal-overlay {
     display: none;
@@ -322,8 +322,8 @@ section{
     background: #0f172a;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    padding: 25px;
-    max-width: 480px;
+    padding: 30px 25px;
+    max-width: 450px;
     width: 100%;
     text-align: center;
     box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
@@ -339,24 +339,12 @@ section{
 .modal-card p {
     color: #94a3b8;
     font-size: 15px;
-}
-
-/* Espacio donde carga el anuncio directo de Adsterra */
-.ad-space {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px dashed rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
-    padding: 10px;
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 130px;
-    overflow: hidden;
+    line-height: 1.5;
 }
 
 .btn-modal-action {
     width: 100%;
+    margin-top: 15px;
     padding: 14px;
     border-radius: 12px;
     border: none;
@@ -582,13 +570,7 @@ section{
 <div class="modal-overlay" id="modalEspera">
     <div class="modal-card">
         <h3>⏳ Generando Enlace Seguro</h3>
-        <p>Tu archivo se está preparando. Por favor, espera unos segundos...</p>
-
-        <!-- CÓDIGO NATIVO DIRECTO DE ADSTERRA -->
-        <div class="ad-space">
-            <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
-            <div id="container-16fa8571b1eee7681486dc9444354e1e"></div>
-        </div>
+        <p>Tu archivo se está preparando. Por favor, espera a que finalice el contador para continuar.</p>
 
         <button id="btnModalDownload" class="btn-modal-action" disabled>
             Espera <span id="contadorSegundos">10</span> segundos...
@@ -599,11 +581,14 @@ section{
 </div>
 
 
-<!-- SCRIPT DE NAVEGACIÓN Y MANEJO DEL MODAL -->
+<!-- SCRIPT LÓGICO -->
 <script>
     let tiempoRestante = 10;
     let intervaloTimer = null;
     let urlDestinoFinal = "";
+    
+    // Tu Smartlink generado en Adsterra:
+    const adsterraSmartlink = "https://www.effectivecpmnetwork.com/ze9k3h53?key=558404d7c28a7c5fdbd9e30621a5edae";
 
     function mostrarVista(nombreVista) {
         const vistas = document.querySelectorAll('.view');
@@ -629,21 +614,26 @@ section{
         urlDestinoFinal = urlMediafire;
         tiempoRestante = 10;
 
+        // 1. Abre el Smartlink de Adsterra en una pestaña nueva
+        if (adsterraSmartlink) {
+            window.open(adsterraSmartlink, '_blank');
+        }
+
+        // 2. Muestra el modal en la página actual
         const modal = document.getElementById('modalEspera');
         const contadorSpan = document.getElementById('contadorSegundos');
         const btnModal = document.getElementById('btnModalDownload');
 
-        // Prepara el botón y muestra el modal
         btnModal.disabled = true;
         btnModal.classList.remove('ready');
         btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
         modal.style.display = 'flex';
 
-        // Contador regresivo
+        // 3. Inicia la cuenta regresiva hacia MediaFire
         clearInterval(intervaloTimer);
         intervaloTimer = setInterval(() => {
             tiempoRestante--;
-            contadorSpan.innerText = tiempoRestante;
+            if (contadorSpan) contadorSpan.innerText = tiempoRestante;
             btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
 
             if (tiempoRestante <= 0) {
