@@ -1,98 +1,302 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AXKEN | Minecraft Downloads</title>
+<title>AXKEN Minecraft Academy</title>
 
 <style>
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0b0b0f;
+    background: radial-gradient(circle at top, #312e81, #050505 60%);
     color: white;
 }
 
+
+/* PORTADA */
+
 header {
-    padding: 40px;
     text-align: center;
-    background: linear-gradient(135deg,#6d28d9,#2563eb);
+    padding: 50px 20px;
 }
+
+
+.logo {
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    box-shadow: 0 0 35px #8b5cf6;
+
+    animation: aparecer 1s ease;
+
+}
+
 
 h1 {
-    font-size: 50px;
+
+    font-size: 55px;
+    margin: 20px 0 5px;
+
 }
+
+
+h2 {
+
+    color: #a78bfa;
+
+}
+
+
+p {
+
+    font-size: 18px;
+
+}
+
+
+/* TARJETAS */
+
 
 .container {
-    padding: 30px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+    padding:30px;
+
 }
+
+
 
 .card {
-    background: #16161d;
-    padding: 25px;
-    border-radius: 15px;
-    width: 280px;
-    transition: .3s;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(10px);
+
+    width:280px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    transition:0.3s;
+
 }
+
+
 
 .card:hover {
-    transform: translateY(-10px);
+
+    transform:translateY(-10px);
+
+    box-shadow:0 0 25px #7c3aed;
+
 }
+
+
 
 button {
+
     background:#7c3aed;
+
     color:white;
-    border:0;
+
+    border:none;
+
     padding:12px 25px;
+
     border-radius:10px;
+
     cursor:pointer;
+
+    font-size:16px;
+
 }
 
+
+
 button:hover {
-    background:#9333ea;
+
+    background:#a855f7;
+
 }
+
+
+
+/* ANIMACION */
+
+
+@keyframes aparecer {
+
+from {
+
+opacity:0;
+
+transform:scale(0.5);
+
+}
+
+
+to {
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+
+
+/* CELULAR */
+
+
+@media(max-width:600px){
+
+
+h1 {
+
+font-size:40px;
+
+}
+
+
+.logo {
+
+width:130px;
+
+height:130px;
+
+}
+
+
+}
+
 
 </style>
 
+
 </head>
+
 
 <body>
 
+
 <header>
+
+
+<img src="logo.png" class="logo">
+
+
 <h1>AXKEN</h1>
-<p>Mods • Shaders • Texture Packs Minecraft</p>
+
+
+<h2>Minecraft Academy</h2>
+
+
+<p>
+Tutoriales • Mods • Shaders • Texture Packs
+</p>
+
+
 </header>
+
 
 
 <div class="container">
 
+
 <div class="card">
-<h2>Sodium Mod</h2>
-<p>Mejora los FPS de Minecraft Java.</p>
-<button>Descargar</button>
+
+<h2>🎮 Tutoriales</h2>
+
+<p>
+Guías de Minecraft Java y Bedrock.
+</p>
+
+<button>
+Ver tutoriales
+</button>
+
 </div>
 
 
+
 <div class="card">
-<h2>Iris Shaders</h2>
-<p>Instala shaders fácilmente.</p>
-<button>Descargar</button>
+
+<h2>🧩 Mods</h2>
+
+<p>
+Sodium, Iris, Fabric y más.
+</p>
+
+<button>
+Ver Mods
+</button>
+
 </div>
 
 
+
 <div class="card">
-<h2>Texture Packs</h2>
-<p>Los mejores packs para Minecraft.</p>
-<button>Descargar</button>
+
+<h2>🌈 Shaders</h2>
+
+<p>
+Los mejores shaders para Minecraft.
+</p>
+
+<button>
+Ver Shaders
+</button>
+
 </div>
+
+
+
+<div class="card">
+
+<h2>🎨 Texture Packs</h2>
+
+<p>
+Packs PvP y realistas.
+</p>
+
+<button>
+Ver Packs
+</button>
+
+</div>
+
 
 </div>
 
 
 </body>
+
 </html>
