@@ -11,7 +11,7 @@
 <!-- SCRIPT DEL BANNER NATIVO (DENTRO DEL MODAL) -->
 <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
 
-<!-- SCRIPT DE TU SOCIAL BAR (RESTAURADO) -->
+<!-- SCRIPT DE TU SOCIAL BAR -->
 <script type="text/javascript" src="https://pl30504966.effectivecpmnetwork.com/8a/be/bb/8abebb4ed787cdd852523a03ef63786e.js"></script>
 
 <style>
@@ -23,9 +23,10 @@
 body{
     margin:0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: radial-gradient(circle at top,#1e40af,#050505 60%);
-    color:white;
+    background: radial-gradient(circle at 50% 0%, #1e293b, #090d16 70%);
+    color: #f8fafc;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
 }
 
 
@@ -34,30 +35,32 @@ body{
 nav{
     display:flex;
     justify-content:center;
-    gap:20px;
-    padding:18px 20px;
-    background:rgba(10, 10, 15, 0.75);
-    backdrop-filter:blur(12px);
+    gap:10px;
+    padding:14px 20px;
+    background:rgba(15, 23, 42, 0.85);
+    backdrop-filter:blur(16px);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 nav a{
-    color:#e2e8f0;
+    color:#94a3b8;
     text-decoration:none;
     font-weight:600;
-    font-size: 15px;
-    transition:.3s;
+    font-size: 14.5px;
+    transition: all 0.25s ease;
     cursor: pointer;
-    padding: 8px 16px;
-    border-radius: 8px;
+    padding: 8px 18px;
+    border-radius: 10px;
 }
 
 nav a:hover, nav a.active-tab {
     color:#4ade80;
-    background: rgba(74, 222, 128, 0.12);
+    background: rgba(74, 222, 128, 0.1);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.15);
 }
 
 
@@ -65,7 +68,7 @@ nav a:hover, nav a.active-tab {
 
 .view {
     display: none;
-    animation: fadeIn 0.4s ease-out;
+    animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .view.active {
@@ -77,52 +80,59 @@ nav a:hover, nav a.active-tab {
 
 .hero{
     text-align:center;
-    padding:50px 20px 20px;
+    padding:60px 20px 30px;
 }
 
 .logo{
-    width:160px;
-    height:160px;
+    width:150px;
+    height:150px;
     border-radius:50%;
     object-fit:cover;
-    box-shadow: 0 0 35px rgba(124, 58, 237, 0.6), 0 0 60px rgba(37, 99, 235, 0.4);
-    animation:entrada 1s ease-out;
+    image-rendering: -webkit-optimize-contrast;
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.4), 0 0 80px rgba(74, 222, 128, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    animation:entrada 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 h1{
-    font-size:52px;
+    font-size:54px;
     margin:20px 0 5px;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.5);
 }
 
 .hero h2{
     color:#4ade80;
     font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 12px;
 }
 
 .hero p{
-    font-size:19px;
-    color: #cbd5e1;
+    font-size:17.5px;
+    color: #94a3b8;
+    max-width: 550px;
+    margin: 0 auto 25px;
+    line-height: 1.5;
 }
 
 .btn{
     display:inline-block;
-    margin-top:15px;
     padding:14px 32px;
     background: linear-gradient(135deg, #7c3aed, #4f46e5);
     color:white;
-    border-radius:12px;
+    border-radius:14px;
     text-decoration:none;
     font-weight:bold;
-    transition:.3s;
-    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
 }
 
 .btn:hover{
-    background: #4ade80;
-    color:black;
-    transform:translateY(-3px);
-    box-shadow: 0 6px 25px rgba(74, 222, 128, 0.5);
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    transform:translateY(-2px);
+    box-shadow: 0 6px 25px rgba(124, 58, 237, 0.5);
 }
 
 
@@ -139,30 +149,38 @@ h1{
 }
 
 .category-card {
-    width: 250px;
-    background: rgba(255,255,255,.05);
+    width: 260px;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.7));
     border-radius: 20px;
-    padding: 25px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,.12);
+    padding: 28px 22px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     text-align: center;
-    transition: .3s;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .category-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(74, 222, 128, 0.5);
-    box-shadow: 0 0 30px rgba(74, 222, 128, 0.25);
+    transform: translateY(-6px);
+    border-color: rgba(74, 222, 128, 0.4);
+    box-shadow: 0 15px 35px rgba(74, 222, 128, 0.15);
 }
 
 .category-card h3 {
     color: #4ade80;
     margin-top: 0;
+    font-size: 20px;
+}
+
+.category-card p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
 
-/* SECCIÓN TUTORIALES */
+/* SECCIÓN GENERAL */
 
 section{
     padding:40px 20px;
@@ -172,18 +190,18 @@ section{
 }
 
 .section-title {
-    color: #ffffff;
-    font-size: 38px;
+    color: #f8fafc;
+    font-size: 36px;
     font-weight: 800;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .section-desc{
     max-width: 650px;
-    margin: 0 auto 35px auto;
+    margin: 0 auto 40px auto;
     color: #94a3b8;
-    font-size: 17px;
+    font-size: 16.5px;
     line-height: 1.6;
 }
 
@@ -191,20 +209,20 @@ section{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 35px;
+    gap: 30px;
     padding: 10px;
 }
 
 .video-card{
     width: 420px;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
-    border-radius: 24px;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.6));
+    border-radius: 22px;
     padding: 20px;
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     text-align: left;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
 }
@@ -212,34 +230,34 @@ section{
 .video-card:hover{
     transform: translateY(-6px);
     border-color: rgba(74, 222, 128, 0.4);
-    box-shadow: 0 15px 35px rgba(74, 222, 128, 0.2);
+    box-shadow: 0 15px 40px rgba(74, 222, 128, 0.2);
 }
 
 .badge {
     display: inline-block;
-    background: rgba(74, 222, 128, 0.15);
+    background: rgba(74, 222, 128, 0.12);
     color: #4ade80;
-    border: 1px solid rgba(74, 222, 128, 0.3);
-    padding: 4px 12px;
+    border: 1px solid rgba(74, 222, 128, 0.25);
+    padding: 5px 14px;
     border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 11.5px;
+    font-weight: 700;
     margin-bottom: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
 }
 
 .video-card h3{
-    color: #ffffff;
-    font-size: 20px;
-    margin: 10px 0;
+    color: #f8fafc;
+    font-size: 19px;
+    margin: 8px 0;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.35;
 }
 
 .video-card p{
-    font-size: 14.5px;
-    color: #cbd5e1;
+    font-size: 14px;
+    color: #94a3b8;
     margin-bottom: 20px;
     line-height: 1.5;
 }
@@ -249,10 +267,11 @@ section{
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    margin-bottom: 15px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    margin-bottom: 16px;
+    background: #000;
 }
 
 .video-wrapper iframe{
@@ -268,12 +287,12 @@ section{
     background: linear-gradient(135deg, #7c3aed, #6366f1);
     color: white;
     border: 0;
-    padding: 14px 20px;
+    padding: 13px 20px;
     border-radius: 12px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 15px;
-    transition: all 0.3s ease;
+    font-size: 14.5px;
+    transition: all 0.25s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -283,8 +302,8 @@ section{
 
 .btn-download:hover {
     background: #4ade80;
-    color: #050505;
-    transform: scale(1.02);
+    color: #090d16;
+    transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
 }
 
@@ -293,17 +312,18 @@ section{
     width: auto;
     display: inline-block;
     padding: 12px 28px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    color: white;
+    color: #cbd5e1;
     font-weight: 600;
     cursor: pointer;
-    transition: .3s;
+    transition: all 0.25s ease;
 }
 
 .btn-back:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
 }
 
 
@@ -316,8 +336,8 @@ section{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
+    background: rgba(5, 8, 15, 0.85);
+    backdrop-filter: blur(10px);
     z-index: 200;
     justify-content: center;
     align-items: center;
@@ -326,14 +346,14 @@ section{
 
 .modal-card {
     background: #0f172a;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 25px 20px;
-    max-width: 480px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 28px 22px;
+    max-width: 460px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
-    animation: fadeIn 0.3s ease-out;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(124, 58, 237, 0.25);
+    animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modal-card h3 {
@@ -347,21 +367,20 @@ section{
     color: #94a3b8;
     font-size: 14px;
     line-height: 1.4;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
-/* CONTENEDOR PUBLICITARIO OPTIMIZADO */
 .ad-box {
-    margin: 10px 0;
+    margin: 12px 0;
     max-height: 220px;
     overflow-y: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px dashed rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
-    padding: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 8px;
 }
 
 .btn-modal-action {
@@ -370,18 +389,18 @@ section{
     border-radius: 12px;
     border: none;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
     cursor: not-allowed;
-    background: #334155;
-    color: #94a3b8;
-    transition: 0.3s;
+    background: #1e293b;
+    color: #64748b;
+    transition: all 0.3s ease;
 }
 
 .btn-modal-action.ready {
     background: #4ade80;
-    color: #000;
+    color: #090d16;
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
 }
 
 .btn-close-modal {
@@ -392,16 +411,23 @@ section{
     cursor: pointer;
     font-size: 13px;
     text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.btn-close-modal:hover {
+    color: #cbd5e1;
 }
 
 
 /* COMUNIDAD */
 
 .community{
-    background:rgba(0,0,0,.4);
+    background:rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
     padding: 40px 20px;
     margin-top: 20px;
+    backdrop-filter: blur(12px);
 }
 
 .social-links{
@@ -413,48 +439,46 @@ section{
 }
 
 .btn-social{
-    padding: 12px 24px;
-    border-radius: 10px;
+    padding: 12px 26px;
+    border-radius: 12px;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.15);
-    transition: .3s;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.25s ease;
 }
 
 .btn-social:hover{
     background: #4ade80;
-    color: black;
+    color: #090d16;
+    border-color: #4ade80;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(74, 222, 128, 0.3);
 }
 
 
-/* ANIMACIONES Y RESPONSIVE */
+/* ANIMACIONES */
 
 @keyframes entrada{
-    from{ opacity:0; transform:scale(.6); }
+    from{ opacity:0; transform:scale(0.8); }
     to{ opacity:1; transform:scale(1); }
 }
 
 @keyframes fadeIn{
-    from{ opacity:0; transform: translateY(12px); }
+    from{ opacity:0; transform: translateY(10px); }
     to{ opacity:1; transform: translateY(0); }
 }
 
 @media(max-width:600px){
-    h1{ font-size:38px; }
-    nav{ flex-wrap:wrap; gap: 8px; }
-    .logo{ width:130px; height:130px; }
+    h1{ font-size:40px; }
+    nav{ flex-wrap:wrap; gap: 6px; padding: 10px; }
+    nav a { padding: 6px 12px; font-size: 13.5px; }
+    .logo{ width:120px; height:120px; }
     .video-card{ width: 100%; }
-    .modal-card {
-        padding: 15px 12px;
-        max-width: 92%;
-        max-height: 90vh;
-        overflow-y: auto;
-    }
-    .ad-box {
-        max-height: 180px;
-    }
+    .category-card { width: 100%; max-width: 320px; }
+    .modal-card { padding: 20px 15px; max-width: 92%; }
 }
 
 </style>
@@ -482,7 +506,7 @@ section{
         <img src="logo.png" class="logo" alt="Logo AXKEN">
         <h1>AXKEN</h1>
         <h2>Minecraft Academy</h2>
-        <p>Aprende Minecraft con tutoriales paso a paso, mods, shaders y recursos gratis.</p>
+        <p>Aprende Minecraft con tutoriales paso a paso, mods, shaders y recursos de alta calidad completamente gratis.</p>
         <a class="btn" href="https://www.youtube.com/@Axken00" target="_blank">▶ Canal de YouTube</a>
     </div>
 
@@ -490,25 +514,25 @@ section{
         <div class="category-card" onclick="mostrarVista('tutoriales')">
             <h3>🎮 Tutoriales</h3>
             <p>Guías paso a paso y archivos de instalación.</p>
-            <button class="btn-download" style="margin-top:15px;">Entrar</button>
+            <button class="btn-download" style="margin-top:10px;">Entrar</button>
         </div>
 
         <div class="category-card" onclick="mostrarVista('mods')">
             <h3>🧩 Mods</h3>
             <p>Sodium, Iris, Fabric y optimización total.</p>
-            <button class="btn-download" style="margin-top:15px;">Entrar</button>
+            <button class="btn-download" style="margin-top:10px;">Entrar</button>
         </div>
 
         <div class="category-card" onclick="mostrarVista('shaders')">
             <h3>🌈 Shaders</h3>
             <p>Mejora los gráficos y la luz de tu juego.</p>
-            <button class="btn-download" style="margin-top:15px;">Entrar</button>
+            <button class="btn-download" style="margin-top:10px;">Entrar</button>
         </div>
 
         <div class="category-card" onclick="mostrarVista('packs')">
             <h3>🎨 Texture Packs</h3>
             <p>Packs de texturas PvP y realistas.</p>
-            <button class="btn-download" style="margin-top:15px;">Entrar</button>
+            <button class="btn-download" style="margin-top:10px;">Entrar</button>
         </div>
     </div>
 
@@ -525,7 +549,7 @@ section{
 
         <div class="video-grid">
             
-            <!-- TUTORIAL 1: Shaders en Minecraft Java -->
+            <!-- TUTORIAL 1 -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe 
@@ -546,7 +570,7 @@ section{
                 </button>
             </div>
 
-            <!-- TUTORIAL 2: Mods y Skins en Minecraft Java -->
+            <!-- TUTORIAL 2 -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe 
@@ -567,7 +591,7 @@ section{
                 </button>
             </div>
 
-            <!-- TUTORIAL 3: Minecraft Bedrock -->
+            <!-- TUTORIAL 3 -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe 
@@ -595,7 +619,7 @@ section{
 </div>
 
 
-<!-- ================= VISTAS ADICIONALES ================= -->
+<!-- ================= VISTA: MODS ================= -->
 <div id="vista-mods" class="view">
     <section>
         <h2 class="section-title">🧩 Módulo de Mods</h2>
@@ -604,6 +628,7 @@ section{
     </section>
 </div>
 
+
 <!-- ================= VISTA: SHADERS ================= -->
 <div id="vista-shaders" class="view">
     <section>
@@ -611,7 +636,6 @@ section{
         <p class="section-desc">Instala tus shaders preferidos y optimiza los gráficos al máximo con los complementos necesarios.</p>
 
         <div class="video-grid">
-            <!-- VIDEO DE SHADERS AGREGADO EN SU APARTADO -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe 
@@ -637,6 +661,8 @@ section{
     </section>
 </div>
 
+
+<!-- ================= VISTA: PACKS ================= -->
 <div id="vista-packs" class="view">
     <section>
         <h2 class="section-title">🎨 Texture Packs</h2>
@@ -645,6 +671,8 @@ section{
     </section>
 </div>
 
+
+<!-- ================= VISTA: COMUNIDAD ================= -->
 <div id="vista-comunidad" class="view">
     <section class="community">
         <h2 class="section-title">⚡ Comunidad AXKEN</h2>
