@@ -2,992 +2,653 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AXKEN Minecraft Academy | RGB Mirror Glass Edition</title>
-
-<!-- SCRIPT DEL BANNER NATIVO (DENTRO DEL MODAL) -->
-<script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
-
-<!-- SCRIPT DE TU SOCIAL BAR -->
-<script type="text/javascript" src="https://pl30504966.effectivecpmnetwork.com/8a/be/bb/8abebb4ed787cdd852523a03ef63786e.js"></script>
+<title>NEXUS // Premium Gaming Hub</title>
 
 <style>
-
 :root {
-    --bg-main: #05070f;
-    --bg-card: rgba(12, 18, 33, 0.68);
-    --neon-green: #00ff88;
-    --neon-purple: #c084fc;
-    --neon-cyan: #22d3ee;
-    --neon-pink: #f43f5e;
+    --bg-main: #0B0B0F;
+    --blue-electric: #00BFFF;
+    --purple-neon: #8A2BE2;
+    --cyan-neon: #22d3ee;
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
+    --card-bg: rgba(18, 20, 32, 0.65);
+    --border-glass: rgba(255, 255, 255, 0.08);
 }
 
-*{
+* {
     box-sizing: border-box;
+    cursor: none; /* Ocultamos cursor nativo para usar el personalizado */
 }
 
-body{
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     margin: 0;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-main);
-    
-    /* EFECTO ESPEJO MATE CON BARRIDO RGB DINÁMICO */
-    background-image: 
-        /* Reflejo sutil superior (efecto cristal espejo no brillante) */
-        linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 40%, rgba(0, 0, 0, 0.6) 100%),
-        /* Luces RGB móviles flotantes estilo PC Gamer */
-        radial-gradient(circle at 15% 20%, rgba(34, 211, 238, 0.22) 0%, transparent 40%),
-        radial-gradient(circle at 85% 15%, rgba(192, 132, 252, 0.22) 0%, transparent 40%),
-        radial-gradient(circle at 50% 85%, rgba(0, 255, 136, 0.18) 0%, transparent 45%),
-        radial-gradient(circle at 80% 80%, rgba(244, 63, 94, 0.15) 0%, transparent 40%),
-        /* Malla metálica/textura sutil de fondo */
-        repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(255, 255, 255, 0.01) 60px, rgba(255, 255, 255, 0.01) 62px);
-    
-    background-size: 100% 100%, 120% 120%, 120% 120%, 120% 120%, 120% 120%, 100px 100px;
-    animation: rgbMirrorShift 16s ease-in-out infinite alternate;
     color: var(--text-main);
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    min-height: 100vh;
+    animation: fadeInBody 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-
-/* MENÚ DE NAVEGACIÓN GAMER */
-
-nav{
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 20px;
-    background: rgba(8, 12, 22, 0.75);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-nav a{
-    color: var(--text-muted);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: pointer;
-    padding: 8px 20px;
-    border-radius: 12px;
-    border: 1px solid transparent;
-}
-
-nav a:hover, nav a.active-tab {
-    color: var(--neon-green);
-    background: rgba(0, 255, 136, 0.08);
-    border-color: rgba(0, 255, 136, 0.35);
-    box-shadow: 0 0 25px rgba(0, 255, 136, 0.25), inset 0 0 10px rgba(0, 255, 136, 0.1);
-    text-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
-}
-
-
-/* CONTROL DE VISTAS */
-
-.view {
-    display: none;
-    animation: fadeInView 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.view.active {
-    display: block;
-}
-
-
-/* HERO / INICIO GAMER */
-
-.hero{
-    text-align: center;
-    padding: 60px 20px 30px;
-    position: relative;
-}
-
-.logo{
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    image-rendering: -webkit-optimize-contrast;
-    box-shadow: 0 0 35px rgba(192, 132, 252, 0.5), 0 0 70px rgba(0, 255, 136, 0.25), inset 0 0 15px rgba(255, 255, 255, 0.3);
-    border: 3px solid rgba(255, 255, 255, 0.15);
-    animation: floatLogo 4s ease-in-out infinite, rgbGlow 6s linear infinite;
-}
-
-h1{
-    font-size: 52px;
-    margin: 20px 0 5px;
-    letter-spacing: 2px;
-    font-weight: 900;
-    background: linear-gradient(135deg, #ffffff 20%, var(--neon-cyan) 60%, var(--neon-green) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 35px rgba(34, 211, 238, 0.3);
-}
-
-.hero h2{
-    color: var(--neon-green);
-    font-weight: 700;
-    font-size: 20px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
-}
-
-.hero p{
-    font-size: 16.5px;
-    color: var(--text-muted);
-    max-width: 580px;
-    margin: 0 auto 30px;
-    line-height: 1.6;
-}
-
-
-/* CATEGORÍAS & GRID (EFECTO ESPEJO MATE) */
-
-.categories-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.category-card {
-    width: 270px;
-    background: var(--bg-card);
-    border-radius: 20px;
-    padding: 30px 22px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    text-align: center;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: pointer;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.category-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
-    transition: 0.6s;
-}
-
-.category-card:hover::before {
-    left: 100%;
-}
-
-.category-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: var(--neon-cyan);
-    box-shadow: 0 20px 45px rgba(34, 211, 238, 0.25), inset 0 0 15px rgba(34, 211, 238, 0.1);
-}
-
-.category-card h3 {
-    color: var(--text-main);
-    margin-top: 0;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.category-card p {
-    color: var(--text-muted);
-    font-size: 13.5px;
-    margin-bottom: 20px;
-    line-height: 1.4;
-}
-
-
-/* SECCIÓN GENERAL Y VIDEOS */
-
-section{
-    padding: 40px 20px;
-    text-align: center;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.section-title {
-    color: #f8fafc;
-    font-size: 34px;
-    font-weight: 900;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-}
-
-.section-desc{
-    max-width: 650px;
-    margin: 0 auto 35px auto;
-    color: var(--text-muted);
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-.video-grid{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 10px;
-}
-
-.video-card{
-    width: 420px;
-    background: var(--bg-card);
-    border-radius: 22px;
-    padding: 22px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    text-align: left;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    position: relative;
-}
-
-.video-card:hover{
-    transform: translateY(-8px);
-    border-color: rgba(192, 132, 252, 0.5);
-    box-shadow: 0 20px 45px rgba(192, 132, 252, 0.25), inset 0 0 15px rgba(192, 132, 252, 0.1);
-}
-
-.badge {
-    display: inline-block;
-    background: rgba(192, 132, 252, 0.12);
-    color: #c084fc;
-    border: 1px solid rgba(192, 132, 252, 0.35);
-    padding: 5px 14px;
-    border-radius: 20px;
-    font-size: 11.5px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.video-card h3{
-    color: #f8fafc;
-    font-size: 18.5px;
-    margin: 8px 0;
-    font-weight: 700;
-    line-height: 1.4;
-}
-
-.video-card p{
-    font-size: 13.5px;
-    color: var(--text-muted);
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-.video-wrapper{
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    margin-bottom: 16px;
-    background: #000;
-}
-
-.video-wrapper iframe{
-    position: absolute;
+/* ================= CURSOR PERSONALIZADO ================= */
+.custom-cursor {
+    position: fixed;
     top: 0;
     left: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--cyan-neon);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    z-index: 9999;
+    box-shadow: 0 0 15px var(--cyan-neon);
+}
+
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    background-color: var(--blue-electric);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+}
+
+/* ================= FONDO RGB FUTURISTA & PARTÍCULAS ================= */
+.bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 50%, #121526 0%, var(--bg-main) 100%);
+}
+
+/* Efecto Espejo Mate + Barrido RGB Animado */
+.bg-mirror-mesh {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 50%, rgba(0, 0, 0, 0.7) 100%),
+        radial-gradient(circle at 10% 20%, rgba(0, 191, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.08) 0%, transparent 60%);
+    background-size: 100% 100%, 140% 140%, 140% 140%, 100% 100%;
+    animation: bgShift 20s ease infinite alternate;
+}
+
+@keyframes bgShift {
+    0% { background-position: 0% 0%, 0% 0%, 100% 100%, 50% 50%; }
+    50% { background-position: 0% 0%, 50% 40%, 40% 60%, 30% 70%; }
+    100% { background-position: 0% 0%, 100% 80%, 10% 20%, 70% 30%; }
+}
+
+/* Canvas para partículas fluidas */
+#particleCanvas {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
 }
 
 
-/* BOTONES GAMER */
-
-.btn-download {
-    width: 100%;
-    background: linear-gradient(135deg, #7c3aed, #2563eb);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 13px 20px;
-    border-radius: 14px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 14px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    margin-top: 10px;
-    letter-spacing: 0.5px;
-}
-
-.btn-download:hover {
-    background: linear-gradient(135deg, var(--neon-green), #059669);
-    color: #05070f;
-    border-color: var(--neon-green);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.5);
-}
-
-.btn-back {
-    margin-top: 35px;
-    width: auto;
-    display: inline-block;
-    padding: 12px 28px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 14px;
-    color: var(--text-main);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-back:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--neon-cyan);
-    color: var(--neon-cyan);
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
-}
-
-
-/* MODAL FLOTANTE GAMER */
-
-.modal-overlay {
-    display: none;
+/* ================= BARRA DE NAVEGACIÓN ================= */
+nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(5, 7, 15, 0.85);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    z-index: 200;
-    justify-content: center;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    animation: fadeInView 0.25s ease forwards;
+    padding: 20px 50px;
+    background: rgba(11, 11, 15, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-glass);
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: slideDownNav 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.modal-card {
-    background: rgba(12, 18, 33, 0.9);
-    border: 1px solid rgba(34, 211, 238, 0.35);
-    border-radius: 24px;
-    padding: 30px 24px;
-    max-width: 460px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 40px rgba(34, 211, 238, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+@keyframes slideDownNav {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
-.modal-card h3 {
-    color: var(--neon-cyan);
+.nav-brand {
     font-size: 22px;
-    margin-top: 0;
-    margin-bottom: 8px;
-    text-shadow: 0 0 12px rgba(34, 211, 238, 0.4);
+    font-weight: 900;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, #fff, var(--blue-electric));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
 }
 
-.modal-card p {
-    color: var(--text-muted);
-    font-size: 14px;
-    line-height: 1.4;
-    margin-bottom: 16px;
-}
-
-.ad-box {
-    margin: 12px 0;
-    max-height: 220px;
-    overflow-y: auto;
+.nav-links {
     display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue-electric), var(--purple-neon));
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 10px var(--blue-electric);
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* ================= HERO SECTION ================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px dashed rgba(255, 255, 255, 0.15);
-    border-radius: 14px;
-    padding: 8px;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
 }
 
-.btn-modal-action {
-    width: 100%;
-    padding: 14px;
-    border-radius: 14px;
-    border: none;
-    font-weight: 700;
-    font-size: 15px;
-    cursor: not-allowed;
-    background: #1e293b;
-    color: #64748b;
-    transition: all 0.3s ease;
+.hero h1 {
+    font-size: 64px;
+    font-weight: 900;
+    margin: 0 0 15px;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #ffffff 30%, var(--blue-electric) 70%, var(--purple-neon) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 30px rgba(0, 191, 255, 0.3));
+    animation: fadeSlideUp 0.8s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.btn-modal-action.ready {
-    background: var(--neon-green);
-    color: #05070f;
-    cursor: pointer;
-    box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
-    animation: pulseGlow 1.5s infinite;
+.hero p {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 0 35px;
+    line-height: 1.6;
+    animation: fadeSlideUp 0.8s 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.btn-close-modal {
-    margin-top: 15px;
-    background: transparent;
-    border: none;
-    color: #64748b;
-    cursor: pointer;
-    font-size: 13px;
-    text-decoration: underline;
-    transition: color 0.2s;
-}
-
-.btn-close-modal:hover {
-    color: #cbd5e1;
-}
-
-
-/* COMUNIDAD */
-
-.community{
-    background: var(--bg-card);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
-    padding: 45px 20px;
-    margin-top: 20px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.social-links{
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
-
-.btn-social{
-    padding: 12px 28px;
-    border-radius: 14px;
-    text-decoration: none;
-    color: white;
-    font-weight: 700;
-    font-size: 14.5px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.btn-social:hover{
-    background: var(--neon-cyan);
-    color: #05070f;
-    border-color: var(--neon-cyan);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(34, 211, 238, 0.4);
-}
-
-
-/* ANIMACIONES KEYFRAMES PERSONALIZADAS */
-
-@keyframes rgbMirrorShift {
-    0% {
-        background-position: 0% 0%, 0% 0%, 100% 100%, 50% 50%, 20% 80%, 0 0;
-    }
-    50% {
-        background-position: 0% 0%, 50% 40%, 30% 60%, 70% 30%, 50% 50%, 30px 30px;
-    }
-    100% {
-        background-position: 0% 0%, 100% 80%, 10% 20%, 30% 80%, 80% 20%, 60px 60px;
-    }
-}
-
-@keyframes floatLogo {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
-
-@keyframes rgbGlow {
-    0% { box-shadow: 0 0 35px rgba(192, 132, 252, 0.5), 0 0 70px rgba(0, 255, 136, 0.25), inset 0 0 15px rgba(255, 255, 255, 0.3); }
-    33% { box-shadow: 0 0 35px rgba(34, 211, 238, 0.5), 0 0 70px rgba(192, 132, 252, 0.25), inset 0 0 15px rgba(255, 255, 255, 0.3); }
-    66% { box-shadow: 0 0 35px rgba(0, 255, 136, 0.5), 0 0 70px rgba(34, 211, 238, 0.25), inset 0 0 15px rgba(255, 255, 255, 0.3); }
-    100% { box-shadow: 0 0 35px rgba(192, 132, 252, 0.5), 0 0 70px rgba(0, 255, 136, 0.25), inset 0 0 15px rgba(255, 255, 255, 0.3); }
-}
-
-@keyframes fadeInView {
-    from { opacity: 0; transform: translateY(15px); }
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes scaleUp {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+
+/* ================= BOTONES PREMIUM (RIPPLE + GLOW) ================= */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    padding: 15px 35px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, var(--blue-electric), var(--purple-neon));
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    cursor: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    animation: fadeSlideUp 0.8s 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); }
-    50% { box-shadow: 0 0 40px rgba(0, 255, 136, 0.8); }
-    100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); }
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 191, 255, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Efecto Ripple al hacer clic */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: rippleEffect 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes rippleEffect {
+    to { transform: scale(4); opacity: 0; }
 }
 
 
-/* RESPONSIVE DESIGN */
-
-@media(max-width: 600px){
-    h1{ font-size: 38px; }
-    nav{ flex-wrap: wrap; gap: 6px; padding: 10px; }
-    nav a { padding: 6px 14px; font-size: 13px; }
-    .logo{ width: 120px; height: 120px; }
-    .video-card{ width: 100%; }
-    .category-card { width: 100%; max-width: 320px; }
-    .modal-card { padding: 22px 16px; max-width: 92%; }
+/* ================= SECCIÓN DE JUEGOS / TARJETAS ================= */
+.section {
+    padding: 100px 50px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
+.section-title {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #fff, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 30px;
+}
+
+/* TARJETAS DE JUEGOS CON GLASSMORPHISM & ZOOM */
+.game-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid var(--border-glass);
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--blue-electric);
+    box-shadow: 0 30px 60px rgba(0, 191, 255, 0.25), inset 0 0 20px rgba(0, 191, 255, 0.15);
+}
+
+.card-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.game-card:hover .card-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(138, 43, 226, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    color: #fff;
+}
+
+.card-content p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Barra de progreso de rendimiento / optimización */
+.stat-bar-container {
+    margin-top: 15px;
+}
+
+.stat-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.stat-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue-electric), var(--cyan-neon));
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--blue-electric);
+    width: 0%;
+    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* ================= FOOTER ================= *
+footer {
+    background: rgba(5, 5, 8, 0.9);
+    border-top: 1px solid var(--border-glass);
+    padding: 40px 50px;
+    text-align: center;
+    position: relative;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 768px) {
+    nav { padding: 15px 20px; }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 40px; }
+    .section { padding: 60px 20px; }
+}
 </style>
-
 </head>
-
 
 <body>
 
-<!-- MENÚ DE NAVEGACIÓN PRINCIPAL -->
+<!-- CURSOR PERSONALIZADO -->
+<div class="custom-cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- FONDO RGB + PARTÍCULAS -->
+<div class="bg-container">
+    <div class="bg-mirror-mesh"></div>
+    <canvas id="particleCanvas"></canvas>
+</div>
+
+<!-- NAVEGACIÓN -->
 <nav>
-    <a onclick="mostrarVista('inicio')" id="tab-inicio" class="active-tab">Inicio</a>
-    <a onclick="mostrarVista('menu-java')" id="tab-menu-java">Minecraft Java</a>
-    <a onclick="mostrarVista('menu-bedrock')" id="tab-menu-bedrock">Minecraft Bedrock</a>
-    <a onclick="mostrarVista('comunidad')" id="tab-comunidad">Comunidad</a>
+    <div class="nav-brand">NEXUS // 2077</div>
+    <div class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#tecnologia">Tecnología</a>
+        <a href="#comunidad">Comunidad</a>
+    </div>
 </nav>
 
+<!-- HERO SECTION -->
+<section id="inicio" class="hero">
+    <h1>EXPERIENCIA GAMING SUPREMA</h1>
+    <p>Adéntrate en la nueva generación de plataformas interactivas con tecnología holográfica, rendimiento fluido y estética futurista.</p>
+    <button class="btn-primary" id="exploreBtn">Explorar Catálogo</button>
+</section>
 
-<!-- ================= VISTA: INICIO (SELECTOR PRINCIPAL) ================= -->
-<div id="vista-inicio" class="view active">
-    
-    <div class="hero">
-        <img src="logo.png" class="logo" alt="Logo AXKEN">
-        <h1>AXKEN</h1>
-        <h2>Minecraft Academy</h2>
-        <p>Selecciona tu versión favorita para explorar todo el contenido especializado en tutoriales, add-ons, texture packs y shaders.</p>
-    </div>
+<!-- SECCIÓN DE JUEGOS -->
+<section id="catalogo" class="section">
+    <h2 class="section-title">LANZAMIENTOS DESTACADOS</h2>
+    <p class="section-subtitle">Títulos optimizados para máximo rendimiento gráfico y baja latencia.</p>
 
-    <div class="categories-grid">
-        <!-- TARJETA JAVA -->
-        <div class="category-card" onclick="mostrarVista('menu-java')">
-            <h3>💻 Minecraft Java</h3>
-            <p>Contenido para PC: Mods, Shaders, Texture Packs, Tutoriales y optimización.</p>
-            <button class="btn-download" style="margin-top:10px;">Entrar a Java</button>
-        </div>
-
-        <!-- TARJETA BEDROCK -->
-        <div class="category-card" onclick="mostrarVista('menu-bedrock')">
-            <h3>📱 Minecraft Bedrock</h3>
-            <p>Contenido para Móvil y PC: Add-ons, Shaders, Texture Packs y Tutoriales.</p>
-            <button class="btn-download" style="margin-top:10px;">Entrar a Bedrock</button>
-        </div>
-    </div>
-
-</div>
-
-
-<!-- ================= VISTA: SUBMENÚ MINECRAFT JAVA ================= -->
-<div id="vista-menu-java" class="view">
-    
-    <div class="hero">
-        <img src="logo.png" class="logo" alt="Logo AXKEN">
-        <h1>Minecraft Java</h1>
-        <h2>Panel de Contenido PC</h2>
-        <p>Elige qué tipo de contenido deseas consultar para tu versión Java.</p>
-    </div>
-
-    <div class="categories-grid">
-        <div class="category-card" onclick="mostrarVista('java-tutoriales')">
-            <h3>📖 Tutoriales</h3>
-            <p>Guías de instalación, launchers y configuración general.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Tutoriales</button>
-        </div>
-
-        <div class="category-card" onclick="mostrarVista('java-mods')">
-            <h3>🧩 Mods</h3>
-            <p>Modificaciones, paquetes de mods y contenido extra.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Mods</button>
-        </div>
-
-        <div class="category-card" onclick="mostrarVista('java-textures')">
-            <h3>🎨 Texture Packs</h3>
-            <p>Paquetes de texturas y recursos visuales para Java.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Texture Packs</button>
-        </div>
-
-        <div class="category-card" onclick="mostrarVista('java-shaders')">
-            <h3>🌈 Shaders</h3>
-            <p>Mejoras visuales y sombreadores avanzados para PC.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Shaders</button>
-        </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 20px;">
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector de Versiones</button>
-    </div>
-
-</div>
-
-
-<!-- ================= VISTA: SUBMENÚ MINECRAFT BEDROCK ================= -->
-<div id="vista-menu-bedrock" class="view">
-    
-    <div class="hero">
-        <img src="logo.png" class="logo" alt="Logo AXKEN">
-        <h1>Minecraft Bedrock</h1>
-        <h2>Panel de Contenido Móvil / PC</h2>
-        <p>Elige qué tipo de contenido deseas consultar para tu versión Bedrock.</p>
-    </div>
-
-    <div class="categories-grid">
-        <div class="category-card" onclick="mostrarVista('bedrock-tutoriales')">
-            <h3>📖 Tutoriales</h3>
-            <p>Guías paso a paso para Bedrock sin errores.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Tutoriales</button>
-        </div>
-
-        <div class="category-card" onclick="mostrarVista('bedrock-addons')">
-            <h3>🧩 Add-ons</h3>
-            <p>Paquetes de comportamientos y complementos oficiales.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Add-ons</button>
-        </div>
-
-        <div class="category-card" onclick="mostrarVista('bedrock-textures')">
-            <h3>🎨 Texture Packs</h3>
-            <p>Paquetes de texturas optimizados para Bedrock.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Texture Packs</button>
-        </div>
-
-        <div class="category-card" onclick="mostrarVista('bedrock-shaders')">
-            <h3>🌈 Shaders</h3>
-            <p>Gráficos optimizados compatibles con Render_Dragon.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Shaders</button>
-        </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 20px;">
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector de Versiones</button>
-    </div>
-
-</div>
-
-
-<!-- ================= VISTA: JAVA - TUTORIALES ================= -->
-<div id="vista-java-tutoriales" class="view">
-    <section>
-        <h2 class="section-title">📖 Tutoriales Minecraft Java</h2>
-        <p class="section-desc">Guías de instalación y tutoriales en video para la versión de PC.</p>
-
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/K4pkbwErShk" title="Tutorial Complementos Java" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <span class="badge">📖 Tutorial Java</span>
-                <h3>Tutorial de Instalación de Complementos</h3>
-                <p>Aprende paso a paso cómo instalar y configurar tus complementos correctamente en Minecraft Java.</p>
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
-                    📥 Descargar Complementos (ZIP)
-                </button>
+    <div class="games-grid">
+        <!-- TARJETA 1 -->
+        <div class="game-card">
+            <div class="card-img-wrapper">
+                <span class="card-badge">4K // 120 FPS</span>
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop" alt="Cyber Game">
             </div>
-
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/2x0azN_Jv80" title="Tutorial y Mods Java" frameborder="0" allowfullscreen></iframe>
+            <div class="card-content">
+                <h3>Cyber Pulse: Zero</h3>
+                <p>Acción táctica en un mundo distópico con trazado de rayos completo y físicas avanzadas.</p>
+                <div class="stat-bar-container">
+                    <div class="stat-info"><span>Optimización Motor</span><span>98%</span></div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 98%;"></div></div>
                 </div>
-                <span class="badge">📖 Tutorial Java</span>
-                <h3>Tutorial de Instalación y Uso de Mods</h3>
-                <p>Aprende paso a paso cómo instalar y configurar tus complementos y mods correctamente en Minecraft Java.</p>
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
-                    📥 Descargar Complementos (ZIP)
-                </button>
             </div>
         </div>
 
-        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: JAVA - MODS ================= -->
-<div id="vista-java-mods" class="view">
-    <section>
-        <h2 class="section-title">🧩 Mods para Minecraft Java</h2>
-        <p class="section-desc">Los mejores complementos, mods y añadidos para la versión de PC.</p>
-
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/K4pkbwErShk" title="Mods Complementos Java" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <span class="badge">🧩 Mods Java</span>
-                <h3>Paquete de Complementos y Mods Java</h3>
-                <p>Descarga el archivo completo de complementos reseñados en el video para mejorar tu experiencia en Java.</p>
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
-                    📥 Descargar Complementos (ZIP)
-                </button>
+        <!-- TARJETA 2 -->
+        <div class="game-card">
+            <div class="card-img-wrapper">
+                <span class="card-badge">Ray Tracing</span>
+                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800&auto=format&fit=crop" alt="Strategy Game">
             </div>
-
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/2x0azN_Jv80" title="Mods Complementos Java 2" frameborder="0" allowfullscreen></iframe>
+            <div class="card-content">
+                <h3>Stellar Odyssey</h3>
+                <p>Simulación espacial masiva con generación procedural y multijugador sin interrupciones.</p>
+                <div class="stat-bar-container">
+                    <div class="stat-info"><span>Rendimiento Gráfico</span><span>94%</span></div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 94%;"></div></div>
                 </div>
-                <span class="badge">🧩 Mods Java</span>
-                <h3>Paquete de Mods y Complementos Java (Video 2)</h3>
-                <p>Descarga el archivo completo de complementos y mods reseñados en este video para tu versión Java.</p>
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
-                    📥 Descargar Complementos (ZIP)
-                </button>
             </div>
         </div>
 
-        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: JAVA - TEXTURE PACKS ================= -->
-<div id="vista-java-textures" class="view">
-    <section>
-        <h2 class="section-title">🎨 Texture Packs para Minecraft Java</h2>
-        <p class="section-desc">Renueva la apariencia visual de tus bloques y objetos en la versión de PC.</p>
-
-        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: JAVA - SHADERS ================= -->
-<div id="vista-java-shaders" class="view">
-    <section>
-        <h2 class="section-title">🌈 Shaders para Minecraft Java</h2>
-        <p class="section-desc">Transforma el aspecto visual de tu juego con sombreadores increíbles.</p>
-
-        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: BEDROCK - TUTORIALES ================= -->
-<div id="vista-bedrock-tutoriales" class="view">
-    <section>
-        <h2 class="section-title">📖 Tutoriales Minecraft Bedrock</h2>
-        <p class="section-desc">Guías paso a paso y archivos de descarga para tu versión Bedrock.</p>
-
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Llave para desbloquear" frameborder="0" allowfullscreen></iframe>
+        <!-- TARJETA 3 -->
+        <div class="game-card">
+            <div class="card-img-wrapper">
+                <span class="card-badge">E-Sports Ready</span>
+                <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=800&auto=format&fit=crop" alt="Action Game">
+            </div>
+            <div class="card-content">
+                <h3>Apex Vanguard</h3>
+                <p>Combates competitivos de alta velocidad diseñados para torneos profesionales internacionales.</p>
+                <div class="stat-bar-container">
+                    <div class="stat-info"><span>Latencia de Red</span><span>99%</span></div>
+                    <div class="stat-bar"><div class="stat-fill" style="width: 99%;"></div></div>
                 </div>
-                <span class="badge">📖 Tutorial Bedrock</span>
-                <h3>Cómo desbloquear contenido / Llave de desbloqueo</h3>
-                <p>Sigue los pasos de este video tutorial para utilizar correctamente el archivo de desbloqueo.</p>
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
-                    📥 Descargar Llave para Desbloquear
-                </button>
             </div>
         </div>
-
-        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: BEDROCK - ADD-ONS ================= -->
-<div id="vista-bedrock-addons" class="view">
-    <section>
-        <h2 class="section-title">🧩 Add-ons Bedrock</h2>
-        <p class="section-desc">Complementos y comportamientos personalizados para tus mundos.</p>
-
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/5_hNlnV23As" title="Addon Modo Creativo Sin Desactivar Logros" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <span class="badge">🔥 Bedrock Edition</span>
-                <h3>😱 Este ADDON te pone en MODO CREATIVO... ¡SIN DESACTIVAR LOS LOGROS! | Minecraft Bedrock</h3>
-                <p>Aprende a ponerte en creativo en tu mundo de Minecraft sin perder logros usando un simple palo.</p>
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/rogzezdfqt4xlbd/addon.zip/file')">
-                    📥 Descargar Add-on Bedrock
-                </button>
-            </div>
-        </div>
-
-        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: BEDROCK - TEXTURE PACKS ================= -->
-<div id="vista-bedrock-textures" class="view">
-    <section>
-        <h2 class="section-title">🎨 Texture Packs Bedrock</h2>
-        <p class="section-desc">Paquetes de texturas y recursos visuales presentados en video para Minecraft Bedrock.</p>
-
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/rR3FO6JudCc" title="Texture Packs PvP Bedrock" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <span class="badge">🎨 Texture Packs Bedrock</span>
-                <h3>Texture Packs PvP (Lyro PvP Ultimate & Venom)</h3>
-                <p>Descarga los paquetes de texturas reseñados en este video para mejorar tus partidas.</p>
-                
-                <button class="btn-download" onclick="iniciarEspera('https://mcpedl.com/lyro-pvp-ultimate/')">
-                    📥 Descargar #1: Lyro PvP Ultimate
-                </button>
-
-                <button class="btn-download" onclick="iniciarEspera('https://mcpedl.com/venom/')">
-                    📥 Descargar #2: Venom Pack
-                </button>
-            </div>
-        </div>
-
-        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: BEDROCK - SHADERS ================= -->
-<div id="vista-bedrock-shaders" class="view">
-    <section>
-        <h2 class="section-title">🌈 Shaders Bedrock</h2>
-        <p class="section-desc">Mejora visualmente tu juego con configuraciones adaptadas a Render_Dragon.</p>
-
-        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: COMUNIDAD ================= -->
-<div id="vista-comunidad" class="view">
-    <section class="community">
-        <h2 class="section-title">⚡ Comunidad AXKEN</h2>
-        <p class="section-desc">Forma parte de la comunidad en nuestras redes sociales:</p>
-
-        <div class="social-links">
-            <a href="https://www.youtube.com/@Axken00" target="_blank" class="btn-social">YouTube</a>
-            <a href="https://www.tiktok.com/@axken00" target="_blank" class="btn-social">TikTok</a>
-            <a href="https://discord.gg/TU_LINK_DE_DISCORD" target="_blank" class="btn-social">Discord</a>
-        </div>
-        <br>
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
-    </section>
-</div>
-
-
-<!-- ================= VENTANA FLOTANTE DE MONETIZACIÓN (MODAL) ================= -->
-<div class="modal-overlay" id="modalEspera">
-    <div class="modal-card">
-        <h3>⏳ Generando Enlace Seguro</h3>
-        <p>Tu archivo se está preparando. El botón de descarga se habilitará al finalizar el contador:</p>
-
-        <!-- BANNER PUBLICITARIO DE ADSTERRA -->
-        <div class="ad-box">
-            <div id="container-16fa8571b1eee7681486dc9444354e1e"></div>
-        </div>
-
-        <button id="btnModalDownload" class="btn-modal-action" disabled>
-            Espera <span id="contadorSegundos">10</span> segundos...
-        </button>
-
-        <button class="btn-close-modal" onclick="cerrarModal()">Cancelar</button>
     </div>
-</div>
+</section>
 
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 NEXUS GAMING HUB. Todos los derechos reservados. Diseñado con estética futurista y optimización 60 FPS.</p>
+</footer>
 
-<!-- SCRIPT DE NAVEGACIÓN Y MANEJO DEL MODAL -->
+<!-- SCRIPTS DE RENDIMIENTO, PARTÍCULAS Y CURSOR -->
 <script>
-    let tiempoRestante = 10;
-    let intervaloTimer = null;
-    let urlDestinoFinal = "";
+    // 1. CURSOR PERSONALIZADO Y EFECTO MAGNÉTICO
+    const cursor = document.getElementById('cursor');
+    const cursorDot = document.getElementById('cursorDot');
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
 
-    function mostrarVista(nombreVista) {
-        const vistas = document.querySelectorAll('.view');
-        vistas.forEach(v => v.classList.remove('active'));
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorDot.style.left = `${mouseX}px`;
+        cursorDot.style.top = `${mouseY}px`;
+    });
 
-        const tabs = document.querySelectorAll('nav a');
-        tabs.forEach(t => t.classList.remove('active-tab'));
+    function renderCursor() {
+        cursorX += (mouseX - cursorX) * 0.2;
+        cursorY += (mouseY - cursorY) * 0.2;
+        cursor.style.left = `${cursorX}px`;
+        cursor.style.top = `${cursorY}px`;
+        requestAnimationFrame(renderCursor);
+    }
+    renderCursor();
 
-        const vistaSeleccionada = document.getElementById('vista-' + nombreVista);
-        if (vistaSeleccionada) {
-            vistaSeleccionada.classList.add('active');
+    // Efecto Hover en elementos interactivos
+    const interactables = document.querySelectorAll('button, a, .game-card');
+    interactables.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.style.width = '40px';
+            cursor.style.height = '40px';
+            cursor.style.backgroundColor = 'rgba(0, 191, 255, 0.1)';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.style.width = '20px';
+            cursor.style.height = '20px';
+            cursor.style.backgroundColor = 'transparent';
+        });
+    });
+
+    // 2. EFECTO RIPPLE EN BOTONES
+    const buttons = document.querySelectorAll('.btn-primary');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            let x = e.clientX - e.target.getBoundingClientRect().left;
+            let y = e.clientY - e.target.getBoundingClientRect().top;
+            let ripples = document.createElement('span');
+            ripples.classList.add('ripple');
+            ripples.style.left = `${x}px`;
+            ripples.style.top = `${y}px`;
+            this.appendChild(ripples);
+            setTimeout(() => ripples.remove(), 600);
+        });
+    });
+
+    // 3. CANVAS DE PARTÍCULAS FLOTANTES Y LÍNEAS HOLOGRÁFICAS (60 FPS)
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const particlesArray = [];
+    const numberOfParticles = Math.floor(window.innerWidth / 25);
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 2 + 0.5;
+            this.speedX = (Math.random() - 0.5) * 0.6;
+            this.speedY = (Math.random() - 0.5) * 0.6;
+            this.color = Math.random() > 0.5 ? 'rgba(0, 191, 255, 0.5)' : 'rgba(138, 43, 226, 0.5)';
         }
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
 
-        const tabSeleccionado = document.getElementById('tab-' + nombreVista);
-        if (tabSeleccionado) {
-            tabSeleccionado.classList.add('active-tab');
+            if (this.x < 0) this.x = canvas.width;
+            if (this.x > canvas.width) this.x = 0;
+            if (this.y < 0) this.y = canvas.height;
+            if (this.y > canvas.height) this.y = 0;
         }
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        draw() {
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
     }
 
-    function iniciarEspera(urlDestino) {
-        urlDestinoFinal = urlDestino;
-        tiempoRestante = 10;
+    function initParticles() {
+        particlesArray.length = 0;
+        for (let i = 0; i < numberOfParticles; i++) {
+            particlesArray.push(new Particle());
+        }
+    }
+    initParticles();
 
-        const modal = document.getElementById('modalEspera');
-        const contadorSpan = document.getElementById('contadorSegundos');
-        const btnModal = document.getElementById('btnModalDownload');
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Dibujar partículas y conectar líneas cercanas estilo red neuronal
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+            particlesArray[i].draw();
 
-        btnModal.disabled = true;
-        btnModal.classList.remove('ready');
-        btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
-        modal.style.display = 'flex';
+            for (let j = i; j < particlesArray.length; j++) {
+                const dx = particlesArray[i].x - particlesArray[j].x;
+                const dy = particlesArray[i].y - particlesArray[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
 
-        clearInterval(intervaloTimer);
-        intervaloTimer = setInterval(() => {
-            tiempoRestante--;
-            if (contadorSpan) contadorSpan.innerText = tiempoRestante;
-            btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
-
-            if (tiempoRestante <= 0) {
-                clearInterval(intervaloTimer);
-                btnModal.disabled = false;
-                btnModal.classList.add('ready');
-                btnModal.innerText = '🚀 ¡Ir al Enlace!';
-                btnModal.onclick = function() {
-                    window.open(urlDestinoFinal, '_blank');
-                    cerrarModal();
-                };
+                if (distance < 120) {
+                    ctx.strokeStyle = `rgba(34, 211, 238, ${0.15 * (1 - distance / 120)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                    ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                    ctx.stroke();
+                }
             }
-        }, 1000);
+        }
+        requestAnimationFrame(animateParticles);
     }
+    animateParticles();
 
-    function cerrarModal() {
-        clearInterval(intervaloTimer);
-        document.getElementById('modalEspera').style.display = 'none';
-    }
+    // 4. ANIMACIÓN DE BARRAS DE PROGRESO AL HACER SCROLL
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const fills = entry.target.querySelectorAll('.stat-fill');
+                fills.forEach(fill => {
+                    fill.style.width = fill.style.width; // Activa la transición CSS
+                });
+            }
+        });
+    }, { threshold: 0.2 });
+
+    observer.observe(document.getElementById('catalogo'));
 </script>
 
 </body>
-
 </html>
