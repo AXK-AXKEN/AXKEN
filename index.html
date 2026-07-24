@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AXKEN Minecraft Academy | Gamer Edition</title>
+<title>AXKEN Minecraft Academy | Cyber Gaming Edition</title>
 
 <!-- SCRIPT DEL BANNER NATIVO (DENTRO DEL MODAL) -->
 <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
@@ -17,14 +17,13 @@
 <style>
 
 :root {
-    --bg-main: #070913;
-    --bg-card: rgba(13, 17, 33, 0.75);
+    --bg-main: #03050d;
+    --bg-card: rgba(10, 15, 30, 0.78);
     --neon-green: #00ff88;
-    --neon-purple: #9333ea;
+    --neon-purple: #a855f7;
     --neon-cyan: #06b6d4;
     --text-main: #f1f5f9;
     --text-muted: #94a3b8;
-    --border-glow: rgba(0, 255, 136, 0.25);
 }
 
 *{
@@ -35,10 +34,16 @@ body{
     margin: 0;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-main);
+    /* Fondo animado dinámico con rejilla cibernética y gradientes en movimiento */
     background-image: 
-        radial-gradient(circle at 15% 15%, rgba(147, 51, 234, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(0, 255, 136, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, #0b0f19 0%, #05070d 100%);
+        linear-gradient(rgba(3, 5, 13, 0.85), rgba(3, 5, 13, 0.92)),
+        radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(0, 255, 136, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 50% 10%, rgba(6, 182, 212, 0.12) 0%, transparent 50%),
+        repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255, 255, 255, 0.015) 40px, rgba(255, 255, 255, 0.015) 41px),
+        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255, 255, 255, 0.015) 40px, rgba(255, 255, 255, 0.015) 41px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+    animation: backgroundShift 20s ease-in-out infinite alternate;
     color: var(--text-main);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
@@ -53,14 +58,14 @@ nav{
     justify-content: center;
     gap: 8px;
     padding: 12px 20px;
-    background: rgba(7, 9, 19, 0.85);
+    background: rgba(3, 5, 13, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 255, 136, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 nav a{
@@ -77,10 +82,10 @@ nav a{
 
 nav a:hover, nav a.active-tab {
     color: var(--neon-green);
-    background: rgba(0, 255, 136, 0.08);
-    border-color: rgba(0, 255, 136, 0.3);
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
-    text-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+    background: rgba(0, 255, 136, 0.1);
+    border-color: rgba(0, 255, 136, 0.4);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.3);
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
 }
 
 
@@ -110,9 +115,9 @@ nav a:hover, nav a.active-tab {
     border-radius: 50%;
     object-fit: cover;
     image-rendering: -webkit-optimize-contrast;
-    box-shadow: 0 0 35px rgba(147, 51, 234, 0.5), 0 0 70px rgba(0, 255, 136, 0.25);
-    border: 3px solid rgba(0, 255, 136, 0.4);
-    animation: floatLogo 4s ease-in-out infinite;
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.6), 0 0 80px rgba(0, 255, 136, 0.3);
+    border: 3px solid rgba(0, 255, 136, 0.6);
+    animation: floatLogo 4s ease-in-out infinite, rgbGlow 6s linear infinite;
 }
 
 h1{
@@ -123,7 +128,7 @@ h1{
     background: linear-gradient(135deg, #ffffff 30%, var(--neon-green) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+    text-shadow: 0 0 35px rgba(0, 255, 136, 0.3);
 }
 
 .hero h2{
@@ -133,6 +138,7 @@ h1{
     margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
 }
 
 .hero p{
@@ -167,9 +173,10 @@ h1{
     text-align: center;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     position: relative;
     overflow: hidden;
+    animation: cardPulse 5s ease-in-out infinite alternate;
 }
 
 .category-card::before {
@@ -179,8 +186,8 @@ h1{
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
-    transition: 0.5s;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transition: 0.6s;
 }
 
 .category-card:hover::before {
@@ -188,9 +195,9 @@ h1{
 }
 
 .category-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-10px) scale(1.03);
     border-color: var(--neon-green);
-    box-shadow: 0 15px 40px rgba(0, 255, 136, 0.25), inset 0 0 15px rgba(0, 255, 136, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 255, 136, 0.3), inset 0 0 20px rgba(0, 255, 136, 0.15);
 }
 
 .category-card h3 {
@@ -251,21 +258,21 @@ section{
     border: 1px solid rgba(255, 255, 255, 0.08);
     text-align: left;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
     position: relative;
 }
 
 .video-card:hover{
-    transform: translateY(-8px);
-    border-color: rgba(147, 51, 234, 0.5);
-    box-shadow: 0 20px 45px rgba(147, 51, 234, 0.25), 0 0 20px rgba(0, 255, 136, 0.15);
+    transform: translateY(-10px);
+    border-color: rgba(168, 85, 247, 0.6);
+    box-shadow: 0 22px 50px rgba(168, 85, 247, 0.3), 0 0 25px rgba(0, 255, 136, 0.2);
 }
 
 .badge {
     display: inline-block;
-    background: rgba(147, 51, 234, 0.15);
+    background: rgba(168, 85, 247, 0.15);
     color: #c084fc;
-    border: 1px solid rgba(147, 51, 234, 0.35);
+    border: 1px solid rgba(168, 85, 247, 0.4);
     padding: 5px 14px;
     border-radius: 20px;
     font-size: 11.5px;
@@ -335,10 +342,10 @@ section{
 
 .btn-download:hover {
     background: linear-gradient(135deg, var(--neon-green), #059669);
-    color: #070913;
+    color: #03050d;
     border-color: var(--neon-green);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(0, 255, 136, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 255, 136, 0.6);
 }
 
 .btn-back {
@@ -357,8 +364,10 @@ section{
 
 .btn-back:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-color: var(--text-main);
+    border-color: var(--neon-green);
+    color: var(--neon-green);
     transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
 }
 
 
@@ -371,9 +380,9 @@ section{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(3, 5, 10, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(3, 5, 13, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     z-index: 200;
     justify-content: center;
     align-items: center;
@@ -382,14 +391,14 @@ section{
 }
 
 .modal-card {
-    background: #0d1121;
-    border: 1px solid rgba(0, 255, 136, 0.3);
+    background: #0a0f1e;
+    border: 1px solid rgba(0, 255, 136, 0.4);
     border-radius: 24px;
     padding: 30px 24px;
     max-width: 460px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 255, 136, 0.2);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 50px rgba(0, 255, 136, 0.25);
     animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -398,7 +407,7 @@ section{
     font-size: 22px;
     margin-top: 0;
     margin-bottom: 8px;
-    text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+    text-shadow: 0 0 12px rgba(0, 255, 136, 0.4);
 }
 
 .modal-card p {
@@ -415,8 +424,8 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px dashed rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
     border-radius: 14px;
     padding: 8px;
 }
@@ -436,9 +445,9 @@ section{
 
 .btn-modal-action.ready {
     background: var(--neon-green);
-    color: #070913;
+    color: #03050d;
     cursor: pointer;
-    box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+    box-shadow: 0 0 35px rgba(0, 255, 136, 0.6);
     animation: pulseGlow 1.5s infinite;
 }
 
@@ -467,7 +476,7 @@ section{
     padding: 45px 20px;
     margin-top: 20px;
     backdrop-filter: blur(16px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
 .social-links{
@@ -492,22 +501,43 @@ section{
 
 .btn-social:hover{
     background: var(--neon-green);
-    color: #070913;
+    color: #03050d;
     border-color: var(--neon-green);
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
 }
 
 
-/* ANIMACIONES KEYFRAMES */
+/* ANIMACIONES KEYFRAMES AVANZADAS */
+
+@keyframes backgroundShift {
+    0% {
+        background-position: 0% 0%, 0% 0%, 100% 100%, 50% 50%, 0 0, 0 0;
+    }
+    100% {
+        background-position: 0% 0%, 10% 20%, 90% 80%, 50% 30%, 40px 40px, 40px 40px;
+    }
+}
 
 @keyframes floatLogo {
-    0%, 100% { transform: translateY(0); box-shadow: 0 0 35px rgba(147, 51, 234, 0.5), 0 0 70px rgba(0, 255, 136, 0.25); }
-    50% { transform: translateY(-8px); box-shadow: 0 0 45px rgba(147, 51, 234, 0.7), 0 0 90px rgba(0, 255, 136, 0.4); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes rgbGlow {
+    0% { box-shadow: 0 0 35px rgba(168, 85, 247, 0.6), 0 0 70px rgba(0, 255, 136, 0.3); }
+    33% { box-shadow: 0 0 35px rgba(6, 182, 212, 0.6), 0 0 70px rgba(168, 85, 247, 0.3); }
+    66% { box-shadow: 0 0 35px rgba(0, 255, 136, 0.6), 0 0 70px rgba(6, 182, 212, 0.3); }
+    100% { box-shadow: 0 0 35px rgba(168, 85, 247, 0.6), 0 0 70px rgba(0, 255, 136, 0.3); }
+}
+
+@keyframes cardPulse {
+    0%, 100% { border-color: rgba(255, 255, 255, 0.08); }
+    50% { border-color: rgba(0, 255, 136, 0.2); }
 }
 
 @keyframes fadeInView {
-    from { opacity: 0; transform: translateY(12px); }
+    from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -517,9 +547,9 @@ section{
 }
 
 @keyframes pulseGlow {
-    0% { box-shadow: 0 0 15px rgba(0, 255, 136, 0.4); }
-    50% { box-shadow: 0 0 30px rgba(0, 255, 136, 0.8); }
-    100% { box-shadow: 0 0 15px rgba(0, 255, 136, 0.4); }
+    0% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); }
+    50% { box-shadow: 0 0 40px rgba(0, 255, 136, 0.9); }
+    100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); }
 }
 
 
@@ -673,7 +703,6 @@ section{
         <p class="section-desc">Guías de instalación y tutoriales en video para la versión de PC.</p>
 
         <div class="video-grid">
-            <!-- VIDEO JAVA 1 -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/K4pkbwErShk" title="Tutorial Complementos Java" frameborder="0" allowfullscreen></iframe>
@@ -686,7 +715,6 @@ section{
                 </button>
             </div>
 
-            <!-- VIDEO JAVA 2 -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/2x0azN_Jv80" title="Tutorial y Mods Java" frameborder="0" allowfullscreen></iframe>
@@ -712,7 +740,6 @@ section{
         <p class="section-desc">Los mejores complementos, mods y añadidos para la versión de PC.</p>
 
         <div class="video-grid">
-            <!-- MOD JAVA 1 -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/K4pkbwErShk" title="Mods Complementos Java" frameborder="0" allowfullscreen></iframe>
@@ -725,7 +752,6 @@ section{
                 </button>
             </div>
 
-            <!-- MOD JAVA 2 -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/2x0azN_Jv80" title="Mods Complementos Java 2" frameborder="0" allowfullscreen></iframe>
