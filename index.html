@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AXKEN Minecraft Academy</title>
+<title>AXKEN Minecraft Academy | Gamer Edition</title>
 
 <!-- SCRIPT DEL BANNER NATIVO (DENTRO DEL MODAL) -->
 <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
@@ -16,51 +16,71 @@
 
 <style>
 
+:root {
+    --bg-main: #070913;
+    --bg-card: rgba(13, 17, 33, 0.75);
+    --neon-green: #00ff88;
+    --neon-purple: #9333ea;
+    --neon-cyan: #06b6d4;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border-glow: rgba(0, 255, 136, 0.25);
+}
+
 *{
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 body{
-    margin:0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: radial-gradient(circle at 50% 0%, #1e293b, #090d16 70%);
-    color: #f8fafc;
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(147, 51, 234, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(0, 255, 136, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, #0b0f19 0%, #05070d 100%);
+    color: var(--text-main);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 
-/* MENÚ DE NAVEGACIÓN */
+/* MENÚ DE NAVEGACIÓN GAMER */
 
 nav{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    padding:14px 20px;
-    background:rgba(15, 23, 42, 0.85);
-    backdrop-filter:blur(16px);
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: rgba(7, 9, 19, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     position: sticky;
     top: 0;
     z-index: 100;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 nav a{
-    color:#94a3b8;
-    text-decoration:none;
-    font-weight:600;
-    font-size: 14.5px;
-    transition: all 0.25s ease;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
-    padding: 8px 18px;
-    border-radius: 10px;
+    padding: 8px 20px;
+    border-radius: 12px;
+    border: 1px solid transparent;
 }
 
 nav a:hover, nav a.active-tab {
-    color:#4ade80;
-    background: rgba(74, 222, 128, 0.1);
-    box-shadow: 0 0 15px rgba(74, 222, 128, 0.15);
+    color: var(--neon-green);
+    background: rgba(0, 255, 136, 0.08);
+    border-color: rgba(0, 255, 136, 0.3);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
 }
 
 
@@ -68,7 +88,7 @@ nav a:hover, nav a.active-tab {
 
 .view {
     display: none;
-    animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: fadeInView 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .view.active {
@@ -76,132 +96,140 @@ nav a:hover, nav a.active-tab {
 }
 
 
-/* HERO / INICIO */
+/* HERO / INICIO GAMER */
 
 .hero{
-    text-align:center;
-    padding:60px 20px 30px;
+    text-align: center;
+    padding: 60px 20px 30px;
+    position: relative;
 }
 
 .logo{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    object-fit:cover;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
     image-rendering: -webkit-optimize-contrast;
-    box-shadow: 0 0 40px rgba(124, 58, 237, 0.4), 0 0 80px rgba(74, 222, 128, 0.2);
-    border: 3px solid rgba(255, 255, 255, 0.15);
-    animation:entrada 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 35px rgba(147, 51, 234, 0.5), 0 0 70px rgba(0, 255, 136, 0.25);
+    border: 3px solid rgba(0, 255, 136, 0.4);
+    animation: floatLogo 4s ease-in-out infinite;
 }
 
 h1{
-    font-size:54px;
-    margin:20px 0 5px;
-    letter-spacing: 1.5px;
-    font-weight: 800;
-    text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+    font-size: 52px;
+    margin: 20px 0 5px;
+    letter-spacing: 2px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffffff 30%, var(--neon-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
 }
 
 .hero h2{
-    color:#4ade80;
-    font-weight: 600;
-    font-size: 22px;
+    color: var(--neon-green);
+    font-weight: 700;
+    font-size: 20px;
     margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .hero p{
-    font-size:17.5px;
-    color: #94a3b8;
-    max-width: 550px;
-    margin: 0 auto 25px;
-    line-height: 1.5;
-}
-
-.btn{
-    display:inline-block;
-    padding:14px 32px;
-    background: linear-gradient(135deg, #7c3aed, #4f46e5);
-    color:white;
-    border-radius:14px;
-    text-decoration:none;
-    font-weight:bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
-}
-
-.btn:hover{
-    background: linear-gradient(135deg, #8b5cf6, #6366f1);
-    transform:translateY(-2px);
-    box-shadow: 0 6px 25px rgba(124, 58, 237, 0.5);
+    font-size: 16.5px;
+    color: var(--text-muted);
+    max-width: 580px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
 }
 
 
-/* CATEGORÍAS */
+/* CATEGORÍAS & GRID */
 
 .categories-grid {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 25px;
-    padding: 30px 20px;
+    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .category-card {
-    width: 260px;
-    background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.7));
+    width: 270px;
+    background: var(--bg-card);
     border-radius: 20px;
-    padding: 28px 22px;
-    backdrop-filter: blur(12px);
+    padding: 30px 22px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     text-align: center;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+    transition: 0.5s;
+}
+
+.category-card:hover::before {
+    left: 100%;
 }
 
 .category-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(74, 222, 128, 0.4);
-    box-shadow: 0 15px 35px rgba(74, 222, 128, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--neon-green);
+    box-shadow: 0 15px 40px rgba(0, 255, 136, 0.25), inset 0 0 15px rgba(0, 255, 136, 0.1);
 }
 
 .category-card h3 {
-    color: #4ade80;
+    color: var(--text-main);
     margin-top: 0;
     font-size: 20px;
+    font-weight: 700;
 }
 
 .category-card p {
-    color: #94a3b8;
-    font-size: 14px;
+    color: var(--text-muted);
+    font-size: 13.5px;
     margin-bottom: 20px;
+    line-height: 1.4;
 }
 
 
-/* SECCIÓN GENERAL */
+/* SECCIÓN GENERAL Y VIDEOS */
 
 section{
-    padding:40px 20px;
-    text-align:center;
+    padding: 40px 20px;
+    text-align: center;
     max-width: 1100px;
     margin: 0 auto;
 }
 
 .section-title {
     color: #f8fafc;
-    font-size: 36px;
-    font-weight: 800;
+    font-size: 34px;
+    font-weight: 900;
     margin-bottom: 10px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    letter-spacing: 0.5px;
 }
 
 .section-desc{
     max-width: 650px;
-    margin: 0 auto 40px auto;
-    color: #94a3b8;
-    font-size: 16.5px;
+    margin: 0 auto 35px auto;
+    color: var(--text-muted);
+    font-size: 16px;
     line-height: 1.6;
 }
 
@@ -215,49 +243,49 @@ section{
 
 .video-card{
     width: 420px;
-    background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.6));
+    background: var(--bg-card);
     border-radius: 22px;
-    padding: 20px;
+    padding: 22px;
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     text-align: left;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
     position: relative;
-    overflow: hidden;
 }
 
 .video-card:hover{
-    transform: translateY(-6px);
-    border-color: rgba(74, 222, 128, 0.4);
-    box-shadow: 0 15px 40px rgba(74, 222, 128, 0.2);
+    transform: translateY(-8px);
+    border-color: rgba(147, 51, 234, 0.5);
+    box-shadow: 0 20px 45px rgba(147, 51, 234, 0.25), 0 0 20px rgba(0, 255, 136, 0.15);
 }
 
 .badge {
     display: inline-block;
-    background: rgba(74, 222, 128, 0.12);
-    color: #4ade80;
-    border: 1px solid rgba(74, 222, 128, 0.25);
+    background: rgba(147, 51, 234, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(147, 51, 234, 0.35);
     padding: 5px 14px;
     border-radius: 20px;
     font-size: 11.5px;
     font-weight: 700;
     margin-bottom: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 1px;
 }
 
 .video-card h3{
     color: #f8fafc;
-    font-size: 19px;
+    font-size: 18.5px;
     margin: 8px 0;
     font-weight: 700;
-    line-height: 1.35;
+    line-height: 1.4;
 }
 
 .video-card p{
-    font-size: 14px;
-    color: #94a3b8;
+    font-size: 13.5px;
+    color: var(--text-muted);
     margin-bottom: 20px;
     line-height: 1.5;
 }
@@ -268,8 +296,8 @@ section{
     height: 0;
     overflow: hidden;
     border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
     margin-bottom: 16px;
     background: #000;
 }
@@ -282,53 +310,59 @@ section{
     height: 100%;
 }
 
+
+/* BOTONES GAMER */
+
 .btn-download {
     width: 100%;
-    background: linear-gradient(135deg, #7c3aed, #6366f1);
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
     color: white;
-    border: 0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 13px 20px;
-    border-radius: 12px;
+    border-radius: 14px;
     cursor: pointer;
-    font-weight: bold;
-    font-size: 14.5px;
-    transition: all 0.25s ease;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
     margin-top: 10px;
+    letter-spacing: 0.5px;
 }
 
 .btn-download:hover {
-    background: #4ade80;
-    color: #090d16;
+    background: linear-gradient(135deg, var(--neon-green), #059669);
+    color: #070913;
+    border-color: var(--neon-green);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+    box-shadow: 0 6px 25px rgba(0, 255, 136, 0.5);
 }
 
 .btn-back {
-    margin-top: 40px;
+    margin-top: 35px;
     width: auto;
     display: inline-block;
     padding: 12px 28px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    color: var(--text-main);
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: all 0.3s ease;
 }
 
 .btn-back:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-main);
+    transform: translateY(-2px);
 }
 
 
-/* VENTANA FLOTANTE DE MONETIZACIÓN (MODAL) */
+/* MODAL FLOTANTE GAMER */
 
 .modal-overlay {
     display: none;
@@ -337,35 +371,38 @@ section{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(5, 8, 15, 0.85);
-    backdrop-filter: blur(10px);
+    background: rgba(3, 5, 10, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     z-index: 200;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    animation: fadeInView 0.25s ease forwards;
 }
 
 .modal-card {
-    background: #0f172a;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #0d1121;
+    border: 1px solid rgba(0, 255, 136, 0.3);
     border-radius: 24px;
-    padding: 28px 22px;
+    padding: 30px 24px;
     max-width: 460px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(124, 58, 237, 0.25);
-    animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 255, 136, 0.2);
+    animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .modal-card h3 {
-    color: #4ade80;
+    color: var(--neon-green);
     font-size: 22px;
     margin-top: 0;
     margin-bottom: 8px;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
 }
 
 .modal-card p {
-    color: #94a3b8;
+    color: var(--text-muted);
     font-size: 14px;
     line-height: 1.4;
     margin-bottom: 16px;
@@ -378,8 +415,8 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px dashed rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
     border-radius: 14px;
     padding: 8px;
 }
@@ -387,9 +424,9 @@ section{
 .btn-modal-action {
     width: 100%;
     padding: 14px;
-    border-radius: 12px;
+    border-radius: 14px;
     border: none;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 15px;
     cursor: not-allowed;
     background: #1e293b;
@@ -398,10 +435,11 @@ section{
 }
 
 .btn-modal-action.ready {
-    background: #4ade80;
-    color: #090d16;
+    background: var(--neon-green);
+    color: #070913;
     cursor: pointer;
-    box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+    animation: pulseGlow 1.5s infinite;
 }
 
 .btn-close-modal {
@@ -423,12 +461,13 @@ section{
 /* COMUNIDAD */
 
 .community{
-    background:rgba(15, 23, 42, 0.5);
+    background: var(--bg-card);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
-    padding: 40px 20px;
+    padding: 45px 20px;
     margin-top: 20px;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
 }
 
 .social-links{
@@ -440,46 +479,60 @@ section{
 }
 
 .btn-social{
-    padding: 12px 26px;
-    border-radius: 12px;
+    padding: 12px 28px;
+    border-radius: 14px;
     text-decoration: none;
     color: white;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 14.5px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.25s ease;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-social:hover{
-    background: #4ade80;
-    color: #090d16;
-    border-color: #4ade80;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(74, 222, 128, 0.3);
+    background: var(--neon-green);
+    color: #070913;
+    border-color: var(--neon-green);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
 }
 
 
-/* ANIMACIONES */
+/* ANIMACIONES KEYFRAMES */
 
-@keyframes entrada{
-    from{ opacity:0; transform:scale(0.8); }
-    to{ opacity:1; transform:scale(1); }
+@keyframes floatLogo {
+    0%, 100% { transform: translateY(0); box-shadow: 0 0 35px rgba(147, 51, 234, 0.5), 0 0 70px rgba(0, 255, 136, 0.25); }
+    50% { transform: translateY(-8px); box-shadow: 0 0 45px rgba(147, 51, 234, 0.7), 0 0 90px rgba(0, 255, 136, 0.4); }
 }
 
-@keyframes fadeIn{
-    from{ opacity:0; transform: translateY(10px); }
-    to{ opacity:1; transform: translateY(0); }
+@keyframes fadeInView {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@media(max-width:600px){
-    h1{ font-size:40px; }
-    nav{ flex-wrap:wrap; gap: 6px; padding: 10px; }
-    nav a { padding: 6px 12px; font-size: 13.5px; }
-    .logo{ width:120px; height:120px; }
+@keyframes scaleUp {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 15px rgba(0, 255, 136, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(0, 255, 136, 0.8); }
+    100% { box-shadow: 0 0 15px rgba(0, 255, 136, 0.4); }
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width: 600px){
+    h1{ font-size: 38px; }
+    nav{ flex-wrap: wrap; gap: 6px; padding: 10px; }
+    nav a { padding: 6px 14px; font-size: 13px; }
+    .logo{ width: 120px; height: 120px; }
     .video-card{ width: 100%; }
     .category-card { width: 100%; max-width: 320px; }
-    .modal-card { padding: 20px 15px; max-width: 92%; }
+    .modal-card { padding: 22px 16px; max-width: 92%; }
 }
 
 </style>
@@ -510,17 +563,17 @@ section{
 
     <div class="categories-grid">
         <!-- TARJETA JAVA -->
-        <div class="category-card" onclick="mostrarVista('menu-java')" style="border-color: rgba(124, 58, 237, 0.4);">
+        <div class="category-card" onclick="mostrarVista('menu-java')">
             <h3>💻 Minecraft Java</h3>
             <p>Contenido para PC: Mods, Shaders, Texture Packs, Tutoriales y optimización.</p>
             <button class="btn-download" style="margin-top:10px;">Entrar a Java</button>
         </div>
 
         <!-- TARJETA BEDROCK -->
-        <div class="category-card" onclick="mostrarVista('menu-bedrock')" style="border-color: rgba(74, 222, 128, 0.4);">
+        <div class="category-card" onclick="mostrarVista('menu-bedrock')">
             <h3>📱 Minecraft Bedrock</h3>
             <p>Contenido para Móvil y PC: Add-ons, Shaders, Texture Packs y Tutoriales.</p>
-            <button class="btn-download" style="margin-top:10px; background: linear-gradient(135deg, #059669, #10b981);">Entrar a Bedrock</button>
+            <button class="btn-download" style="margin-top:10px;">Entrar a Bedrock</button>
         </div>
     </div>
 
@@ -864,7 +917,7 @@ section{
             tabSeleccionado.classList.add('active-tab');
         }
 
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function iniciarEspera(urlDestino) {
