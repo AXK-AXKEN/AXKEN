@@ -34,19 +34,62 @@ body{
     margin: 0;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-main);
-    background-image: 
-        linear-gradient(rgba(3, 5, 13, 0.85), rgba(3, 5, 13, 0.92)),
-        radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.18) 0%, transparent 45%),
-        radial-gradient(circle at 80% 80%, rgba(0, 255, 136, 0.15) 0%, transparent 45%),
-        radial-gradient(circle at 50% 10%, rgba(6, 182, 212, 0.12) 0%, transparent 50%),
-        repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255, 255, 255, 0.015) 40px, rgba(255, 255, 255, 0.015) 41px),
-        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255, 255, 255, 0.015) 40px, rgba(255, 255, 255, 0.015) 41px);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 80px 80px, 80px 80px;
-    animation: backgroundShift 20s ease-in-out infinite alternate;
     color: var(--text-main);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    position: relative;
+}
+
+/* FONDO ANIMADO SUTIL (PARTÍCULAS Y LUCES NEÓN FLOTANTES) */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 50%, #080c1d 0%, #03050d 100%);
+}
+
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.25;
+    animation: floatOrb 15s ease-in-out infinite alternate;
+}
+
+.orb-1 {
+    width: 350px;
+    height: 350px;
+    background: var(--neon-purple);
+    top: -10%;
+    left: -10%;
+}
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--neon-green);
+    bottom: -15%;
+    right: -10%;
+    animation-delay: -5s;
+}
+
+.orb-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--neon-cyan);
+    top: 40%;
+    left: 60%;
+    animation-delay: -10s;
+}
+
+@keyframes floatOrb {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(40px, 50px) scale(1.1); }
 }
 
 
@@ -88,15 +131,19 @@ nav a:hover, nav a.active-tab {
 }
 
 
-/* CONTROL DE VISTAS */
+/* CONTROL DE VISTAS CON ANIMACIÓN DE TRANSICIÓN */
 
 .view {
     display: none;
-    animation: fadeInView 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .view.active {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
@@ -174,7 +221,6 @@ h1{
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     position: relative;
     overflow: hidden;
-    animation: cardPulse 5s ease-in-out infinite alternate;
     cursor: pointer;
 }
 
@@ -386,7 +432,6 @@ section{
     justify-content: center;
     align-items: center;
     padding: 20px;
-    animation: fadeInView 0.25s ease forwards;
 }
 
 .modal-card {
@@ -506,16 +551,7 @@ section{
 }
 
 
-/* ANIMACIONES KEYFRAMES AVANZADAS */
-
-@keyframes backgroundShift {
-    0% {
-        background-position: 0% 0%, 0% 0%, 100% 100%, 50% 50%, 0 0, 0 0;
-    }
-    100% {
-        background-position: 0% 0%, 10% 20%, 90% 80%, 50% 30%, 40px 40px, 40px 40px;
-    }
-}
+/* ANIMACIONES KEYFRAMES */
 
 @keyframes floatLogo {
     0%, 100% { transform: translateY(0); }
@@ -527,16 +563,6 @@ section{
     33% { box-shadow: 0 0 35px rgba(6, 182, 212, 0.6), 0 0 70px rgba(168, 85, 247, 0.3); }
     66% { box-shadow: 0 0 35px rgba(0, 255, 136, 0.6), 0 0 70px rgba(6, 182, 212, 0.3); }
     100% { box-shadow: 0 0 35px rgba(168, 85, 247, 0.6), 0 0 70px rgba(0, 255, 136, 0.3); }
-}
-
-@keyframes cardPulse {
-    0%, 100% { border-color: rgba(255, 255, 255, 0.08); }
-    50% { border-color: rgba(0, 255, 136, 0.2); }
-}
-
-@keyframes fadeInView {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes scaleUp {
@@ -569,6 +595,13 @@ section{
 
 
 <body>
+
+<!-- FONDO ANIMADO SUTIL (ORBES FLOTANTES) -->
+<div class="animated-bg">
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+</div>
 
 <!-- MENÚ DE NAVEGACIÓN PRINCIPAL -->
 <nav>
