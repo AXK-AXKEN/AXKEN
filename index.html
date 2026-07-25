@@ -34,7 +34,6 @@ body{
     margin: 0;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-main);
-    /* Fondo animado dinámico con rejilla cibernética y gradientes en movimiento */
     background-image: 
         linear-gradient(rgba(3, 5, 13, 0.85), rgba(3, 5, 13, 0.92)),
         radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.18) 0%, transparent 45%),
@@ -467,6 +466,94 @@ section{
 }
 
 
+/* NUEVAS SECCIONES: FAQ (PREGUNTAS FRECUENTES) Y SOPORTE */
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    padding: 20px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-main);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question:hover {
+    color: var(--neon-green);
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 22px;
+    color: var(--neon-green);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    color: var(--text-muted);
+    font-size: 14.5px;
+    line-height: 1.6;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 0 20px 20px 20px;
+}
+
+
+/* BUSCADOR DE CONTENIDO RÁPIDO */
+
+.search-box-container {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 16px 22px;
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: 16px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: var(--neon-green);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.25);
+}
+
+
 /* COMUNIDAD */
 
 .community{
@@ -575,8 +662,9 @@ section{
 <!-- MENÚ DE NAVEGACIÓN PRINCIPAL -->
 <nav>
     <a onclick="mostrarVista('inicio')" id="tab-inicio" class="active-tab">Inicio</a>
-    <a onclick="mostrarVista('menu-java')" id="tab-menu-java">Minecraft Java</a>
-    <a onclick="mostrarVista('menu-bedrock')" id="tab-menu-bedrock">Minecraft Bedrock</a>
+    <a onclick="mostrarVista('menu-java')" id="tab-menu-java">Java</a>
+    <a onclick="mostrarVista('menu-bedrock')" id="tab-menu-bedrock">Bedrock</a>
+    <a onclick="mostrarVista('faq')" id="tab-faq">❓ Preguntas Frecuentes</a>
     <a onclick="mostrarVista('comunidad')" id="tab-comunidad">Comunidad</a>
 </nav>
 
@@ -588,10 +676,15 @@ section{
         <img src="logo.png" class="logo" alt="Logo AXKEN">
         <h1>AXKEN</h1>
         <h2>Minecraft Academy</h2>
-        <p>Selecciona tu versión favorita para explorar todo el contenido especializado en tutoriales, add-ons, texture packs y shaders.</p>
+        <p>Explora todo el contenido especializado en tutoriales, add-ons, texture packs y shaders para tus versiones favoritas.</p>
     </div>
 
-    <div class="categories-grid">
+    <!-- BUSCADOR RÁPIDO EN INICIO -->
+    <div class="search-box-container">
+        <input type="text" id="buscadorGlobal" class="search-input" placeholder="🔍 ¿Qué estás buscando? Ej: Addon, Shaders, Creativo..." onkeyup="filtrarContenido()">
+    </div>
+
+    <div class="categories-grid" id="contenedorCategorias">
         <!-- TARJETA JAVA -->
         <div class="category-card" onclick="mostrarVista('menu-java')">
             <h3>💻 Minecraft Java</h3>
@@ -604,6 +697,13 @@ section{
             <h3>📱 Minecraft Bedrock</h3>
             <p>Contenido para Móvil y PC: Add-ons, Shaders, Texture Packs y Tutoriales.</p>
             <button class="btn-download" style="margin-top:10px;">Entrar a Bedrock</button>
+        </div>
+
+        <!-- TARJETA FAQ / AYUDA -->
+        <div class="category-card" onclick="mostrarVista('faq')">
+            <h3>❓ Preguntas Frecuentes</h3>
+            <p>¿Dudas con las descargas, enlaces o instalación? Resuélvelas aquí al instante.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Dudas</button>
         </div>
     </div>
 
@@ -883,6 +983,40 @@ section{
 </div>
 
 
+<!-- ================= VISTA: PREGUNTAS FRECUENTES (FAQ) ================= -->
+<div id="vista-faq" class="view">
+    <section>
+        <h2 class="section-title">❓ Preguntas Frecuentes (FAQ)</h2>
+        <p class="section-desc">Encuentra respuestas rápidas a los problemas más comunes con las descargas e instalaciones.</p>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Cómo descargo los archivos de MediaFire correctamente?</div>
+                <div class="faq-answer">Haz clic en el botón de descarga, espera los 10 segundos indicados en el contador del modal de seguridad y haz clic en el botón verde para abrir el enlace directo sin complicaciones.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Los Add-ons de Bedrock desactivan los logros del mundo?</div>
+                <div class="faq-answer">Depende del add-on. Por ejemplo, el add-on de modo creativo que compartimos en el canal está diseñado específicamente para permitirte usar comandos o creativo sin desactivar los logros de tu partida oficial.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Cómo instalo un Texture Pack en Minecraft Bedrock (Móvil)?</div>
+                <div class="faq-answer">Descarga el archivo `.mcpack` o `.mcworld`. Al abrirlo desde tu explorador de archivos en el teléfono, Minecraft se abrirá automáticamente e importará el paquete de manera automática.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Dónde puedo reportar un enlace roto o pedir ayuda?</div>
+                <div class="faq-answer">Puedes unirte a nuestro servidor de Discord o dejarnos un comentario directamente en los videos recientes de nuestro canal oficial de YouTube (@Axken00).</div>
+            </div>
+        </div>
+
+        <br>
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+    </section>
+</div>
+
+
 <!-- ================= VISTA: COMUNIDAD ================= -->
 <div id="vista-comunidad" class="view">
     <section class="community">
@@ -920,7 +1054,7 @@ section{
 </div>
 
 
-<!-- SCRIPT DE NAVEGACIÓN Y MANEJO DEL MODAL -->
+<!-- SCRIPT DE NAVEGACIÓN, FAQ, BUSCADOR Y MODAL -->
 <script>
     let tiempoRestante = 10;
     let intervaloTimer = null;
@@ -944,6 +1078,35 @@ section{
         }
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Funcionalidad para abrir y cerrar las preguntas frecuentes (FAQ)
+    function toggleFaq(elemento) {
+        const item = elemento.parentElement;
+        const estabaActivo = item.classList.contains('active');
+        
+        // Cerrar todos los demás
+        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+        
+        // Si no estaba activo, abrirlo
+        if (!estabaActivo) {
+            item.classList.add('active');
+        }
+    }
+
+    // Buscador rápido interactivo en la página principal
+    function filtrarContenido() {
+        let input = document.getElementById('buscadorGlobal').value.toLowerCase();
+        let tarjetas = document.querySelectorAll('#contenedorCategorias .category-card');
+
+        tarjetas.forEach(card => {
+            let texto = card.innerText.toLowerCase();
+            if (texto.includes(input)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
     }
 
     function iniciarEspera(urlDestino) {
