@@ -2,742 +2,988 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AXKEN Minecraft Academy | Ultimate Cyber Gaming Hub</title>
 
-    <!-- SCRIPT DEL BANNER NATIVO (DENTRO DEL MODAL) -->
-    <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SCRIPT DE TU SOCIAL BAR -->
-    <script type="text/javascript" src="https://pl30504966.effectivecpmnetwork.com/8a/be/bb/8abebb4ed787cdd852523a03ef63786e.js"></script>
+<title>AXKEN Minecraft Academy | Cyber Gaming Edition</title>
 
-    <style>
-        :root {
-            --bg-deep: #02040a;
-            --bg-main: #060913;
-            --bg-card: rgba(11, 18, 35, 0.88);
-            --neon-green: #00ff88;
-            --neon-purple: #c084fc;
-            --neon-cyan: #22d3ee;
-            --neon-pink: #ec4899;
-            --neon-orange: #f97316;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-glow: rgba(0, 255, 136, 0.25);
-        }
+<!-- SCRIPT DEL BANNER NATIVO (DENTRO DEL MODAL) -->
+<script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
 
-        * {
-            box-sizing: border-box;
-        }
+<!-- SCRIPT DE TU SOCIAL BAR -->
+<script type="text/javascript" src="https://pl30504966.effectivecpmnetwork.com/8a/be/bb/8abebb4ed787cdd852523a03ef63786e.js"></script>
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-            position: relative;
-        }
+<style>
 
-        /* FONDO DINÁMICO DE LUCES INDUSTRIALES / GAMER */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            background: radial-gradient(circle at 50% 20%, #0d132c 0%, var(--bg-deep) 100%);
-        }
+:root {
+    --bg-main: #03050d;
+    --bg-card: rgba(10, 15, 30, 0.78);
+    --neon-green: #00ff88;
+    --neon-purple: #a855f7;
+    --neon-cyan: #06b6d4;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+}
 
-        .cyber-grid {
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
-            background-image: linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            transform: perspective(500px) rotateX(60deg);
-            animation: gridMove 20s linear infinite;
-        }
+*{
+    box-sizing: border-box;
+}
 
-        @keyframes gridMove {
-            0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
-            100% { transform: perspective(500px) rotateX(60deg) translateY(40px); }
-        }
+body{
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    /* Fondo animado dinámico con rejilla cibernética y gradientes en movimiento */
+    background-image: 
+        linear-gradient(rgba(3, 5, 13, 0.85), rgba(3, 5, 13, 0.92)),
+        radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(0, 255, 136, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 50% 10%, rgba(6, 182, 212, 0.12) 0%, transparent 50%),
+        repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255, 255, 255, 0.015) 40px, rgba(255, 255, 255, 0.015) 41px),
+        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255, 255, 255, 0.015) 40px, rgba(255, 255, 255, 0.015) 41px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+    animation: backgroundShift 20s ease-in-out infinite alternate;
+    color: var(--text-main);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
 
-        .floating-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.2;
-            animation: floatOrb 12s ease-in-out infinite alternate;
-        }
 
-        .orb-1 { width: 450px; height: 450px; background: var(--neon-purple); top: -5%; left: -10%; }
-        .orb-2 { width: 500px; height: 500px; background: var(--neon-green); bottom: -10%; right: -10%; animation-delay: -4s; }
-        .orb-3 { width: 350px; height: 350px; background: var(--neon-orange); top: 50%; left: 40%; animation-delay: -8s; }
+/* MENÚ DE NAVEGACIÓN GAMER */
 
-        @keyframes floatOrb {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(50px, 60px) scale(1.15); }
-        }
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: rgba(3, 5, 13, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 255, 136, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
 
-        /* BARRA DE NAVEGACIÓN ESTILO HUD GAMER */
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 6px;
-            padding: 12px 15px;
-            background: rgba(6, 9, 19, 0.9);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 2px solid rgba(0, 255, 136, 0.2);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-            flex-wrap: wrap;
-        }
+nav a{
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    padding: 8px 20px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+}
 
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 11.5px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 7px 11px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            background: rgba(255, 255, 255, 0.02);
-            cursor: pointer;
-        }
+nav a:hover, nav a.active-tab {
+    color: var(--neon-green);
+    background: rgba(0, 255, 136, 0.1);
+    border-color: rgba(0, 255, 136, 0.4);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.3);
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+}
 
-        nav a:hover, nav a.active-tab {
-            color: var(--neon-green);
-            background: rgba(0, 255, 136, 0.08);
-            border-color: var(--neon-green);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-            text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
-        }
 
-        /* CONTROL DE VISTAS */
-        .view {
-            display: none;
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
+/* CONTROL DE VISTAS */
 
-        .view.active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
+.view {
+    display: none;
+    animation: fadeInView 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
 
-        /* HERO SECTION */
-        .hero {
-            text-align: center;
-            padding: 40px 20px 20px;
-            position: relative;
-        }
+.view.active {
+    display: block;
+}
 
-        .logo-container {
-            position: relative;
-            display: inline-block;
-        }
 
-        .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--neon-green);
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.4), inset 0 0 15px rgba(0, 255, 136, 0.3);
-            animation: floatLogo 4s ease-in-out infinite, rgbGlow 6s linear infinite;
-        }
+/* HERO / INICIO GAMER */
 
-        h1 {
-            font-size: 42px;
-            margin: 15px 0 0px;
-            letter-spacing: 3px;
-            font-weight: 900;
-            background: linear-gradient(135deg, #ffffff 20%, var(--neon-green) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
-            text-transform: uppercase;
-        }
+.hero{
+    text-align: center;
+    padding: 60px 20px 30px;
+    position: relative;
+}
 
-        .hero h2 {
-            color: var(--neon-cyan);
-            font-weight: 700;
-            font-size: 14px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
+.logo{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.6), 0 0 80px rgba(0, 255, 136, 0.3);
+    border: 3px solid rgba(0, 255, 136, 0.6);
+    animation: floatLogo 4s ease-in-out infinite, rgbGlow 6s linear infinite;
+}
 
-        .hero p {
-            font-size: 15px;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-        }
+h1{
+    font-size: 52px;
+    margin: 20px 0 5px;
+    letter-spacing: 2px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffffff 30%, var(--neon-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 35px rgba(0, 255, 136, 0.3);
+}
 
-        /* CATEGORÍAS & GRID */
-        .categories-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            padding: 10px 20px 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.hero h2{
+    color: var(--neon-green);
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
 
-        .category-card {
-            width: 270px;
-            background: var(--bg-card);
-            border-radius: 16px;
-            padding: 28px 20px;
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            text-align: center;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
+.hero p{
+    font-size: 16.5px;
+    color: var(--text-muted);
+    max-width: 580px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
 
-        .category-card::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 3px;
-            background: linear-gradient(90deg, var(--neon-purple), var(--neon-green));
-            opacity: 0.6;
-            transition: 0.3s;
-        }
 
-        .category-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: var(--neon-green);
-            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.25), inset 0 0 15px rgba(0, 255, 136, 0.1);
-        }
+/* CATEGORÍAS & GRID */
 
-        .category-card h3 {
-            color: var(--text-main);
-            margin-top: 5px;
-            font-size: 19px;
-            font-weight: 700;
-        }
+.categories-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .category-card p {
-            color: var(--text-muted);
-            font-size: 13px;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
+.category-card {
+    width: 270px;
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 30px 22px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: cardPulse 5s ease-in-out infinite alternate;
+}
 
-        /* SECCIONES Y VIDEOS */
-        section {
-            padding: 30px 20px;
-            text-align: center;
-            max-width: 1150px;
-            margin: 0 auto;
-        }
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transition: 0.6s;
+}
 
-        .section-title {
-            color: #ffffff;
-            font-size: 30px;
-            font-weight: 900;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+.category-card:hover::before {
+    left: 100%;
+}
 
-        .section-desc {
-            max-width: 650px;
-            margin: 0 auto 35px auto;
-            color: var(--text-muted);
-            font-size: 14.5px;
-        }
+.category-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    border-color: var(--neon-green);
+    box-shadow: 0 20px 50px rgba(0, 255, 136, 0.3), inset 0 0 20px rgba(0, 255, 136, 0.15);
+}
 
-        .video-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            padding: 10px;
-        }
+.category-card h3 {
+    color: var(--text-main);
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
 
-        .video-card {
-            width: 420px;
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 22px;
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            text-align: left;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
-            position: relative;
-        }
+.category-card p {
+    color: var(--text-muted);
+    font-size: 13.5px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
 
-        .video-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(192, 132, 252, 0.5);
-            box-shadow: 0 20px 45px rgba(192, 132, 252, 0.2), 0 0 20px rgba(0, 255, 136, 0.15);
-        }
 
-        .badge {
-            display: inline-block;
-            background: rgba(192, 132, 252, 0.12);
-            color: var(--neon-purple);
-            border: 1px solid rgba(192, 132, 252, 0.3);
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+/* SECCIÓN GENERAL Y VIDEOS */
 
-        .badge-bloodstrike {
-            background: rgba(249, 115, 22, 0.12);
-            color: var(--neon-orange);
-            border: 1px solid rgba(249, 115, 22, 0.3);
-        }
+section{
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-        .video-card h3 {
-            color: #f8fafc;
-            font-size: 17.5px;
-            margin: 6px 0 10px 0;
-            font-weight: 700;
-            line-height: 1.4;
-        }
+.section-title {
+    color: #f8fafc;
+    font-size: 34px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
 
-        .video-card p {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
+.section-desc{
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
 
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
-            margin-bottom: 16px;
-            background: #000;
-        }
+.video-grid{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 10px;
+}
 
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-        }
+.video-card{
+    width: 420px;
+    background: var(--bg-card);
+    border-radius: 22px;
+    padding: 22px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+    position: relative;
+}
 
-        /* TICKER DINÁMICO */
-        .ticker-bar {
-            background: linear-gradient(90deg, rgba(192, 132, 252, 0.1), rgba(0, 255, 136, 0.15), rgba(249, 115, 22, 0.15));
-            border-top: 1px solid rgba(0, 255, 136, 0.3);
-            border-bottom: 1px solid rgba(0, 255, 136, 0.3);
-            padding: 10px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-            margin-bottom: 15px;
-        }
+.video-card:hover{
+    transform: translateY(-10px);
+    border-color: rgba(168, 85, 247, 0.6);
+    box-shadow: 0 22px 50px rgba(168, 85, 247, 0.3), 0 0 25px rgba(0, 255, 136, 0.2);
+}
 
-        .ticker-content {
-            display: inline-block;
-            animation: tickerScroll 25s linear infinite;
-            color: var(--neon-green);
-            font-weight: 700;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+.badge {
+    display: inline-block;
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 11.5px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        @keyframes tickerScroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
+.video-card h3{
+    color: #f8fafc;
+    font-size: 18.5px;
+    margin: 8px 0;
+    font-weight: 700;
+    line-height: 1.4;
+}
 
-        /* HERRAMIENTAS Y WIDGETS */
-        .generator-card, .calculator-card, .roulette-card, .sens-card, .clicker-card, .sound-card, .specs-card, .poll-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(34, 211, 238, 0.3);
-            border-radius: 16px;
-            padding: 25px;
-            max-width: 500px;
-            margin: 25px auto;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
+.video-card p{
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
 
-        .generator-input, .calc-select {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: white;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 14px;
-            margin-bottom: 12px;
-            text-align: center;
-            outline: none;
-        }
+.video-wrapper{
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    margin-bottom: 16px;
+    background: #000;
+}
 
-        /* BOTONES DE ACCIÓN */
-        .btn-download, .btn-social {
-            width: 100%;
-            background: linear-gradient(135deg, #7c3aed, #4f46e5);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 13px 20px;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 13.5px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            cursor: pointer;
-            margin-top: 10px;
-            text-decoration: none;
-        }
+.video-wrapper iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
-        .btn-download:hover {
-            background: linear-gradient(135deg, var(--neon-green), #059669);
-            color: #03050d;
-        }
 
-        /* MODAL FLOTANTE */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(2, 4, 10, 0.9);
-            backdrop-filter: blur(12px);
-            z-index: 200;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+/* BOTONES GAMER */
 
-        .modal-card {
-            background: #090e1d;
-            border: 1px solid rgba(0, 255, 136, 0.4);
-            border-radius: 20px;
-            padding: 30px 24px;
-            max-width: 440px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
-        }
+.btn-download {
+    width: 100%;
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 13px 20px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
 
-        .btn-modal-action {
-            width: 100%;
-            padding: 13px;
-            border-radius: 10px;
-            border: none;
-            font-weight: 700;
-            font-size: 14.5px;
-            color: #64748b;
-            background: #1e293b;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.btn-download:hover {
+    background: linear-gradient(135deg, var(--neon-green), #059669);
+    color: #03050d;
+    border-color: var(--neon-green);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 255, 136, 0.6);
+}
 
-        .btn-modal-action.ready {
-            background: var(--neon-green);
-            color: #03050d;
-        }
-    </style>
+.btn-back {
+    margin-top: 35px;
+    width: auto;
+    display: inline-block;
+    padding: 12px 28px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    color: var(--text-main);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+
+/* MODAL FLOTANTE GAMER */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 5, 13, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeInView 0.25s ease forwards;
+}
+
+.modal-card {
+    background: #0a0f1e;
+    border: 1px solid rgba(0, 255, 136, 0.4);
+    border-radius: 24px;
+    padding: 30px 24px;
+    max-width: 460px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 50px rgba(0, 255, 136, 0.25);
+    animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-card h3 {
+    color: var(--neon-green);
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-shadow: 0 0 12px rgba(0, 255, 136, 0.4);
+}
+
+.modal-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+}
+
+.ad-box {
+    margin: 12px 0;
+    max-height: 220px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    padding: 8px;
+}
+
+.btn-modal-action {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: not-allowed;
+    background: #1e293b;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.btn-modal-action.ready {
+    background: var(--neon-green);
+    color: #03050d;
+    cursor: pointer;
+    box-shadow: 0 0 35px rgba(0, 255, 136, 0.6);
+    animation: pulseGlow 1.5s infinite;
+}
+
+.btn-close-modal {
+    margin-top: 15px;
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.btn-close-modal:hover {
+    color: #cbd5e1;
+}
+
+
+/* COMUNIDAD */
+
+.community{
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 45px 20px;
+    margin-top: 20px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.social-links{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-social{
+    padding: 12px 28px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 14.5px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-social:hover{
+    background: var(--neon-green);
+    color: #03050d;
+    border-color: var(--neon-green);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+}
+
+
+/* ANIMACIONES KEYFRAMES AVANZADAS */
+
+@keyframes backgroundShift {
+    0% {
+        background-position: 0% 0%, 0% 0%, 100% 100%, 50% 50%, 0 0, 0 0;
+    }
+    100% {
+        background-position: 0% 0%, 10% 20%, 90% 80%, 50% 30%, 40px 40px, 40px 40px;
+    }
+}
+
+@keyframes floatLogo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes rgbGlow {
+    0% { box-shadow: 0 0 35px rgba(168, 85, 247, 0.6), 0 0 70px rgba(0, 255, 136, 0.3); }
+    33% { box-shadow: 0 0 35px rgba(6, 182, 212, 0.6), 0 0 70px rgba(168, 85, 247, 0.3); }
+    66% { box-shadow: 0 0 35px rgba(0, 255, 136, 0.6), 0 0 70px rgba(6, 182, 212, 0.3); }
+    100% { box-shadow: 0 0 35px rgba(168, 85, 247, 0.6), 0 0 70px rgba(0, 255, 136, 0.3); }
+}
+
+@keyframes cardPulse {
+    0%, 100% { border-color: rgba(255, 255, 255, 0.08); }
+    50% { border-color: rgba(0, 255, 136, 0.2); }
+}
+
+@keyframes fadeInView {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); }
+    50% { box-shadow: 0 0 40px rgba(0, 255, 136, 0.9); }
+    100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); }
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width: 600px){
+    h1{ font-size: 38px; }
+    nav{ flex-wrap: wrap; gap: 6px; padding: 10px; }
+    nav a { padding: 6px 14px; font-size: 13px; }
+    .logo{ width: 120px; height: 120px; }
+    .video-card{ width: 100%; }
+    .category-card { width: 100%; max-width: 320px; }
+    .modal-card { padding: 22px 16px; max-width: 92%; }
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-<!-- FONDO ANIMADO CIBERNÉTICO -->
-<div class="animated-bg">
-    <div class="cyber-grid"></div>
-    <div class="floating-orb orb-1"></div>
-    <div class="floating-orb orb-2"></div>
-    <div class="floating-orb orb-3"></div>
-</div>
-
-<!-- BARRA DE ANUNCIOS / TICKER DINÁMICO -->
-<div class="ticker-bar">
-    <div class="ticker-content">
-        🔥 NUEVA SECCIÓN DE BLOODSTRIKE DISPONIBLE &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 🚀 ¡SÍGUEME EN MI NUEVO TIKTOK @axken0000! &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ⚡ MÁS UTILIDADES Y MINI-JUEGOS INTERACTIVOS 2026
-    </div>
-</div>
-
-<!-- MENÚ DE NAVEGACIÓN -->
+<!-- MENÚ DE NAVEGACIÓN PRINCIPAL -->
 <nav>
     <a onclick="mostrarVista('inicio')" id="tab-inicio" class="active-tab">Inicio</a>
-    <a onclick="mostrarVista('menu-java')" id="tab-menu-java">Java</a>
-    <a onclick="mostrarVista('menu-bedrock')" id="tab-menu-bedrock">Bedrock</a>
-    <a onclick="mostrarVista('bloodstrike')" id="tab-bloodstrike">BloodStrike 🔥</a>
-    <a onclick="mostrarVista('herramientas')" id="tab-herramientas">Utilidades ⚡</a>
-    <a onclick="mostrarVista('novedades')" id="tab-novedades">Novedades 🚀</a>
+    <a onclick="mostrarVista('menu-java')" id="tab-menu-java">Minecraft Java</a>
+    <a onclick="mostrarVista('menu-bedrock')" id="tab-menu-bedrock">Minecraft Bedrock</a>
+    <a onclick="mostrarVista('comunidad')" id="tab-comunidad">Comunidad</a>
 </nav>
 
-<!-- VISTA 1: INICIO -->
-<div id="view-inicio" class="view active">
-    <header class="hero">
-        <div class="logo-container">
-            <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300&auto=format&fit=crop&q=80" alt="AXKEN Logo" class="logo">
-        </div>
-        <h1>AXKEN HUB</h1>
-        <h2>Ultimate Cyber Gaming Hub & Tutorials</h2>
-        <p>Tu portal definitivo para optimización de juegos, configuraciones técnicas avanzadas, mapas personalizados y contenido exclusivo para creadores.</p>
-    </header>
+
+<!-- ================= VISTA: INICIO (SELECTOR PRINCIPAL) ================= -->
+<div id="vista-inicio" class="view active">
+    
+    <div class="hero">
+        <img src="logo.png" class="logo" alt="Logo AXKEN">
+        <h1>AXKEN</h1>
+        <h2>Minecraft Academy</h2>
+        <p>Selecciona tu versión favorita para explorar todo el contenido especializado en tutoriales, add-ons, texture packs y shaders.</p>
+    </div>
 
     <div class="categories-grid">
+        <!-- TARJETA JAVA -->
         <div class="category-card" onclick="mostrarVista('menu-java')">
-            <h3>Minecraft Java</h3>
-            <p>Guías de optimización, optimizadores de rendimiento y texturas avanzadas.</p>
+            <h3>💻 Minecraft Java</h3>
+            <p>Contenido para PC: Mods, Shaders, Texture Packs, Tutoriales y optimización.</p>
+            <button class="btn-download" style="margin-top:10px;">Entrar a Java</button>
         </div>
+
+        <!-- TARJETA BEDROCK -->
         <div class="category-card" onclick="mostrarVista('menu-bedrock')">
-            <h3>Minecraft Bedrock</h3>
-            <p>Complementos, configuraciones móviles y mapas multijugador.</p>
-        </div>
-        <div class="category-card" onclick="mostrarVista('bloodstrike')">
-            <h3>BloodStrike 🔥</h3>
-            <p>Sensibilidad ideal, armas recomendadas y trucos tácticos.</p>
-        </div>
-        <div class="category-card" onclick="mostrarVista('herramientas')">
-            <h3>Utilidades ⚡</h3>
-            <p>Herramientas interactivas, generadores de nicks y calculadoras.</p>
+            <h3>📱 Minecraft Bedrock</h3>
+            <p>Contenido para Móvil y PC: Add-ons, Shaders, Texture Packs y Tutoriales.</p>
+            <button class="btn-download" style="margin-top:10px;">Entrar a Bedrock</button>
         </div>
     </div>
+
 </div>
 
-<!-- VISTA 2: JAVA -->
-<div id="view-menu-java" class="view">
+
+<!-- ================= VISTA: SUBMENÚ MINECRAFT JAVA ================= -->
+<div id="vista-menu-java" class="view">
+    
+    <div class="hero">
+        <img src="logo.png" class="logo" alt="Logo AXKEN">
+        <h1>Minecraft Java</h1>
+        <h2>Panel de Contenido PC</h2>
+        <p>Elige qué tipo de contenido deseas consultar para tu versión Java.</p>
+    </div>
+
+    <div class="categories-grid">
+        <div class="category-card" onclick="mostrarVista('java-tutoriales')">
+            <h3>📖 Tutoriales</h3>
+            <p>Guías de instalación, launchers y configuración general.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Tutoriales</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('java-mods')">
+            <h3>🧩 Mods</h3>
+            <p>Modificaciones, paquetes de mods y contenido extra.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Mods</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('java-textures')">
+            <h3>🎨 Texture Packs</h3>
+            <p>Paquetes de texturas y recursos visuales para Java.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Texture Packs</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('java-shaders')">
+            <h3>🌈 Shaders</h3>
+            <p>Mejoras visuales y sombreadores avanzados para PC.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Shaders</button>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector de Versiones</button>
+    </div>
+
+</div>
+
+
+<!-- ================= VISTA: SUBMENÚ MINECRAFT BEDROCK ================= -->
+<div id="vista-menu-bedrock" class="view">
+    
+    <div class="hero">
+        <img src="logo.png" class="logo" alt="Logo AXKEN">
+        <h1>Minecraft Bedrock</h1>
+        <h2>Panel de Contenido Móvil / PC</h2>
+        <p>Elige qué tipo de contenido deseas consultar para tu versión Bedrock.</p>
+    </div>
+
+    <div class="categories-grid">
+        <div class="category-card" onclick="mostrarVista('bedrock-tutoriales')">
+            <h3>📖 Tutoriales</h3>
+            <p>Guías paso a paso para Bedrock sin errores.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Tutoriales</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('bedrock-addons')">
+            <h3>🧩 Add-ons</h3>
+            <p>Paquetes de comportamientos y complementos oficiales.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Add-ons</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('bedrock-textures')">
+            <h3>🎨 Texture Packs</h3>
+            <p>Paquetes de texturas optimizados para Bedrock.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Texture Packs</button>
+        </div>
+
+        <div class="category-card" onclick="mostrarVista('bedrock-shaders')">
+            <h3>🌈 Shaders</h3>
+            <p>Gráficos optimizados compatibles con Render_Dragon.</p>
+            <button class="btn-download" style="margin-top:10px;">Ver Shaders</button>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector de Versiones</button>
+    </div>
+
+</div>
+
+
+<!-- ================= VISTA: JAVA - TUTORIALES ================= -->
+<div id="vista-java-tutoriales" class="view">
     <section>
-        <h2 class="section-title">Minecraft Java Edition</h2>
-        <p class="section-desc">Mejora tus FPS al máximo y descubre los mejores trucos de optimización para PC.</p>
+        <h2 class="section-title">📖 Tutoriales Minecraft Java</h2>
+        <p class="section-desc">Guías de instalación y tutoriales en video para la versión de PC.</p>
+
         <div class="video-grid">
             <div class="video-card">
-                <span class="badge">Optimización</span>
-                <h3>Cómo subir FPS y evitar lag en Minecraft Java 2026</h3>
-                <p>Guía paso a paso para configurar mods de rendimiento eficientes.</p>
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/K4pkbwErShk" title="Tutorial Complementos Java" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <button class="btn-download" onclick="abrirModalEnlace('https://www.mediafire.com')">Descargar Configuración ⚡</button>
+                <span class="badge">📖 Tutorial Java</span>
+                <h3>Tutorial de Instalación de Complementos</h3>
+                <p>Aprende paso a paso cómo instalar y configurar tus complementos correctamente en Minecraft Java.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
+                    📥 Descargar Complementos (ZIP)
+                </button>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/2x0azN_Jv80" title="Tutorial y Mods Java" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">📖 Tutorial Java</span>
+                <h3>Tutorial de Instalación y Uso de Mods</h3>
+                <p>Aprende paso a paso cómo instalar y configurar tus complementos y mods correctamente en Minecraft Java.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
+                    📥 Descargar Complementos (ZIP)
+                </button>
             </div>
         </div>
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+
+        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
     </section>
 </div>
 
-<!-- VISTA 3: BEDROCK -->
-<div id="view-menu-bedrock" class="view">
+
+<!-- ================= VISTA: JAVA - MODS ================= -->
+<div id="vista-java-mods" class="view">
     <section>
-        <h2 class="section-title">Minecraft Bedrock & Móvil</h2>
-        <p class="section-desc">Todo lo que necesitas para exprimir Bedrock al máximo en teléfonos y consolas.</p>
+        <h2 class="section-title">🧩 Mods para Minecraft Java</h2>
+        <p class="section-desc">Los mejores complementos, mods y añadidos para la versión de PC.</p>
+
         <div class="video-grid">
             <div class="video-card">
-                <span class="badge">Bedrock</span>
-                <h3>Instala Texturas y Shaders sin Lag en Celular</h3>
-                <p>Mejora los gráficos visuales sin sacrificar rendimiento en tu dispositivo.</p>
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/K4pkbwErShk" title="Mods Complementos Java" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <button class="btn-download" onclick="abrirModalEnlace('https://www.mediafire.com')">Descargar Paquete 🚀</button>
+                <span class="badge">🧩 Mods Java</span>
+                <h3>Paquete de Complementos y Mods Java</h3>
+                <p>Descarga el archivo completo de complementos reseñados en el video para mejorar tu experiencia en Java.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
+                    📥 Descargar Complementos (ZIP)
+                </button>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/2x0azN_Jv80" title="Mods Complementos Java 2" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">🧩 Mods Java</span>
+                <h3>Paquete de Mods y Complementos Java (Video 2)</h3>
+                <p>Descarga el archivo completo de complementos y mods reseñados en este video para tu versión Java.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
+                    📥 Descargar Complementos (ZIP)
+                </button>
             </div>
         </div>
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+
+        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
     </section>
 </div>
 
-<!-- VISTA 4: BLOODSTRIKE -->
-<div id="view-bloodstrike" class="view">
+
+<!-- ================= VISTA: JAVA - TEXTURE PACKS ================= -->
+<div id="vista-java-textures" class="view">
     <section>
-        <h2 class="section-title">BloodStrike Tactical Hub</h2>
-        <p class="section-desc">Domina el campo de batalla con las mejores builds y ajustes de sensibilidad.</p>
+        <h2 class="section-title">🎨 Texture Packs para Minecraft Java</h2>
+        <p class="section-desc">Renueva la apariencia visual de tus bloques y objetos en la versión de PC.</p>
+
+        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTA: JAVA - SHADERS ================= -->
+<div id="vista-java-shaders" class="view">
+    <section>
+        <h2 class="section-title">🌈 Shaders para Minecraft Java</h2>
+        <p class="section-desc">Transforma el aspecto visual de tu juego con sombreadores increíbles.</p>
+
+        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTA: BEDROCK - TUTORIALES ================= -->
+<div id="vista-bedrock-tutoriales" class="view">
+    <section>
+        <h2 class="section-title">📖 Tutoriales Minecraft Bedrock</h2>
+        <p class="section-desc">Guías paso a paso y archivos de descarga para tu versión Bedrock.</p>
+
         <div class="video-grid">
             <div class="video-card">
-                <span class="badge badge-bloodstrike">Shooter</span>
-                <h3>Mejor Sensibilidad y Ajustes de HUD para Competitivo</h3>
-                <p>Domina el retroceso y mejora tu puntería con estos consejos profesionales.</p>
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Llave para desbloquear" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <button class="btn-download btn-bloodstrike" onclick="abrirModalEnlace('https://www.mediafire.com')">Ver Guía Completa 🔥</button>
-            </div>
-        </div>
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
-    </section>
-</div>
-
-<!-- VISTA 5: UTILIDADES -->
-<div id="view-herramientas" class="view">
-    <section>
-        <h2 class="section-title">Centro de Utilidades Gamer</h2>
-        <p class="section-desc">Herramientas interactivas creadas para la comunidad.</p>
-
-        <!-- Generador de Nicks -->
-        <div class="generator-card">
-            <h3>Generador de Nicks Épicos</h3>
-            <input type="text" id="nombreBase" class="generator-input" placeholder="Ingresa tu nombre..." oninput="generarNick()">
-            <div class="nickname-result" id="nickResultado">AXKEN_VIP_2026</div>
-        </div>
-
-        <!-- Encuesta Interactiva -->
-        <div class="poll-card">
-            <h3>¿Cuál es tu juego favorito actualmente?</h3>
-            <button class="poll-btn" onclick="votarEncuesta('Minecraft')">Minecraft (Java / Bedrock)</button>
-            <button class="poll-btn" onclick="votarEncuesta('BloodStrike')">BloodStrike</button>
-            <button class="poll-btn" onclick="votarEncuesta('Otro')">Otro Shooter / Sandbox</button>
-            <p id="resultadoVoto" style="color: var(--neon-green); margin-top: 10px; font-size: 13px;"></p>
-        </div>
-
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
-    </section>
-</div>
-
-<!-- VISTA 6: NOVEDADES / COMUNIDAD -->
-<div id="view-novedades" class="view">
-    <section>
-        <h2 class="section-title">Comunidad & Redes</h2>
-        <p class="section-desc">Únete a las transmisiones y sígueme en mis redes sociales oficiales.</p>
-        
-        <div class="community">
-            <h3 style="color: var(--neon-cyan);">¡Conéctate con AXKEN!</h3>
-            <p style="color: var(--text-muted); font-size: 14px; max-width: 500px; margin: 0 auto 20px;">Mantente al día con los directos, torneos relámpago y contenido exclusivo diario.</p>
-            <div class="social-links">
-                <a href="https://tiktok.com/@axken0000" target="_blank" class="btn-social btn-tiktok">TikTok Oficial</a>
-                <a href="https://youtube.com" target="_blank" class="btn-social">YouTube Hub</a>
+                <span class="badge">📖 Tutorial Bedrock</span>
+                <h3>Cómo desbloquear contenido / Llave de desbloqueo</h3>
+                <p>Sigue los pasos de este video tutorial para utilizar correctamente el archivo de desbloqueo.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
+                    📥 Descargar Llave para Desbloquear
+                </button>
             </div>
         </div>
 
+        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTA: BEDROCK - ADD-ONS ================= -->
+<div id="vista-bedrock-addons" class="view">
+    <section>
+        <h2 class="section-title">🧩 Add-ons Bedrock</h2>
+        <p class="section-desc">Complementos y comportamientos personalizados para tus mundos.</p>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/5_hNlnV23As" title="Addon Modo Creativo Sin Desactivar Logros" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">🔥 Bedrock Edition</span>
+                <h3>😱 Este ADDON te pone en MODO CREATIVO... ¡SIN DESACTIVAR LOS LOGROS! | Minecraft Bedrock</h3>
+                <p>Aprende a ponerte en creativo en tu mundo de Minecraft sin perder logros usando un simple palo.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/rogzezdfqt4xlbd/addon.zip/file')">
+                    📥 Descargar Add-on Bedrock
+                </button>
+            </div>
+        </div>
+
+        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTA: BEDROCK - TEXTURE PACKS ================= -->
+<div id="vista-bedrock-textures" class="view">
+    <section>
+        <h2 class="section-title">🎨 Texture Packs Bedrock</h2>
+        <p class="section-desc">Paquetes de texturas y recursos visuales presentados en video para Minecraft Bedrock.</p>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/rR3FO6JudCc" title="Texture Packs PvP Bedrock" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">🎨 Texture Packs Bedrock</span>
+                <h3>Texture Packs PvP (Lyro PvP Ultimate & Venom)</h3>
+                <p>Descarga los paquetes de texturas reseñados en este video para mejorar tus partidas.</p>
+                
+                <button class="btn-download" onclick="iniciarEspera('https://mcpedl.com/lyro-pvp-ultimate/')">
+                    📥 Descargar #1: Lyro PvP Ultimate
+                </button>
+
+                <button class="btn-download" onclick="iniciarEspera('https://mcpedl.com/venom/')">
+                    📥 Descargar #2: Venom Pack
+                </button>
+            </div>
+        </div>
+
+        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTA: BEDROCK - SHADERS ================= -->
+<div id="vista-bedrock-shaders" class="view">
+    <section>
+        <h2 class="section-title">🌈 Shaders Bedrock</h2>
+        <p class="section-desc">Mejora visualmente tu juego con configuraciones adaptadas a Render_Dragon.</p>
+
+        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTA: COMUNIDAD ================= -->
+<div id="vista-comunidad" class="view">
+    <section class="community">
+        <h2 class="section-title">⚡ Comunidad AXKEN</h2>
+        <p class="section-desc">Forma parte de la comunidad en nuestras redes sociales:</p>
+
+        <div class="social-links">
+            <a href="https://www.youtube.com/@Axken00" target="_blank" class="btn-social">YouTube</a>
+            <a href="https://www.tiktok.com/@axken0000?is_from_webapp=1&sender_device=pc" target="_blank" class="btn-social">TikTok</a>
+            <a href="https://discord.gg/TU_LINK_DE_DISCORD" target="_blank" class="btn-social">Discord</a>
+        </div>
+        <br>
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </section>
 </div>
 
-<!-- MODAL DE MONETIZACIÓN / ENLACE -->
-<div class="modal-overlay" id="modalMonetizacion">
+
+<!-- ================= VENTANA FLOTANTE DE MONETIZACIÓN (MODAL) ================= -->
+<div class="modal-overlay" id="modalEspera">
     <div class="modal-card">
-        <h3>Preparando tu Enlace...</h3>
-        <p>Por favor, espera unos segundos para desbloquear tu contenido de descarga directa.</p>
-        
-        <!-- Contenedor del Banner Publicitario -->
-        <div class="ad-box" id="bannerAdContainer">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : '16fa8571b1eee7681486dc9444354e1e',
-                    'format' : 'iframe',
-                    'height' : 90,
-                    'width' : 728,
-                    'params' : {}
-                };
-            </script>
+        <h3>⏳ Generando Enlace Seguro</h3>
+        <p>Tu archivo se está preparando. El botón de descarga se habilitará al finalizar el contador:</p>
+
+        <!-- BANNER PUBLICITARIO DE ADSTERRA -->
+        <div class="ad-box">
+            <div id="container-16fa8571b1eee7681486dc9444354e1e"></div>
         </div>
 
-        <button class="btn-modal-action" id="btnAccionModal" disabled onclick="ejecutarAccionFinal()">Espera (5s)...</button>
+        <button id="btnModalDownload" class="btn-modal-action" disabled>
+            Espera <span id="contadorSegundos">10</span> segundos...
+        </button>
+
         <button class="btn-close-modal" onclick="cerrarModal()">Cancelar</button>
     </div>
 </div>
 
+
+<!-- SCRIPT DE NAVEGACIÓN Y MANEJO DEL MODAL -->
 <script>
-    let enlaceDestino = "";
-    let temporizador = null;
+    let tiempoRestante = 10;
+    let intervaloTimer = null;
+    let urlDestinoFinal = "";
 
-    function mostrarVista(idVista) {
-        document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active-tab'));
+    function mostrarVista(nombreVista) {
+        const vistas = document.querySelectorAll('.view');
+        vistas.forEach(v => v.classList.remove('active'));
 
-        const vistaSeleccionada = document.getElementById('view-' + idVista);
+        const tabs = document.querySelectorAll('nav a');
+        tabs.forEach(t => t.classList.remove('active-tab'));
+
+        const vistaSeleccionada = document.getElementById('vista-' + nombreVista);
         if (vistaSeleccionada) {
             vistaSeleccionada.classList.add('active');
         }
-        
-        const tabSeleccionada = document.getElementById('tab-' + idVista);
-        if (tabSeleccionada) {
-            tabSeleccionada.classList.add('active-tab');
+
+        const tabSeleccionado = document.getElementById('tab-' + nombreVista);
+        if (tabSeleccionado) {
+            tabSeleccionado.classList.add('active-tab');
         }
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function abrirModalEnlace(url) {
-        enlaceDestino = url;
-        const modal = document.getElementById('modalMonetizacion');
-        const boton = document.getElementById('btnAccionModal');
-        
+    function iniciarEspera(urlDestino) {
+        urlDestinoFinal = urlDestino;
+        tiempoRestante = 10;
+
+        const modal = document.getElementById('modalEspera');
+        const contadorSpan = document.getElementById('contadorSegundos');
+        const btnModal = document.getElementById('btnModalDownload');
+
+        btnModal.disabled = true;
+        btnModal.classList.remove('ready');
+        btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
         modal.style.display = 'flex';
-        boton.disabled = true;
-        boton.classList.remove('ready');
-        
-        let segundos = 5;
-        boton.innerText = `Espera (${segundos}s)...`;
 
-        if (temporizador) clearInterval(temporizador);
+        clearInterval(intervaloTimer);
+        intervaloTimer = setInterval(() => {
+            tiempoRestante--;
+            if (contadorSpan) contadorSpan.innerText = tiempoRestante;
+            btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
 
-        temporizador = setInterval(() => {
-            segundos--;
-            if (segundos > 0) {
-                boton.innerText = `Espera (${segundos}s)...`;
-            } else {
-                clearInterval(temporizador);
-                boton.innerText = "¡Obtener Enlace Ahora! 🚀";
-                boton.disabled = false;
-                boton.classList.add('ready');
+            if (tiempoRestante <= 0) {
+                clearInterval(intervaloTimer);
+                btnModal.disabled = false;
+                btnModal.classList.add('ready');
+                btnModal.innerText = '🚀 ¡Ir al Enlace!';
+                btnModal.onclick = function() {
+                    window.open(urlDestinoFinal, '_blank');
+                    cerrarModal();
+                };
             }
         }, 1000);
     }
 
     function cerrarModal() {
-        document.getElementById('modalMonetizacion').style.display = 'none';
-        if (temporizador) clearInterval(temporizador);
-    }
-
-    function ejecutarAccionFinal() {
-        if (enlaceDestino) {
-            window.open(enlaceDestino, '_blank');
-            cerrarModal();
-        }
-    }
-
-    function generarNick() {
-        const base = document.getElementById('nombreBase').value.trim();
-        const resultado = document.getElementById('nickResultado');
-        if (!base) {
-            resultado.innerText = "AXKEN_VIP_2026";
-            return;
-        }
-        const sufijos = ["_YT", "🔥", "[PRO]", "⚡", "_07", "X"];
-        const sufijoAleatorio = sufijos[Math.floor(Math.random() * sufijos.length)];
-        resultado.innerText = `👑${base}${sufijoAleatorio}`;
-    }
-
-    function votarEncuesta(opcion) {
-        const textoVoto = document.getElementById('resultadoVoto');
-        textoVoto.innerText = `¡Gracias por votar! Tu opción (${opcion}) ha sido registrada correctamente. ⚡`;
+        clearInterval(intervaloTimer);
+        document.getElementById('modalEspera').style.display = 'none';
     }
 </script>
 
 </body>
+
 </html>
