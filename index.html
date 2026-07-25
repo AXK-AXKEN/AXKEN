@@ -346,7 +346,7 @@
             top: 0; left: 0; width: 100%; height: 100%;
         }
 
-        /* NUEVAS SECCIONES EXTRAS AGREGADAS */
+        /* SECCIONES EXTRAS Y WIDGETS */
         .extras-container {
             max-width: 1000px;
             margin: 30px auto 10px auto;
@@ -390,6 +390,43 @@
         .extra-box ul {
             padding-left: 18px;
             margin: 8px 0;
+        }
+
+        /* WIDGET INTERACTIVO: ENCUESTA RÁPIDA */
+        .poll-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 16px;
+            padding: 25px;
+            max-width: 500px;
+            margin: 30px auto;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+        }
+
+        .poll-card h3 {
+            color: var(--neon-green);
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .poll-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--text-main);
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin: 6px 0;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .poll-btn:hover {
+            background: rgba(0, 255, 136, 0.15);
+            border-color: var(--neon-green);
+            color: var(--neon-green);
         }
 
         /* FAQ ACORDEÓN */
@@ -691,7 +728,7 @@
         </div>
     </div>
 
-    <!-- SECCIÓN EXTRA AÑADIDA EN INICIO: STATS / CARACTERÍSTICAS -->
+    <!-- SECCIÓN EXTRA: CARACTERÍSTICAS Y WIDGET DE ENCUESTA -->
     <div style="max-width: 1000px; margin: 0 auto 40px auto; padding: 0 20px;">
         <div class="extras-container" style="margin-top: 0;">
             <div class="extra-box">
@@ -702,6 +739,16 @@
                 <h3>🎮 Actualizado 2026</h3>
                 <p>Contenido totalmente adaptado a las últimas versiones del juego, asegurando compatibilidad óptima en tu dispositivo.</p>
             </div>
+        </div>
+
+        <!-- WIDGET DE ENCUESTA INTERACTIVA -->
+        <div class="poll-card" id="pollCard">
+            <h3>📊 ¿Qué versión juegas más?</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 15px;">Vota para priorizar contenido futuro en el canal.</p>
+            <button class="poll-btn" onclick="votarEncuesta('Java Edition')">💻 Minecraft Java Edition</button>
+            <button class="poll-btn" onclick="votarEncuesta('Bedrock Mobile')">📱 Minecraft Bedrock (Móvil)</button>
+            <button class="poll-btn" onclick="votarEncuesta('Bedrock PC')">🖥️ Minecraft Bedrock (PC)</button>
+            <p id="pollResult" style="font-size: 13px; color: var(--neon-green); margin-top: 12px; font-weight: 700;"></p>
         </div>
     </div>
 </div>
@@ -975,7 +1022,7 @@
 </div>
 
 
-<!-- ================= VISTA NUEVA: NOVEDADES ================= -->
+<!-- ================= VISTA: NOVEDADES ================= -->
 <div id="vista-novedades" class="view">
     <section>
         <h2 class="section-title">📰 Novedades y Actualizaciones</h2>
@@ -1001,7 +1048,7 @@
 </div>
 
 
-<!-- ================= VISTA NUEVA: FAQ (PREGUNTAS FRECUENTES) ================= -->
+<!-- ================= VISTA: FAQ (PREGUNTAS FRECUENTES) ================= -->
 <div id="vista-faq" class="view">
     <section style="max-width: 800px; margin: 0 auto;">
         <h2 class="section-title">❓ Preguntas Frecuentes</h2>
@@ -1066,7 +1113,7 @@
 </div>
 
 
-<!-- SCRIPTS DE NAVEGACIÓN, TEMPORIZADOR Y FAQ -->
+<!-- SCRIPTS DE NAVEGACIÓN, TEMPORIZADOR, FAQ Y ENCUESTA -->
 <script>
     let tiempoRestante = 10;
     let intervaloTimer = null;
@@ -1132,6 +1179,13 @@
     function toggleFaq(button) {
         const item = button.parentElement;
         item.classList.toggle('open');
+    }
+
+    function votarEncuesta(opcion) {
+        const resultado = document.getElementById('pollResult');
+        resultado.innerText = `¡Gracias por votar! Has seleccionado: ${opcion}. ¡Voto registrado con éxito!`;
+        const botones = document.querySelectorAll('.poll-btn');
+        botones.forEach(btn => btn.disabled = true);
     }
 </script>
 
