@@ -353,52 +353,6 @@
             top: 0; left: 0; width: 100%; height: 100%;
         }
 
-        /* SECCIONES EXTRAS Y WIDGETS */
-        .extras-container {
-            max-width: 1000px;
-            margin: 30px auto 10px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            text-align: left;
-        }
-
-        .extra-box {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 24px;
-            backdrop-filter: blur(16px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: 0.3s;
-        }
-
-        .extra-box:hover {
-            border-color: var(--neon-cyan);
-            box-shadow: 0 15px 35px rgba(34, 211, 238, 0.15);
-        }
-
-        .extra-box h3 {
-            color: var(--neon-cyan);
-            font-size: 18px;
-            margin-top: 0;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .extra-box p, .extra-box li {
-            color: var(--text-muted);
-            font-size: 13.5px;
-            line-height: 1.5;
-        }
-
-        .extra-box ul {
-            padding-left: 18px;
-            margin: 8px 0;
-        }
-
         /* TICKER DINÁMICO */
         .ticker-bar {
             background: linear-gradient(90deg, rgba(192, 132, 252, 0.1), rgba(0, 255, 136, 0.15), rgba(249, 115, 22, 0.15));
@@ -426,25 +380,19 @@
             100% { transform: translateX(-100%); }
         }
 
-        /* 1. GENERADOR DE NICKNAMES / NOMBRES GAMER */
-        .generator-card {
+        /* HERRAMIENTAS Y WIDGETS */
+        .generator-card, .calculator-card, .roulette-card, .sens-card, .clicker-card, .sound-card, .specs-card, .poll-card {
             background: var(--bg-card);
-            border: 1px solid rgba(192, 132, 252, 0.3);
+            border: 1px solid rgba(34, 211, 238, 0.3);
             border-radius: 16px;
             padding: 25px;
             max-width: 500px;
             margin: 25px auto;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .generator-card h3 {
-            color: var(--neon-purple);
-            margin-top: 0;
-            font-size: 18px;
-        }
-
-        .generator-input {
+        .generator-input, .calc-select {
             width: 100%;
             background: rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -455,334 +403,10 @@
             margin-bottom: 12px;
             text-align: center;
             outline: none;
-            transition: 0.3s;
         }
 
-        .generator-input:focus {
-            border-color: var(--neon-purple);
-            box-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
-        }
-
-        .nickname-result {
-            background: rgba(0, 255, 136, 0.05);
-            border: 1px dashed var(--neon-green);
-            padding: 12px;
-            border-radius: 8px;
-            color: var(--neon-green);
-            font-weight: bold;
-            font-size: 16px;
-            margin-top: 15px;
-            letter-spacing: 1px;
-            word-break: break-all;
-        }
-
-        /* 2. CALCULADORA DE CRAFTINGS Y RECURSOS */
-        .calculator-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(34, 211, 238, 0.3);
-            border-radius: 16px;
-            padding: 25px;
-            max-width: 500px;
-            margin: 25px auto;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.1);
-        }
-
-        .calculator-card h3 {
-            color: var(--neon-cyan);
-            margin-top: 0;
-            font-size: 18px;
-        }
-
-        .calc-select {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: white;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 13.5px;
-            margin-bottom: 10px;
-            outline: none;
-        }
-
-        .calc-output {
-            color: #f8fafc;
-            background: rgba(34, 211, 238, 0.05);
-            border: 1px solid rgba(34, 211, 238, 0.2);
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 13.5px;
-            margin-top: 15px;
-            text-align: left;
-            line-height: 1.5;
-        }
-
-        /* 3. RULETA DE RETOS / MINI-JUEGOS */
-        .roulette-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(249, 115, 22, 0.3);
-            border-radius: 16px;
-            padding: 25px;
-            max-width: 500px;
-            margin: 25px auto;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.1);
-        }
-
-        .roulette-card h3 {
-            color: var(--neon-orange);
-            margin-top: 0;
-            font-size: 18px;
-        }
-
-        .roulette-output {
-            background: rgba(249, 115, 22, 0.05);
-            border: 1px dashed var(--neon-orange);
-            padding: 15px;
-            border-radius: 8px;
-            color: var(--neon-orange);
-            font-weight: bold;
-            font-size: 14.5px;
-            margin-top: 15px;
-            line-height: 1.4;
-        }
-
-        .btn-roulette {
-            background: linear-gradient(135deg, #f97316, #ea580c);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-weight: 700;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 15px;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
-        }
-
-        .btn-roulette:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        /* 4. CALCULADORA DE SENSIBILIDAD / DPI SUGERIDA PARA SHOOTERS */
-        .sens-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(236, 72, 153, 0.3);
-            border-radius: 16px;
-            padding: 25px;
-            max-width: 500px;
-            margin: 25px auto;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.1);
-        }
-
-        .sens-card h3 {
-            color: var(--neon-pink);
-            margin-top: 0;
-            font-size: 18px;
-        }
-
-        .sens-output {
-            color: #f8fafc;
-            background: rgba(236, 72, 153, 0.05);
-            border: 1px solid rgba(236, 72, 153, 0.2);
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 13.5px;
-            margin-top: 15px;
-            text-align: left;
-            line-height: 1.5;
-        }
-
-        /* NUEVAS FUNCIONES INTERACTIVAS */
-
-        /* 5. MINIJUEGO: CLICKEADOR DE DIAMANTES */
-        .clicker-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(0, 255, 136, 0.3);
-            border-radius: 16px;
-            padding: 25px;
-            max-width: 500px;
-            margin: 25px auto;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
-        }
-
-        .clicker-card h3 {
-            color: var(--neon-green);
-            margin-top: 0;
-            font-size: 18px;
-        }
-
-        .diamond-btn {
-            background: linear-gradient(135deg, #00ff88, #059669);
-            color: #03050d;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 900;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 15px 0;
-            transition: 0.2s;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
-        }
-
-        .diamond-btn:active {
-            transform: scale(0.92);
-        }
-
-        /* 6. SONOMETRO / EFECTO VISUAL DE AUDIO */
-        .sound-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(192, 132, 252, 0.3);
-            border-radius: 16px;
-            padding: 25px;
-            max-width: 500px;
-            margin: 25px auto;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.1);
-        }
-
-        .sound-card h3 {
-            color: var(--neon-purple);
-            margin-top: 0;
-            font-size: 18px;
-        }
-
-        .equalizer-bars {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            gap: 6px;
-            height: 60px;
-            margin: 20px 0 15px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 8px;
-            padding: 10px;
-        }
-
-        .eq-bar {
-            width: 12px;
-            background: var(--neon-purple);
-            border-radius: 4px;
-            height: 10px;
-            transition: height 0.1s ease;
-        }
-
-        /* 7. COTIZADOR / ESTIMADOR DE CONFIGURACIÓN GAMER */
-        .specs-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(34, 211, 238, 0.3);
-            border-radius: 16px;
-            padding: 25px;
-            max-width: 500px;
-            margin: 25px auto;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.1);
-        }
-
-        .specs-card h3 {
-            color: var(--neon-cyan);
-            margin-top: 0;
-            font-size: 18px;
-        }
-
-        .specs-output {
-            color: #f8fafc;
-            background: rgba(34, 211, 238, 0.05);
-            border: 1px solid rgba(34, 211, 238, 0.2);
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 13.5px;
-            margin-top: 15px;
-            text-align: left;
-            line-height: 1.5;
-        }
-
-        /* WIDGET INTERACTIVO: ENCUESTA RÁPIDA */
-        .poll-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(0, 255, 136, 0.3);
-            border-radius: 16px;
-            padding: 25px;
-            max-width: 500px;
-            margin: 30px auto;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
-        }
-
-        .poll-card h3 {
-            color: var(--neon-green);
-            margin-top: 0;
-            font-size: 18px;
-        }
-
-        .poll-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: var(--text-main);
-            padding: 10px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            margin: 6px 0;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .poll-btn:hover {
-            background: rgba(0, 255, 136, 0.15);
-            border-color: var(--neon-green);
-            color: var(--neon-green);
-        }
-
-        /* FAQ ACORDEÓN */
-        .faq-item {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 10px;
-            margin-bottom: 10px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .faq-question {
-            width: 100%;
-            background: transparent;
-            border: none;
-            color: var(--text-main);
-            padding: 14px 18px;
-            text-align: left;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-question:hover {
-            color: var(--neon-green);
-        }
-
-        .faq-answer {
-            padding: 0 18px 14px 18px;
-            color: var(--text-muted);
-            font-size: 13px;
-            display: none;
-            line-height: 1.5;
-        }
-
-        .faq-item.open .faq-answer {
-            display: block;
-        }
-
-        /* BOTONES ACCIÓN GAMER */
-        .btn-download {
+        /* BOTONES DE ACCIÓN */
+        .btn-download, .btn-social {
             width: 100%;
             background: linear-gradient(135deg, #7c3aed, #4f46e5);
             color: white;
@@ -791,67 +415,28 @@
             border-radius: 10px;
             font-weight: 700;
             font-size: 13.5px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
-            margin-top: 10px;
-            letter-spacing: 0.5px;
             cursor: pointer;
+            margin-top: 10px;
+            text-decoration: none;
         }
 
         .btn-download:hover {
             background: linear-gradient(135deg, var(--neon-green), #059669);
             color: #03050d;
-            border-color: var(--neon-green);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 255, 136, 0.5);
         }
 
-        .btn-bloodstrike {
-            background: linear-gradient(135deg, #ea580c, #c2410c);
-            box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3);
-        }
-
-        .btn-bloodstrike:hover {
-            background: linear-gradient(135deg, var(--neon-orange), #c2410c);
-            color: white;
-            border-color: var(--neon-orange);
-            box-shadow: 0 6px 25px rgba(249, 115, 22, 0.5);
-        }
-
-        .btn-back {
-            margin-top: 35px;
-            width: auto;
-            display: inline-block;
-            padding: 11px 26px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn-back:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--neon-cyan);
-            color: var(--neon-cyan);
-            transform: translateY(-2px);
-        }
-
-        /* MODAL FLOTANTE DE MONETIZACIÓN */
+        /* MODAL FLOTANTE */
         .modal-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(2, 4, 10, 0.9);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             z-index: 200;
             justify-content: center;
             align-items: center;
@@ -866,36 +451,7 @@
             max-width: 440px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 255, 136, 0.2);
-            animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .modal-card h3 {
-            color: var(--neon-green);
-            font-size: 21px;
-            margin-top: 0;
-            margin-bottom: 6px;
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
-        }
-
-        .modal-card p {
-            color: var(--text-muted);
-            font-size: 13.5px;
-            line-height: 1.4;
-            margin-bottom: 16px;
-        }
-
-        .ad-box {
-            margin: 12px 0;
-            max-height: 220px;
-            overflow-y: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px dashed rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            padding: 8px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
         }
 
         .btn-modal-action {
@@ -907,120 +463,20 @@
             font-size: 14.5px;
             color: #64748b;
             background: #1e293b;
-            transition: all 0.3s ease;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         .btn-modal-action.ready {
             background: var(--neon-green);
             color: #03050d;
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
-            animation: pulseGlow 1.5s infinite;
-        }
-
-        .btn-close-modal {
-            margin-top: 15px;
-            background: transparent;
-            border: none;
-            color: #64748b;
-            font-size: 13px;
-            text-decoration: underline;
-            transition: color 0.2s;
-            cursor: pointer;
-        }
-
-        .btn-close-modal:hover { color: #cbd5e1; }
-
-        /* COMUNIDAD */
-        .community {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 45px 20px;
-            margin-top: 20px;
-            backdrop-filter: blur(16px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .btn-social {
-            padding: 12px 28px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: white;
-            font-weight: 700;
-            font-size: 14px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .btn-social:hover {
-            background: var(--neon-green);
-            color: #03050d;
-            border-color: var(--neon-green);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 255, 136, 0.35);
-        }
-
-        .btn-tiktok {
-            background: rgba(249, 115, 22, 0.1) !important;
-            border-color: rgba(249, 115, 22, 0.3) !important;
-            color: var(--neon-orange) !important;
-        }
-
-        .btn-tiktok:hover {
-            background: var(--neon-orange) !important;
-            color: white !important;
-            border-color: var(--neon-orange) !important;
-            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.35) !important;
-        }
-
-        /* ANIMACIONES KEYFRAMES */
-        @keyframes floatLogo {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        @keyframes rgbGlow {
-            0% { box-shadow: 0 0 25px rgba(192, 132, 252, 0.5), 0 0 50px rgba(0, 255, 136, 0.25); }
-            33% { box-shadow: 0 0 25px rgba(34, 211, 238, 0.5), 0 0 50px rgba(192, 132, 252, 0.25); }
-            66% { box-shadow: 0 0 25px rgba(0, 255, 136, 0.5), 0 0 50px rgba(34, 211, 238, 0.25); }
-            100% { box-shadow: 0 0 25px rgba(192, 132, 252, 0.5), 0 0 50px rgba(0, 255, 136, 0.25); }
-        }
-
-        @keyframes scaleUp {
-            from { opacity: 0; transform: scale(0.92); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 15px rgba(0, 255, 136, 0.3); }
-            50% { box-shadow: 0 0 30px rgba(0, 255, 136, 0.8); }
-            100% { box-shadow: 0 0 15px rgba(0, 255, 136, 0.3); }
-        }
-
-        @media(max-width: 600px) {
-            h1 { font-size: 32px; }
-            nav { padding: 8px; gap: 4px; }
-            nav a { padding: 5px 8px; font-size: 10px; }
-            .logo { width: 100px; height: 100px; }
-            .video-card { width: 100%; }
-            .category-card { width: 100%; max-width: 320px; }
         }
     </style>
 </head>
 
 <body>
 
-<!-- FONDO ANIMADO CIBERNETICO -->
+<!-- FONDO ANIMADO CIBERNÉTICO -->
 <div class="animated-bg">
     <div class="cyber-grid"></div>
     <div class="floating-orb orb-1"></div>
@@ -1042,797 +498,244 @@
     <a onclick="mostrarVista('menu-bedrock')" id="tab-menu-bedrock">Bedrock</a>
     <a onclick="mostrarVista('bloodstrike')" id="tab-bloodstrike">BloodStrike 🔥</a>
     <a onclick="mostrarVista('herramientas')" id="tab-herramientas">Utilidades ⚡</a>
-    <a onclick="mostrarVista('novedades')" id="tab-novedades">Novedades</a>
-    <a onclick="mostrarVista('faq')" id="tab-faq">FAQ</a>
-    <a onclick="mostrarVista('comunidad')" id="tab-comunidad">Comunidad</a>
+    <a onclick="mostrarVista('novedades')" id="tab-novedades">Novedades 🚀</a>
 </nav>
 
-
-<!-- ================= VISTA: INICIO ================= -->
-<div id="vista-inicio" class="view active">
-    <div class="hero">
+<!-- VISTA 1: INICIO -->
+<div id="view-inicio" class="view active">
+    <header class="hero">
         <div class="logo-container">
-            <img src="logo.png" class="logo" alt="Logo AXKEN">
+            <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300&auto=format&fit=crop&q=80" alt="AXKEN Logo" class="logo">
         </div>
-        <h1>AXKEN</h1>
-        <h2>Academy & Gaming Hub</h2>
-        <p>Tu plataforma definitiva para add-ons de Minecraft, configuraciones, optimización y contenido exclusivo de BloodStrike.</p>
-    </div>
+        <h1>AXKEN HUB</h1>
+        <h2>Ultimate Cyber Gaming Hub & Tutorials</h2>
+        <p>Tu portal definitivo para optimización de juegos, configuraciones técnicas avanzadas, mapas personalizados y contenido exclusivo para creadores.</p>
+    </header>
 
     <div class="categories-grid">
         <div class="category-card" onclick="mostrarVista('menu-java')">
-            <h3>💻 Minecraft Java</h3>
-            <p>Mods avanzados, Shaders, Texture Packs y Guías de instalación para PC.</p>
-            <button class="btn-download" style="margin-top:10px;">Entrar a Java</button>
+            <h3>Minecraft Java</h3>
+            <p>Guías de optimización, optimizadores de rendimiento y texturas avanzadas.</p>
         </div>
-
         <div class="category-card" onclick="mostrarVista('menu-bedrock')">
-            <h3>📱 Minecraft Bedrock</h3>
-            <p>Add-ons, Shaders con Render_Dragon y Texturas PvP optimizadas.</p>
-            <button class="btn-download" style="margin-top:10px;">Entrar a Bedrock</button>
+            <h3>Minecraft Bedrock</h3>
+            <p>Complementos, configuraciones móviles y mapas multijugador.</p>
         </div>
-
         <div class="category-card" onclick="mostrarVista('bloodstrike')">
-            <h3>🔥 BloodStrike Hub</h3>
-            <p>Sensibilidades, configuraciones, clips y el mejor contenido de tus partidas.</p>
-            <button class="btn-download btn-bloodstrike" style="margin-top:10px;">Ver BloodStrike</button>
+            <h3>BloodStrike 🔥</h3>
+            <p>Sensibilidad ideal, armas recomendadas y trucos tácticos.</p>
         </div>
-    </div>
-
-    <!-- SECCIÓN EXTRA: CARACTERÍSTICAS Y WIDGET DE ENCUESTA -->
-    <div style="max-width: 1000px; margin: 0 auto 40px auto; padding: 0 20px;">
-        <div class="extras-container" style="margin-top: 0;">
-            <div class="extra-box">
-                <h3>⚡ Enlaces Seguros</h3>
-                <p>Todos nuestros archivos están verificados y alojados en plataformas estables para garantizar descargas sin virus ni archivos maliciosos.</p>
-            </div>
-            <div class="extra-box">
-                <h3>🎮 Actualizado 2026</h3>
-                <p>Contenido totalmente adaptado a las últimas versiones de Minecraft y BloodStrike, asegurando rendimiento óptimo.</p>
-            </div>
-        </div>
-
-        <!-- WIDGET DE ENCUESTA INTERACTIVA -->
-        <div class="poll-card" id="pollCard">
-            <h3>📊 ¿Qué juego prefieres ver más en el canal?</h3>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 15px;">Vota para priorizar las próximas guías y directos.</p>
-            <button class="poll-btn" onclick="votarEncuesta('Minecraft Java')">💻 Minecraft Java Edition</button>
-            <button class="poll-btn" onclick="votarEncuesta('Minecraft Bedrock')">📱 Minecraft Bedrock / Add-ons</button>
-            <button class="poll-btn" onclick="votarEncuesta('BloodStrike Gameplay')">🔥 BloodStrike (Batallas y Clips)</button>
-            <p id="pollResult" style="font-size: 13px; color: var(--neon-green); margin-top: 12px; font-weight: 700;"></p>
+        <div class="category-card" onclick="mostrarVista('herramientas')">
+            <h3>Utilidades ⚡</h3>
+            <p>Herramientas interactivas, generadores de nicks y calculadoras.</p>
         </div>
     </div>
 </div>
 
-
-<!-- ================= VISTA: BLOODSTRIKE HUB ================= -->
-<div id="vista-bloodstrike" class="view">
-    <div class="hero">
-        <div class="logo-container">
-            <img src="logo.png" class="logo" alt="Logo AXKEN">
-        </div>
-        <h1>BloodStrike Hub</h1>
-        <h2>Zona de Acción y Tips</h2>
-        <p>Encuentra mis configuraciones, consejos para mejorar tu puntería y clips directos desde mi TikTok oficial.</p>
-    </div>
-
-    <div class="video-grid" style="max-width: 1000px; margin: 0 auto 30px auto;">
-        <div class="video-card" style="width: 100%;">
-            <span class="badge badge-bloodstrike">🔥 Directo de TikTok</span>
-            <h3>¡Sígueme en mi cuenta oficial de BloodStrike!</h3>
-            <p>Estoy subiendo jugadas épicas, configuraciones de sensibilidad para bajo rendimiento y clips diarios en mi nuevo perfil: <b>@axken0000</b>.</p>
-            <a href="https://www.tiktok.com/@axken0000?is_from_webapp=1&sender_device=pc" target="_blank" class="btn-download btn-bloodstrike" style="text-decoration:none; margin-top:10px;">
-                🚀 Visitar mi TikTok Oficial (@axken0000)
-            </a>
-        </div>
-    </div>
-
-    <div style="max-width: 1000px; margin: 0 auto 40px auto; padding: 0 20px;">
-        <div class="extras-container" style="margin-top: 0;">
-            <div class="extra-box">
-                <h3>🎯 Trucos de Puntería</h3>
-                <p>Mantén la mira a la altura de la cabeza en las esquinas y ajusta tu sensibilidad de cámara para giros rápidos sin perder control del retroceso.</p>
-            </div>
-            <div class="extra-box">
-                <h3>⚡ Optimización FPS</h3>
-                <p>Juega con gráficos en rendimiento, desactiva las sombras dinámicas si juegas en un dispositivo de gama baja y libera memoria RAM antes de iniciar.</p>
+<!-- VISTA 2: JAVA -->
+<div id="view-menu-java" class="view">
+    <section>
+        <h2 class="section-title">Minecraft Java Edition</h2>
+        <p class="section-desc">Mejora tus FPS al máximo y descubre los mejores trucos de optimización para PC.</p>
+        <div class="video-grid">
+            <div class="video-card">
+                <span class="badge">Optimización</span>
+                <h3>Cómo subir FPS y evitar lag en Minecraft Java 2026</h3>
+                <p>Guía paso a paso para configurar mods de rendimiento eficientes.</p>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+                <button class="btn-download" onclick="abrirModalEnlace('https://www.mediafire.com')">Descargar Configuración ⚡</button>
             </div>
         </div>
-
-        <!-- CALCULADORA DE SENSIBILIDAD PARA SHOOTERS -->
-        <div class="sens-card">
-            <h3>⚙️ Configurador Rápido de Sensibilidad</h3>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Elige tu estilo de juego para ver una base recomendada:</p>
-            <select id="selectEstiloSens" class="calc-select" onchange="calcularSensibilidad()">
-                <option value="default">Selecciona un estilo...</option>
-                <option value="agresivo">Jugador Rusher / Agresivo (Alta velocidad)</option>
-                <option value="tactico">Jugador Táctico / Medusa (Precisión equilibrada)</option>
-                <option value="francotirador">Especialista en Sniper / Larga distancia</option>
-            </select>
-            <div id="sensOutput" class="sens-output">Selecciona una opción para ver la configuración orientativa de sensibilidad y giroscopio.</div>
-        </div>
-    </div>
-
-    <div style="text-align: center; margin-bottom: 30px;">
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
-    </div>
+    </section>
 </div>
 
-
-<!-- ================= VISTA: UTILIDADES / HERRAMIENTAS INTERACTIVAS ================= -->
-<div id="vista-herramientas" class="view">
-    <div class="hero">
-        <div class="logo-container">
-            <img src="logo.png" class="logo" alt="Logo AXKEN">
-        </div>
-        <h1>Utilidades Gamer</h1>
-        <h2>Herramientas y Minijuegos Interactivos</h2>
-        <p>Prueba nuestras nuevas funciones interactivas creadas para divertirte y optimizar tus partidas.</p>
-    </div>
-
-    <div style="max-width: 1000px; margin: 0 auto 40px auto; padding: 0 20px;">
-        
-        <!-- 1. MINIJUEGO: CLICKEADOR DE DIAMANTES -->
-        <div class="clicker-card">
-            <h3>💎 Minijuego: Clickeador de Diamantes</h3>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">¡Haz clic lo más rápido posible para minar diamantes antes de que acabe el tiempo!</p>
-            <div style="font-size: 15px; font-weight: bold; color: var(--neon-green);" id="clickerStats">Diamantes: 0 | Tiempo: 10s</div>
-            <button class="diamond-btn" id="btnMine" onclick="minarDiamante()">⛏️ ¡MINAR DIAMANTE!</button>
-            <button class="poll-btn" onclick="iniciarMinijuego()" style="background: rgba(0,255,136,0.1); border-color: var(--neon-green); color: var(--neon-green);">🔄 Reiniciar / Jugar de Nuevo</button>
-        </div>
-
-        <!-- 2. SIMULADOR / ECUALIZADOR DE AUDIO GAMER -->
-        <div class="sound-card">
-            <h3>🎧 Ecualizador Visual Ciberpunk</h3>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">Visualizador de ondas de sonido dinámico para ambientar tu sesión de juego.</p>
-            <div class="equalizer-bars" id="eqContainer">
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
+<!-- VISTA 3: BEDROCK -->
+<div id="view-menu-bedrock" class="view">
+    <section>
+        <h2 class="section-title">Minecraft Bedrock & Móvil</h2>
+        <p class="section-desc">Todo lo que necesitas para exprimir Bedrock al máximo en teléfonos y consolas.</p>
+        <div class="video-grid">
+            <div class="video-card">
+                <span class="badge">Bedrock</span>
+                <h3>Instala Texturas y Shaders sin Lag en Celular</h3>
+                <p>Mejora los gráficos visuales sin sacrificar rendimiento en tu dispositivo.</p>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+                <button class="btn-download" onclick="abrirModalEnlace('https://www.mediafire.com')">Descargar Paquete 🚀</button>
             </div>
-            <button class="poll-btn" onclick="toggleEcualizador()" id="btnEq" style="background: rgba(192,132,252,0.1); border-color: var(--neon-purple); color: var(--neon-purple);">⚡ Pausar / Activar Ecualizador</button>
         </div>
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+    </section>
+</div>
 
-        <!-- 3. ESTIMADOR / COTIZADOR DE CONFIGURACIÓN PC -->
-        <div class="specs-card">
-            <h3>💻 Estimador de Rendimiento para Juegos</h3>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Selecciona tu procesador principal para ver qué tal correrá Minecraft y BloodStrike:</p>
-            <select id="selectProcesor" class="calc-select" onchange="estimarRendimiento()">
-                <option value="default">Selecciona tu procesador...</option>
-                <option value="gama_baja">Gama Baja (Intel Core i3 antiguo / Snapdragon serie 600)</option>
-                <option value="gama_media">Gama Media (Intel Core i5 / Ryzen 5 / Snapdragon serie 700-800)</option>
-                <option value="gama_alta">Gama Alta (Intel Core i7/i9 / Ryzen 7/9 / PC Gamer Pro)</option>
-            </select>
-            <div id="specsOutput" class="specs-output">Selecciona una opción para ver la estimación de FPS y gráficos recomendados.</div>
+<!-- VISTA 4: BLOODSTRIKE -->
+<div id="view-bloodstrike" class="view">
+    <section>
+        <h2 class="section-title">BloodStrike Tactical Hub</h2>
+        <p class="section-desc">Domina el campo de batalla con las mejores builds y ajustes de sensibilidad.</p>
+        <div class="video-grid">
+            <div class="video-card">
+                <span class="badge badge-bloodstrike">Shooter</span>
+                <h3>Mejor Sensibilidad y Ajustes de HUD para Competitivo</h3>
+                <p>Domina el retroceso y mejora tu puntería con estos consejos profesionales.</p>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+                <button class="btn-download btn-bloodstrike" onclick="abrirModalEnlace('https://www.mediafire.com')">Ver Guía Completa 🔥</button>
+            </div>
         </div>
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+    </section>
+</div>
 
-        <!-- 4. GENERADOR DE NICKNAMES GAMER -->
+<!-- VISTA 5: UTILIDADES -->
+<div id="view-herramientas" class="view">
+    <section>
+        <h2 class="section-title">Centro de Utilidades Gamer</h2>
+        <p class="section-desc">Herramientas interactivas creadas para la comunidad.</p>
+
+        <!-- Generador de Nicks -->
         <div class="generator-card">
-            <h3>🔥 Generador de Nicknames Épicos</h3>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 15px;">Escribe tu nombre real o apodo para darle estilo gamer:</p>
-            <input type="text" id="inputNombre" class="generator-input" placeholder="Ej. Alex, ProGamer..." oninput="generarNickname()">
-            <div id="nicknameOutput" class="nickname-result">Escribe algo arriba...</div>
+            <h3>Generador de Nicks Épicos</h3>
+            <input type="text" id="nombreBase" class="generator-input" placeholder="Ingresa tu nombre..." oninput="generarNick()">
+            <div class="nickname-result" id="nickResultado">AXKEN_VIP_2026</div>
         </div>
 
-        <!-- 5. RULETA DE RETOS / MINI-JUEGOS -->
-        <div class="roulette-card">
-            <h3>🎲 Ruleta de Retos para Partidas</h3>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">¿Aburrido de jugar normal? Pon a prueba tu habilidad con este reto aleatorio:</p>
-            <div id="rouletteOutput" class="roulette-output">Haz clic en el botón para sortear un desafío...</div>
-            <button class="btn-roulette" onclick="girarRuleta()">🎯 Sortear Reto Gamer</button>
+        <!-- Encuesta Interactiva -->
+        <div class="poll-card">
+            <h3>¿Cuál es tu juego favorito actualmente?</h3>
+            <button class="poll-btn" onclick="votarEncuesta('Minecraft')">Minecraft (Java / Bedrock)</button>
+            <button class="poll-btn" onclick="votarEncuesta('BloodStrike')">BloodStrike</button>
+            <button class="poll-btn" onclick="votarEncuesta('Otro')">Otro Shooter / Sandbox</button>
+            <p id="resultadoVoto" style="color: var(--neon-green); margin-top: 10px; font-size: 13px;"></p>
         </div>
 
-        <!-- 6. CALCULADORA DE CRAFTINGS Y RECURSOS -->
-        <div class="calculator-card">
-            <h3>📐 Guía Rápida de Recursos (Minecraft)</h3>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Consulta cuántos materiales necesitas para tus crafteos:</p>
-            <select id="selectRecurso" class="calc-select" onchange="calcularRecursos()">
-                <option value="default">Selecciona un elemento...</option>
-                <option value="bloque_diamante">Bloque de Diamante (desde Minerales)</option>
-                <option value="beacon">Faro (Beacon Completo)</option>
-                <option value="libreria">Biblioteca Completa para Encantamientos</option>
-                <option value="tolva">Tolva (Hopper)</option>
-            </select>
-            <div id="calcOutput" class="calc-output">Selecciona una opción del menú desplegable para ver los detalles de crafteo.</div>
-        </div>
-
-    </div>
-
-    <div style="text-align: center; margin-bottom: 30px;">
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
-    </div>
-</div>
-
-
-<!-- ================= VISTA: SUBMENÚ JAVA ================= -->
-<div id="vista-menu-java" class="view">
-    <div class="hero">
-        <div class="logo-container">
-            <img src="logo.png" class="logo" alt="Logo AXKEN">
-        </div>
-        <h1>Minecraft Java</h1>
-        <h2>Panel de Contenido PC</h2>
-        <p>Elige la categoría de recursos que deseas consultar.</p>
-    </div>
-
-    <div class="categories-grid">
-        <div class="category-card" onclick="mostrarVista('java-tutoriales')">
-            <h3>📖 Tutoriales</h3>
-            <p>Guías de instalación y configuraciones esenciales para Java.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Tutoriales</button>
-        </div>
-        <div class="category-card" onclick="mostrarVista('java-mods')">
-            <h3>🧩 Mods</h3>
-            <p>Paquetes de modificaciones y contenido extra para tu PC.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Mods</button>
-        </div>
-        <div class="category-card" onclick="mostrarVista('java-textures')">
-            <h3>🎨 Texture Packs</h3>
-            <p>Mejoras visuales y texturas personalizadas.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Texture Packs</button>
-        </div>
-        <div class="category-card" onclick="mostrarVista('java-shaders')">
-            <h3>🌈 Shaders</h3>
-            <p>Iluminación avanzada y sombreadores realistas.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Shaders</button>
-        </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 10px;">
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
-    </div>
-</div>
-
-
-<!-- ================= VISTA: SUBMENÚ BEDROCK ================= -->
-<div id="vista-menu-bedrock" class="view">
-    <div class="hero">
-        <div class="logo-container">
-            <img src="logo.png" class="logo" alt="Logo AXKEN">
-        </div>
-        <h1>Minecraft Bedrock</h1>
-        <h2>Panel Móvil / PC</h2>
-        <p>Selecciona la categoría de complementos para tu versión.</p>
-    </div>
-
-    <div class="categories-grid">
-        <div class="category-card" onclick="mostrarVista('bedrock-tutoriales')">
-            <h3>📖 Tutoriales</h3>
-            <p>Guías paso a paso optimizadas sin errores.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Tutoriales</button>
-        </div>
-        <div class="category-card" onclick="mostrarVista('bedrock-addons')">
-            <h3>🧩 Add-ons</h3>
-            <p>Paquetes de comportamientos y complementos oficiales.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Add-ons</button>
-        </div>
-        <div class="category-card" onclick="mostrarVista('bedrock-textures')">
-            <h3>🎨 Texture Packs</h3>
-            <p>Paquetes de texturas y PvP diseñados para Bedrock.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Texture Packs</button>
-        </div>
-        <div class="category-card" onclick="mostrarVista('bedrock-shaders')">
-            <h3>🌈 Shaders</h3>
-            <p>Gráficos compatibles con Render_Dragon.</p>
-            <button class="btn-download" style="margin-top:10px;">Ver Shaders</button>
-        </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 10px;">
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Selector</button>
-    </div>
-</div>
-
-
-<!-- ================= VISTA: JAVA - TUTORIALES ================= -->
-<div id="vista-java-tutoriales" class="view">
-    <section>
-        <h2 class="section-title">📖 Tutoriales Java</h2>
-        <p class="section-desc">Guías en video para la instalación de complementos en PC.</p>
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/K4pkbwErShk" title="Tutorial Java 1" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <span class="badge">📖 Tutorial Java</span>
-                <h3>Tutorial de Instalación de Complementos</h3>
-                <p>Aprende paso a paso cómo instalar y configurar tus complementos correctamente.</p>
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
-                    📥 Descargar Complementos (ZIP)
-                </button>
-            </div>
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/2x0azN_Jv80" title="Tutorial Java 2" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <span class="badge">📖 Tutorial Java</span>
-                <h3>Tutorial de Instalación y Uso de Mods</h3>
-                <p>Configura todos tus mods de manera rápida y sin complicaciones en Java.</p>
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
-                    📥 Descargar Complementos (ZIP)
-                </button>
-            </div>
-        </div>
-        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
     </section>
 </div>
 
-
-<!-- ================= VISTA: JAVA - MODS ================= -->
-<div id="vista-java-mods" class="view">
+<!-- VISTA 6: NOVEDADES / COMUNIDAD -->
+<div id="view-novedades" class="view">
     <section>
-        <h2 class="section-title">🧩 Mods para Java</h2>
-        <p class="section-desc">Modificaciones oficiales y complementos recomendados.</p>
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/K4pkbwErShk" title="Mods Java 1" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <span class="badge">🧩 Mods Java</span>
-                <h3>Paquete de Complementos y Mods Java</h3>
-                <p>Descarga el archivo completo reseñado en el video.</p>
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
-                    📥 Descargar Complementos (ZIP)
-                </button>
-            </div>
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/2x0azN_Jv80" title="Mods Java 2" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <span class="badge">🧩 Mods Java</span>
-                <h3>Paquete de Mods y Complementos Java (Video 2)</h3>
-                <p>Complementos adicionales para optimizar tu experiencia.</p>
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/23lee74blapnhjq/COMPLEMENTOS.zip/file')">
-                    📥 Descargar Complementos (ZIP)
-                </button>
-            </div>
-        </div>
-        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: JAVA - TEXTURE PACKS ================= -->
-<div id="vista-java-textures" class="view">
-    <section>
-        <h2 class="section-title">🎨 Texture Packs Java</h2>
-        <p class="section-desc">Renueva la apariencia visual de tus mundos con recursos optimizados.</p>
-        <div class="extras-container" style="justify-content: center;">
-            <div class="extra-box" style="text-align: center; max-width: 400px;">
-                <h3>✨ Próximamente</h3>
-                <p>Estamos seleccionando los mejores packs de texturas clásicos y modernos para Java. ¡Vuelve pronto para descubrirlos!</p>
-            </div>
-        </div>
-        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: JAVA - SHADERS ================= -->
-<div id="vista-java-shaders" class="view">
-    <section>
-        <h2 class="section-title">🌈 Shaders Java</h2>
-        <p class="section-desc">Sombreadores avanzados para exprimir al máximo tu PC.</p>
-        <div class="extras-container" style="justify-content: center;">
-            <div class="extra-box" style="text-align: center; max-width: 400px;">
-                <h3>💡 En Desarrollo</h3>
-                <p>Pronto añadiremos listas de Shaders compatibles con Iris y Optifine para distintas gamas de tarjetas gráficas.</p>
-            </div>
-        </div>
-        <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: BEDROCK - TUTORIALES ================= -->
-<div id="vista-bedrock-tutoriales" class="view">
-    <section>
-        <h2 class="section-title">📖 Tutoriales Bedrock</h2>
-        <p class="section-desc">Guías de desbloqueo y configuración para tu versión.</p>
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/-_EOdMxyV28" title="Tutorial Bedrock" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <span class="badge">📖 Tutorial Bedrock</span>
-                <h3>Cómo desbloquear contenido / Llave de desbloqueo</h3>
-                <p>Sigue los pasos del tutorial para utilizar correctamente el archivo.</p>
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/4cgfzhjx6vpvm6q/llave_para_desbloquear.zip/file')">
-                    📥 Descargar Llave para Desbloquear
-                </button>
-            </div>
-        </div>
-        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: BEDROCK - ADD-ONS ================= -->
-<div id="vista-bedrock-addons" class="view">
-    <section>
-        <h2 class="section-title">🧩 Add-ons Bedrock</h2>
-        <p class="section-desc">Complementos y comportamientos únicos para Bedrock.</p>
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/5_hNlnV23As" title="Addon Bedrock" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <span class="badge">🔥 Bedrock Edition</span>
-                <h3>😱 Este ADDON te pone en MODO CREATIVO... ¡SIN DESACTIVAR LOGROS!</h3>
-                <p>Consigue creativo en tu mundo sin perder logros usando un simple palo.</p>
-                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/rogzezdfqt4xlbd/addon.zip/file')">
-                    📥 Descargar Add-on Bedrock
-                </button>
-            </div>
-        </div>
-        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: BEDROCK - TEXTURE PACKS ================= -->
-<div id="vista-bedrock-textures" class="view">
-    <section>
-        <h2 class="section-title">🎨 Texture Packs Bedrock</h2>
-        <p class="section-desc">Paquetes PvP para destacar en tus partidas multijugador.</p>
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/rR3FO6JudCc" title="Texture Packs PvP" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <span class="badge">🎨 Texture Packs Bedrock</span>
-                <h3>Texture Packs PvP (Lyro PvP Ultimate & Venom)</h3>
-                <p>Mejora tu rendimiento y diseño visual con estos paquetes.</p>
-                <button class="btn-download" onclick="iniciarEspera('https://mcpedl.com/lyro-pvp-ultimate/')">
-                    📥 Descargar #1: Lyro PvP Ultimate
-                </button>
-                <button class="btn-download" onclick="iniciarEspera('https://mcpedl.com/venom/')">
-                    📥 Descargar #2: Venom Pack
-                </button>
-            </div>
-        </div>
-        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: BEDROCK - SHADERS ================= -->
-<div id="vista-bedrock-shaders" class="view">
-    <section>
-        <h2 class="section-title">🌈 Shaders Bedrock</h2>
-        <p class="section-desc">Gráficos estilizados y adaptados para Render_Dragon.</p>
-        <div class="extras-container" style="justify-content: center;">
-            <div class="extra-box" style="text-align: center; max-width: 400px;">
-                <h3>🚀 Próximas Actualizaciones</h3>
-                <p>Nuevos packs de gráficos optimizados para versiones recientes de Bedrock en camino.</p>
-            </div>
-        </div>
-        <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: NOVEDADES ================= -->
-<div id="vista-novedades" class="view">
-    <section>
-        <h2 class="section-title">📰 Novedades y Actualizaciones</h2>
-        <p class="section-desc">Mantente al tanto de los últimos lanzamientos en el canal y la web.</p>
+        <h2 class="section-title">Comunidad & Redes</h2>
+        <p class="section-desc">Únete a las transmisiones y sígueme en mis redes sociales oficiales.</p>
         
-        <div class="extras-container">
-            <div class="extra-box">
-                <h3>🚀 Nuevas Herramientas Interactivas</h3>
-                <p>Hemos añadido minijuegos como el Clickeador de Diamantes, un ecualizador de audio visual y un estimador de rendimiento para hardware.</p>
-            </div>
-            <div class="extra-box">
-                <h3>📢 Actualización de TikTok</h3>
-                <p>Tu enlace oficial (<b>@axken0000</b>) está totalmente integrado para que la comunidad visite tus directos de BloodStrike sin problemas.</p>
-            </div>
-            <div class="extra-box">
-                <h3>🛠️ Optimización General</h3>
-                <p>Mejoras de diseño responsivo y mayor velocidad de navegación entre todas las secciones del sitio.</p>
+        <div class="community">
+            <h3 style="color: var(--neon-cyan);">¡Conéctate con AXKEN!</h3>
+            <p style="color: var(--text-muted); font-size: 14px; max-width: 500px; margin: 0 auto 20px;">Mantente al día con los directos, torneos relámpago y contenido exclusivo diario.</p>
+            <div class="social-links">
+                <a href="https://tiktok.com/@axken0000" target="_blank" class="btn-social btn-tiktok">TikTok Oficial</a>
+                <a href="https://youtube.com" target="_blank" class="btn-social">YouTube Hub</a>
             </div>
         </div>
-        <br>
+
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </section>
 </div>
 
-
-<!-- ================= VISTA: FAQ (PREGUNTAS FRECUENTES) ================= -->
-<div id="vista-faq" class="view">
-    <section style="max-width: 800px; margin: 0 auto;">
-        <h2 class="section-title">❓ Preguntas Frecuentes</h2>
-        <p class="section-desc">Resuelve tus dudas habituales sobre las descargas y el contenido.</p>
-
-        <div style="text-align: left; margin-top: 20px;">
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFaq(this)">¿Dónde puedo ver los clips de BloodStrike? <span>▼</span></button>
-                <div class="faq-answer">Puedes seguirme directamente en mi nuevo TikTok oficial: @axken0000, donde subo jugadas y contenido diario.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFaq(this)">¿Cómo descargo los archivos de MediaFire? <span>▼</span></button>
-                <div class="faq-answer">Haz clic en el botón de descarga, espera los 10 segundos indicados en el modal de seguridad y haz clic en el botón verde para ir directamente al archivo.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFaq(this)">¿Los add-ons de Minecraft desactivan los logros en Bedrock? <span>▼</span></button>
-                <div class="faq-answer">La mayoría de add-ons normales pueden requerir trucos, pero revisa la descripción de cada video específico; algunos están diseñados precisamente para evitarlo.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFaq(this)">¿Qué versión de Minecraft necesito? <span>▼</span></button>
-                <div class="faq-answer">Cada tutorial y mod especifica en su sección correspondiente la versión recomendada para evitar fallos de compatibilidad o cierres inesperados.</div>
-            </div>
-        </div>
-        <br>
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
-    </section>
-</div>
-
-
-<!-- ================= VISTA: COMUNIDAD ================= -->
-<div id="vista-comunidad" class="view">
-    <section class="community">
-        <h2 class="section-title">⚡ Comunidad AXKEN</h2>
-        <p class="section-desc">Conéctate con la comunidad y síguenos en nuestras plataformas oficiales:</p>
-        <div class="social-links">
-            <a href="https://www.youtube.com/@Axken00" target="_blank" class="btn-social">YouTube</a>
-            <a href="https://www.tiktok.com/@axken0000?is_from_webapp=1&sender_device=pc" target="_blank" class="btn-social btn-tiktok">TikTok (@axken0000)</a>
-            <a href="https://discord.gg/TU_LINK_DE_DISCORD" target="_blank" class="btn-social">Discord</a>
-        </div>
-        <br>
-        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
-    </section>
-</div>
-
-
-<!-- ================= MODAL DE MONETIZACIÓN ================= -->
-<div class="modal-overlay" id="modalEspera">
+<!-- MODAL DE MONETIZACIÓN / ENLACE -->
+<div class="modal-overlay" id="modalMonetizacion">
     <div class="modal-card">
-        <h3>⏳ Generando Enlace Seguro</h3>
-        <p>Tu archivo se está preparando. El botón de descarga se habilitará al finalizar el contador:</p>
-
-        <!-- BANNER PUBLICITARIO ADSTERRA -->
-        <div class="ad-box">
-            <div id="container-16fa8571b1eee7681486dc9444354e1e"></div>
+        <h3>Preparando tu Enlace...</h3>
+        <p>Por favor, espera unos segundos para desbloquear tu contenido de descarga directa.</p>
+        
+        <!-- Contenedor del Banner Publicitario -->
+        <div class="ad-box" id="bannerAdContainer">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '16fa8571b1eee7681486dc9444354e1e',
+                    'format' : 'iframe',
+                    'height' : 90,
+                    'width' : 728,
+                    'params' : {}
+                };
+            </script>
         </div>
 
-        <button id="btnModalDownload" class="btn-modal-action" disabled>
-            Espera <span id="contadorSegundos">10</span> segundos...
-        </button>
+        <button class="btn-modal-action" id="btnAccionModal" disabled onclick="ejecutarAccionFinal()">Espera (5s)...</button>
         <button class="btn-close-modal" onclick="cerrarModal()">Cancelar</button>
     </div>
 </div>
 
-
-<!-- SCRIPTS DE NAVEGACIÓN, TEMPORIZADOR, FAQ, ENCUESTA Y NUEVAS FUNCIONES INTERACTIVAS -->
 <script>
-    let tiempoRestante = 10;
-    let intervaloTimer = null;
-    let urlDestinoFinal = "";
+    let enlaceDestino = "";
+    let temporizador = null;
 
-    function mostrarVista(nombreVista) {
-        const vistas = document.querySelectorAll('.view');
-        vistas.forEach(v => v.classList.remove('active'));
+    function mostrarVista(idVista) {
+        document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active-tab'));
 
-        const tabs = document.querySelectorAll('nav a');
-        tabs.forEach(t => t.classList.remove('active-tab'));
-
-        const vistaSeleccionada = document.getElementById('vista-' + nombreVista);
+        const vistaSeleccionada = document.getElementById('view-' + idVista);
         if (vistaSeleccionada) {
             vistaSeleccionada.classList.add('active');
         }
-
-        const tabSeleccionado = document.getElementById('tab-' + nombreVista);
-        if (tabSeleccionado) {
-            tabSeleccionado.classList.add('active-tab');
+        
+        const tabSeleccionada = document.getElementById('tab-' + idVista);
+        if (tabSeleccionada) {
+            tabSeleccionada.classList.add('active-tab');
         }
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function iniciarEspera(urlDestino) {
-        urlDestinoFinal = urlDestino;
-        tiempoRestante = 10;
-
-        const modal = document.getElementById('modalEspera');
-        const contadorSpan = document.getElementById('contadorSegundos');
-        const btnModal = document.getElementById('btnModalDownload');
-
-        btnModal.disabled = true;
-        btnModal.classList.remove('ready');
-        btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
+    function abrirModalEnlace(url) {
+        enlaceDestino = url;
+        const modal = document.getElementById('modalMonetizacion');
+        const boton = document.getElementById('btnAccionModal');
+        
         modal.style.display = 'flex';
+        boton.disabled = true;
+        boton.classList.remove('ready');
+        
+        let segundos = 5;
+        boton.innerText = `Espera (${segundos}s)...`;
 
-        clearInterval(intervaloTimer);
-        intervaloTimer = setInterval(() => {
-            tiempoRestante--;
-            if (contadorSpan) contadorSpan.innerText = tiempoRestante;
-            btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
+        if (temporizador) clearInterval(temporizador);
 
-            if (tiempoRestante <= 0) {
-                clearInterval(intervaloTimer);
-                btnModal.disabled = false;
-                btnModal.classList.add('ready');
-                btnModal.innerText = '🚀 ¡Ir al Enlace!';
-                btnModal.onclick = function() {
-                    window.open(urlDestinoFinal, '_blank');
-                    cerrarModal();
-                };
+        temporizador = setInterval(() => {
+            segundos--;
+            if (segundos > 0) {
+                boton.innerText = `Espera (${segundos}s)...`;
+            } else {
+                clearInterval(temporizador);
+                boton.innerText = "¡Obtener Enlace Ahora! 🚀";
+                boton.disabled = false;
+                boton.classList.add('ready');
             }
         }, 1000);
     }
 
     function cerrarModal() {
-        clearInterval(intervaloTimer);
-        document.getElementById('modalEspera').style.display = 'none';
+        document.getElementById('modalMonetizacion').style.display = 'none';
+        if (temporizador) clearInterval(temporizador);
     }
 
-    function toggleFaq(button) {
-        const item = button.parentElement;
-        item.classList.toggle('open');
+    function ejecutarAccionFinal() {
+        if (enlaceDestino) {
+            window.open(enlaceDestino, '_blank');
+            cerrarModal();
+        }
+    }
+
+    function generarNick() {
+        const base = document.getElementById('nombreBase').value.trim();
+        const resultado = document.getElementById('nickResultado');
+        if (!base) {
+            resultado.innerText = "AXKEN_VIP_2026";
+            return;
+        }
+        const sufijos = ["_YT", "🔥", "[PRO]", "⚡", "_07", "X"];
+        const sufijoAleatorio = sufijos[Math.floor(Math.random() * sufijos.length)];
+        resultado.innerText = `👑${base}${sufijoAleatorio}`;
     }
 
     function votarEncuesta(opcion) {
-        const resultado = document.getElementById('pollResult');
-        resultado.innerText = `¡Gracias por votar! Has seleccionado: ${opcion}. ¡Voto registrado con éxito!`;
-        const botones = document.querySelectorAll('.poll-btn');
-        botones.forEach(btn => btn.disabled = true);
-    }
-
-    /* 1. MINIJUEGO: CLICKEADOR DE DIAMANTES */
-    let diamantesCount = 0;
-    let tiempoClicker = 10;
-    let clickerActivo = false;
-    let timerClickerInterval = null;
-
-    function iniciarMinijuego() {
-        diamantesCount = 0;
-        tiempoClicker = 10;
-        clickerActivo = true;
-        document.getElementById('clickerStats').innerText = `Diamantes: ${diamantesCount} | Tiempo: ${tiempoClicker}s`;
-        document.getElementById('btnMine').disabled = false;
-
-        clearInterval(timerClickerInterval);
-        timerClickerInterval = setInterval(() => {
-            tiempoClicker--;
-            document.getElementById('clickerStats').innerText = `Diamantes: ${diamantesCount} | Tiempo: ${tiempoClicker}s`;
-
-            if (tiempoClicker <= 0) {
-                clearInterval(timerClickerInterval);
-                clickerActivo = false;
-                document.getElementById('btnMine').disabled = true;
-                document.getElementById('clickerStats').innerText = `¡Tiempo acabado! Conseguiste ${diamantesCount} diamantes 💎`;
-            }
-        }, 1000);
-    }
-
-    function minarDiamante() {
-        if (!clickerActivo && tiempoClicker === 10) {
-            iniciarMinijuego();
-        }
-        if (clickerActivo) {
-            diamantesCount++;
-            document.getElementById('clickerStats').innerText = `Diamantes: ${diamantesCount} | Tiempo: ${tiempoClicker}s`;
-        }
-    }
-
-    /* 2. ECUALIZADOR VISUAL CIBERPUNK */
-    let eqActivo = true;
-    let eqInterval = setInterval(() => {
-        if (!eqActivo) return;
-        const bars = document.querySelectorAll('.eq-bar');
-        bars.forEach(bar => {
-            const alturaAleatoria = Math.floor(Math.random() * 45) + 10;
-            bar.style.height = alturaAleatoria + 'px';
-        });
-    }, 150);
-
-    function toggleEcualizador() {
-        eqActivo = !eqActivo;
-        const btn = document.getElementById('btnEq');
-        if (eqActivo) {
-            btn.innerText = "⚡ Pausar / Activar Ecualizador";
-        } else {
-            btn.innerText = "▶️ Reanudar Ecualizador";
-            const bars = document.querySelectorAll('.eq-bar');
-            bars.forEach(bar => bar.style.height = '10px');
-        }
-    }
-
-    /* 3. ESTIMADOR DE RENDIMIENTO PC */
-    function estimarRendimiento() {
-        const select = document.getElementById('selectProcesor').value;
-        const output = document.getElementById('specsOutput');
-
-        const datos = {
-            'gama_baja': '⚠️ <b>Gama Baja:</b> Minecraft Java con Optifine / Sodium (30-45 FPS estables con gráficos al mínimo). BloodStrike jugable en gráficos "Bajos" / Resolución estándar.',
-            'gama_media': '⚡ <b>Gama Media:</b> Minecraft Java fluido (60-90 FPS con Shaders ligeros). BloodStrike en gráficos "Medios/Altos" con excelente tasa de cuadros.',
-            'gama_alta': '🚀 <b>Gama Alta:</b> Rendimiento extremo (120+ FPS en Minecraft Java con Shaders Ultra). BloodStrike en gráficos "Ultra" con máxima fluidez.'
-        };
-
-        if (datos[select]) {
-            output.innerHTML = datos[select];
-        } else {
-            output.innerHTML = "Selecciona una opción para ver la estimación de FPS y gráficos recomendados.";
-        }
-    }
-
-    /* 4. GENERADOR DE NICKNAMES GAMER */
-    function generarNickname() {
-        const input = document.getElementById('inputNombre').value.trim();
-        const output = document.getElementById('nicknameOutput');
-
-        if (!input) {
-            output.innerText = "Escribe algo arriba...";
-            return;
-        }
-
-        const estilos = [
-            `⚡${input}⚡`,
-            `[🔥]${input}[🔥]`,
-            `👑${input}_YT`,
-            `⚡X_ ${input} _X⚡`,
-            `𝔄𝔵𝔨𝔢𝔫_${input}`,
-            `✨${input}_Pro✨`
-        ];
-
-        const aleatorio = estilos[Math.floor(Math.random() * estilos.length)];
-        output.innerText = aleatorio;
-    }
-
-    /* 5. RULETA DE RETOS GAMER */
-    function girarRuleta() {
-        const retos = [
-            "🏆 <b>Reto 1:</b> Juega una partida completa de BloodStrike usando únicamente pistola y arma secundaria.",
-            "🏆 <b>Reto 2:</b> En Minecraft, construye tu refugio principal sin usar madera, solo piedra y bloques minados.",
-            "🏆 <b>Reto 3:</b> Gana un enfrentamiento directo en BloodStrike sin recargar a mitad del tiroteo (arma con cargador completo).",
-            "🏆 <b>Reto 4:</b> Juega una partida entera en Minecraft en modo supervivencia sin correr (caminando o agachado).",
-            "🏆 <b>Reto 5:</b> Consigue al menos 3 eliminaciones en BloodStrike usando únicamente el giroscopio para apuntar."
-        ];
-        const output = document.getElementById('rouletteOutput');
-        const aleatorio = retos[Math.floor(Math.random() * retos.length)];
-        output.innerHTML = aleatorio;
-    }
-
-    /* 6. CALCULADORA DE SENSIBILIDAD PARA SHOOTERS */
-    function calcularSensibilidad() {
-        const select = document.getElementById('selectEstiloSens').value;
-        const output = document.getElementById('sensOutput');
-
-        const datos = {
-            'agresivo': '⚡ <b>Estilo Rusher:</b> Sensibilidad de cámara alta (85 - 95), mira de punto rojo al 75% y giroscopio activado al 100% para giros instantáneos en duelos cercanos.',
-            'tactico': '🎯 <b>Estilo Táctico:</b> Sensibilidad de cámara equilibrada (60 - 70), mira de precisión al 50% y giroscopio suave (65%) para mantener estabilidad en medias distancias.',
-            'francotirador': '🔭 <b>Estilo Sniper:</b> Sensibilidad general media (50) pero con mira de alta potencia (Zoom x4 / x8) reducida al 25 - 35% para micro-ajustes precisos a la cabeza.'
-        };
-
-        if (datos[select]) {
-            output.innerHTML = datos[select];
-        } else {
-            output.innerHTML = "Selecciona una opción para ver la configuración orientativa de sensibilidad y giroscopio.";
-        }
-    }
-
-    /* 7. CALCULADORA DE RECURSOS MINECRAFT */
-    function calcularRecursos() {
-        const select = document.getElementById('selectRecurso').value;
-        const output = document.getElementById('calcOutput');
-
-        const datos = {
-            'bloque_diamante': '💎 <b>Bloque de Diamante:</b> Requiere exactamente <b>9 Diamantes</b> en una mesa de crafteo (cubriendo los 9 espacios).',
-            'beacon': '🌟 <b>Faro (Beacon):</b> Requiere <b>5 bloques de vidrio</b>, <b>3 de obsidiana</b> y <b>1 estrella del Nether</b> (Wither).',
-            'libreria': '📚 <b>Biblioteca (para mesa de encantamientos):</b> Requiere <b>3 libros</b> (cada uno necesita 3 papeles y 1 cuero) y <b>6 tablones de madera</b>.',
-            'tolva': '⚙️ <b>Tolva (Hopper):</b> Requiere <b>5 lingotes de hierro</b> distribuidos en forma de "V" y <b>1 cofre</b> en el centro.'
-        };
-
-        if (datos[select]) {
-            output.innerHTML = datos[select];
-        } else {
-            output.innerHTML = "Selecciona una opción del menú desplegable para ver los detalles de crafteo.";
-        }
+        const textoVoto = document.getElementById('resultadoVoto');
+        textoVoto.innerText = `¡Gracias por votar! Tu opción (${opcion}) ha sido registrada correctamente. ⚡`;
     }
 </script>
 
