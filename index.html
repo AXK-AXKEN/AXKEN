@@ -392,6 +392,127 @@
             margin: 8px 0;
         }
 
+        /* NUEVAS FUNCIONES LLAMATIVAS */
+        
+        /* 1. BARRA DE ANUNCIO / NOTICIA DESTACADA TICKER */
+        .ticker-bar {
+            background: linear-gradient(90deg, rgba(192, 132, 252, 0.1), rgba(0, 255, 136, 0.15), rgba(34, 211, 238, 0.1));
+            border-top: 1px solid rgba(0, 255, 136, 0.3);
+            border-bottom: 1px solid rgba(0, 255, 136, 0.3);
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: tickerScroll 25s linear infinite;
+            color: var(--neon-green);
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes tickerScroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* 2. GENERADOR DE NICKNAMES / NOMBRES GAMER */
+        .generator-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(192, 132, 252, 0.3);
+            border-radius: 16px;
+            padding: 25px;
+            max-width: 500px;
+            margin: 25px auto;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.1);
+        }
+
+        .generator-card h3 {
+            color: var(--neon-purple);
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .generator-input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 12px;
+            text-align: center;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .generator-input:focus {
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
+        }
+
+        .nickname-result {
+            background: rgba(0, 255, 136, 0.05);
+            border: 1px dashed var(--neon-green);
+            padding: 12px;
+            border-radius: 8px;
+            color: var(--neon-green);
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 15px;
+            letter-spacing: 1px;
+            word-break: break-all;
+        }
+
+        /* 3. CALCULADORA DE CRAFTINGS Y RECURSOS */
+        .calculator-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            border-radius: 16px;
+            padding: 25px;
+            max-width: 500px;
+            margin: 25px auto;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.1);
+        }
+
+        .calculator-card h3 {
+            color: var(--neon-cyan);
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .calc-select {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13.5px;
+            margin-bottom: 10px;
+            outline: none;
+        }
+
+        .calc-output {
+            color: #f8fafc;
+            background: rgba(34, 211, 238, 0.05);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13.5px;
+            margin-top: 15px;
+            text-align: left;
+            line-height: 1.5;
+        }
+
         /* WIDGET INTERACTIVO: ENCUESTA RÁPIDA */
         .poll-card {
             background: var(--bg-card);
@@ -692,11 +813,19 @@
     <div class="floating-orb orb-3"></div>
 </div>
 
+<!-- BARRA DE ANUNCIOS / TICKER DINÁMICO -->
+<div class="ticker-bar">
+    <div class="ticker-content">
+        🔥 ¡NUEVOS ADD-ONS DISPONIBLES EN LA SECCIÓN BEDROCK! &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 🚀 ¡VISITA NUESTRO CANAL DE YOUTUBE AXKEN00! &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ⚡ TODOS LOS ENLACES VERIFICADOS SIN VIRUS
+    </div>
+</div>
+
 <!-- MENÚ DE NAVEGACIÓN -->
 <nav>
     <a onclick="mostrarVista('inicio')" id="tab-inicio" class="active-tab">Inicio</a>
     <a onclick="mostrarVista('menu-java')" id="tab-menu-java">Java</a>
     <a onclick="mostrarVista('menu-bedrock')" id="tab-menu-bedrock">Bedrock</a>
+    <a onclick="mostrarVista('herramientas')" id="tab-herramientas">Utilidades ⚡</a>
     <a onclick="mostrarVista('novedades')" id="tab-novedades">Novedades</a>
     <a onclick="mostrarVista('faq')" id="tab-faq">FAQ</a>
     <a onclick="mostrarVista('comunidad')" id="tab-comunidad">Comunidad</a>
@@ -750,6 +879,49 @@
             <button class="poll-btn" onclick="votarEncuesta('Bedrock PC')">🖥️ Minecraft Bedrock (PC)</button>
             <p id="pollResult" style="font-size: 13px; color: var(--neon-green); margin-top: 12px; font-weight: 700;"></p>
         </div>
+    </div>
+</div>
+
+
+<!-- ================= VISTA: UTILIDADES / HERRAMIENTAS INTERACTIVAS ================= -->
+<div id="vista-herramientas" class="view">
+    <div class="hero">
+        <div class="logo-container">
+            <img src="logo.png" class="logo" alt="Logo AXKEN">
+        </div>
+        <h1>Utilidades Gamer</h1>
+        <h2>Herramientas Exclusivas</h2>
+        <p>Prueba nuestras funciones interactivas creadas para la comunidad.</p>
+    </div>
+
+    <div style="max-width: 1000px; margin: 0 auto 40px auto; padding: 0 20px;">
+        
+        <!-- GENERADOR DE NICKNAMES GAMER -->
+        <div class="generator-card">
+            <h3>🔥 Generador de Nicknames Épicos</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 15px;">Escribe tu nombre real o apodo para darle estilo gamer:</p>
+            <input type="text" id="inputNombre" class="generator-input" placeholder="Ej. Alex, ProGamer..." oninput="generarNickname()">
+            <div id="nicknameOutput" class="nickname-result">Escribe algo arriba...</div>
+        </div>
+
+        <!-- CALCULADORA DE CRAFTINGS Y RECURSOS -->
+        <div class="calculator-card">
+            <h3>📐 Guía Rápida de Recursos</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Consulta cuántos materiales necesitas para tus crafteos:</p>
+            <select id="selectRecurso" class="calc-select" onchange="calcularRecursos()">
+                <option value="default">Selecciona un elemento...</option>
+                <option value="bloque_diamante">Bloque de Diamante (desde Minerales)</option>
+                <option value="beacon">Faro (Beacon Completo)</option>
+                <option value="libreria">Biblioteca Completa para Encantamientos</option>
+                <option value="tolva">Tolva (Hopper)</option>
+            </select>
+            <div id="calcOutput" class="calc-output">Selecciona una opción del menú desplegable para ver los detalles de crafteo.</div>
+        </div>
+
+    </div>
+
+    <div style="text-align: center; margin-bottom: 30px;">
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </div>
 </div>
 
@@ -1113,7 +1285,7 @@
 </div>
 
 
-<!-- SCRIPTS DE NAVEGACIÓN, TEMPORIZADOR, FAQ Y ENCUESTA -->
+<!-- SCRIPTS DE NAVEGACIÓN, TEMPORIZADOR, FAQ, ENCUESTA Y NUEVAS FUNCIONES -->
 <script>
     let tiempoRestante = 10;
     let intervaloTimer = null;
@@ -1186,6 +1358,49 @@
         resultado.innerText = `¡Gracias por votar! Has seleccionado: ${opcion}. ¡Voto registrado con éxito!`;
         const botones = document.querySelectorAll('.poll-btn');
         botones.forEach(btn => btn.disabled = true);
+    }
+
+    /* NUEVA FUNCIÓN: GENERADOR DE NICKNAMES GAMER */
+    function generarNickname() {
+        const input = document.getElementById('inputNombre').value.trim();
+        const output = document.getElementById('nicknameOutput');
+
+        if (!input) {
+            output.innerText = "Escribe algo arriba...";
+            return;
+        }
+
+        const estilos = [
+            `⚡${input}⚡`,
+            `[🔥]${input}[🔥]`,
+            `👑${input}_YT`,
+            `⚡X_ ${input} _X⚡`,
+            `𝔄𝔵𝔨𝔢𝔫_${input}`,
+            `✨${input}_Pro✨`
+        ];
+
+        // Selecciona uno dinámicamente o muestra un listado rápido
+        const aleatorio = estilos[Math.floor(Math.random() * estilos.length)];
+        output.innerText = aleatorio;
+    }
+
+    /* NUEVA FUNCIÓN: CALCULADORA DE RECURSOS */
+    function calcularRecursos() {
+        const select = document.getElementById('selectRecurso').value;
+        const output = document.getElementById('calcOutput');
+
+        const datos = {
+            'bloque_diamante': '💎 <b>Bloque de Diamante:</b> Requiere exactamente <b>9 Diamantes</b> en una mesa de crafteo (cubriendo los 9 espacios).',
+            'beacon': '🌟 <b>Faro (Beacon):</b> Requiere <b>5 bloques de vidrio</b>, <b>3 de obsidiana</b> y <b>1 estrella del Nether</b> (Wither).',
+            'libreria': '📚 <b>Biblioteca (para mesa de encantamientos):</b> Requiere <b>3 libros</b> (cada uno necesita 3 papeles y 1 cuero) y <b>6 tablones de madera</b>.',
+            'tolva': '⚙️ <b>Tolva (Hopper):</b> Requiere <b>5 lingotes de hierro</b> distribuidos en forma de "V" y <b>1 cofre</b> en el centro.'
+        };
+
+        if (datos[select]) {
+            output.innerHTML = datos[select];
+        } else {
+            output.innerHTML = "Selecciona una opción del menú desplegable para ver los detalles de crafteo.";
+        }
     }
 </script>
 
