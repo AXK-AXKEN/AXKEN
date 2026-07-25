@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AXKEN Minecraft Academy | Cyber Gaming Edition</title>
+    <title>AXKEN Minecraft Academy | Ultimate Cyber Gaming Hub</title>
 
     <!-- SCRIPT DEL BANNER NATIVO (DENTRO DEL MODAL) -->
     <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
@@ -16,7 +16,7 @@
         :root {
             --bg-deep: #02040a;
             --bg-main: #060913;
-            --bg-card: rgba(11, 18, 35, 0.85);
+            --bg-card: rgba(11, 18, 35, 0.88);
             --neon-green: #00ff88;
             --neon-purple: #c084fc;
             --neon-cyan: #22d3ee;
@@ -92,7 +92,8 @@
         nav {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            align-items: center;
+            gap: 10px;
             padding: 14px 24px;
             background: rgba(6, 9, 19, 0.9);
             backdrop-filter: blur(20px);
@@ -102,17 +103,18 @@
             z-index: 100;
             border-bottom: 2px solid rgba(0, 255, 136, 0.2);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+            flex-wrap: wrap;
         }
 
         nav a {
             color: var(--text-muted);
             text-decoration: none;
             font-weight: 700;
-            font-size: 13.5px;
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 10px 22px;
+            padding: 8px 16px;
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             background: rgba(255, 255, 255, 0.02);
@@ -141,10 +143,10 @@
             transform: translateY(0);
         }
 
-        /* HERO SECTION MEJORADA */
+        /* HERO SECTION */
         .hero {
             text-align: center;
-            padding: 50px 20px 20px;
+            padding: 40px 20px 20px;
             position: relative;
         }
 
@@ -154,8 +156,8 @@
         }
 
         .logo {
-            width: 130px;
-            height: 130px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--neon-green);
@@ -164,7 +166,7 @@
         }
 
         h1 {
-            font-size: 48px;
+            font-size: 42px;
             margin: 15px 0 0px;
             letter-spacing: 3px;
             font-weight: 900;
@@ -178,21 +180,21 @@
         .hero h2 {
             color: var(--neon-cyan);
             font-weight: 700;
-            font-size: 15px;
+            font-size: 14px;
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 3px;
         }
 
         .hero p {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto 30px;
             line-height: 1.6;
         }
 
-        /* CATEGORÍAS & GRID ESTILO CIBERESPACIO */
+        /* CATEGORÍAS & GRID */
         .categories-grid {
             display: flex;
             justify-content: center;
@@ -257,7 +259,7 @@
 
         .section-title {
             color: #ffffff;
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 900;
             margin-bottom: 8px;
             letter-spacing: 1px;
@@ -268,7 +270,7 @@
             max-width: 650px;
             margin: 0 auto 35px auto;
             color: var(--text-muted);
-            font-size: 15px;
+            font-size: 14.5px;
         }
 
         .video-grid {
@@ -342,6 +344,93 @@
         .video-wrapper iframe {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        /* NUEVAS SECCIONES EXTRAS AGREGADAS */
+        .extras-container {
+            max-width: 1000px;
+            margin: 30px auto 10px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            text-align: left;
+        }
+
+        .extra-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+
+        .extra-box:hover {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 15px 35px rgba(34, 211, 238, 0.15);
+        }
+
+        .extra-box h3 {
+            color: var(--neon-cyan);
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .extra-box p, .extra-box li {
+            color: var(--text-muted);
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        .extra-box ul {
+            padding-left: 18px;
+            margin: 8px 0;
+        }
+
+        /* FAQ ACORDEÓN */
+        .faq-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            padding: 14px 18px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: var(--neon-green);
+        }
+
+        .faq-answer {
+            padding: 0 18px 14px 18px;
+            color: var(--text-muted);
+            font-size: 13px;
+            display: none;
+            line-height: 1.5;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
         }
 
         /* BOTONES ACCIÓN GAMER */
@@ -546,10 +635,10 @@
         }
 
         @media(max-width: 600px) {
-            h1 { font-size: 34px; }
-            nav { flex-wrap: wrap; gap: 6px; padding: 10px; }
-            nav a { padding: 6px 12px; font-size: 12px; }
-            .logo { width: 110px; height: 110px; }
+            h1 { font-size: 32px; }
+            nav { padding: 8px; gap: 6px; }
+            nav a { padding: 6px 10px; font-size: 11px; }
+            .logo { width: 100px; height: 100px; }
             .video-card { width: 100%; }
             .category-card { width: 100%; max-width: 320px; }
         }
@@ -569,8 +658,10 @@
 <!-- MENÚ DE NAVEGACIÓN -->
 <nav>
     <a onclick="mostrarVista('inicio')" id="tab-inicio" class="active-tab">Inicio</a>
-    <a onclick="mostrarVista('menu-java')" id="tab-menu-java">Minecraft Java</a>
-    <a onclick="mostrarVista('menu-bedrock')" id="tab-menu-bedrock">Minecraft Bedrock</a>
+    <a onclick="mostrarVista('menu-java')" id="tab-menu-java">Java</a>
+    <a onclick="mostrarVista('menu-bedrock')" id="tab-menu-bedrock">Bedrock</a>
+    <a onclick="mostrarVista('novedades')" id="tab-novedades">Novedades</a>
+    <a onclick="mostrarVista('faq')" id="tab-faq">FAQ</a>
     <a onclick="mostrarVista('comunidad')" id="tab-comunidad">Comunidad</a>
 </nav>
 
@@ -583,7 +674,7 @@
         </div>
         <h1>AXKEN</h1>
         <h2>Minecraft Academy</h2>
-        <p>Selecciona tu versión de juego para acceder a tutoriales exclusivos, mods, add-ons, texture packs y shaders optimizados.</p>
+        <p>Tu plataforma de confianza para encontrar los mejores add-ons, tutoriales, texturas y optimizaciones para Minecraft Java y Bedrock.</p>
     </div>
 
     <div class="categories-grid">
@@ -597,6 +688,20 @@
             <h3>📱 Minecraft Bedrock</h3>
             <p>Contenido para Móvil y PC: Add-ons, Shaders con Render_Dragon y Texturas PvP.</p>
             <button class="btn-download" style="margin-top:10px;">Entrar a Bedrock</button>
+        </div>
+    </div>
+
+    <!-- SECCIÓN EXTRA AÑADIDA EN INICIO: STATS / CARACTERÍSTICAS -->
+    <div style="max-width: 1000px; margin: 0 auto 40px auto; padding: 0 20px;">
+        <div class="extras-container" style="margin-top: 0;">
+            <div class="extra-box">
+                <h3>⚡ Enlaces Seguros</h3>
+                <p>Todos nuestros archivos están verificados y alojados en plataformas estables para garantizar descargas sin virus ni archivos maliciosos.</p>
+            </div>
+            <div class="extra-box">
+                <h3>🎮 Actualizado 2026</h3>
+                <p>Contenido totalmente adaptado a las últimas versiones del juego, asegurando compatibilidad óptima en tu dispositivo.</p>
+            </div>
         </div>
     </div>
 </div>
@@ -754,7 +859,13 @@
 <div id="vista-java-textures" class="view">
     <section>
         <h2 class="section-title">🎨 Texture Packs Java</h2>
-        <p class="section-desc">Renueva la apariencia visual de tus mundos.</p>
+        <p class="section-desc">Renueva la apariencia visual de tus mundos con recursos optimizados.</p>
+        <div class="extras-container" style="justify-content: center;">
+            <div class="extra-box" style="text-align: center; max-width: 400px;">
+                <h3>✨ Próximamente</h3>
+                <p>Estamos seleccionando los mejores packs de texturas clásicos y modernos para Java. ¡Vuelve pronto para descubrirlos!</p>
+            </div>
+        </div>
         <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
     </section>
 </div>
@@ -765,6 +876,12 @@
     <section>
         <h2 class="section-title">🌈 Shaders Java</h2>
         <p class="section-desc">Sombreadores avanzados para exprimir al máximo tu PC.</p>
+        <div class="extras-container" style="justify-content: center;">
+            <div class="extra-box" style="text-align: center; max-width: 400px;">
+                <h3>💡 En Desarrollo</h3>
+                <p>Pronto añadiremos listas de Shaders compatibles con Iris y Optifine para distintas gamas de tarjetas gráficas.</p>
+            </div>
+        </div>
         <button class="btn-back" onclick="mostrarVista('menu-java')">← Volver al Menú Java</button>
     </section>
 </div>
@@ -847,7 +964,69 @@
     <section>
         <h2 class="section-title">🌈 Shaders Bedrock</h2>
         <p class="section-desc">Gráficos estilizados y adaptados para Render_Dragon.</p>
+        <div class="extras-container" style="justify-content: center;">
+            <div class="extra-box" style="text-align: center; max-width: 400px;">
+                <h3>🚀 Próximas Actualizaciones</h3>
+                <p>Nuevos packs de gráficos optimizados para versiones recientes de Bedrock en camino.</p>
+            </div>
+        </div>
         <button class="btn-back" onclick="mostrarVista('menu-bedrock')">← Volver al Menú Bedrock</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTA NUEVA: NOVEDADES ================= -->
+<div id="vista-novedades" class="view">
+    <section>
+        <h2 class="section-title">📰 Novedades y Actualizaciones</h2>
+        <p class="section-desc">Mantente al tanto de los últimos lanzamientos en el canal y la web.</p>
+        
+        <div class="extras-container">
+            <div class="extra-box">
+                <h3>🚀 Lanzamiento de la Web 2.0</h3>
+                <p>Hemos renovado por completo la interfaz de AXKEN Minecraft Academy con un diseño futurista, optimización móvil y navegación más fluida.</p>
+            </div>
+            <div class="extra-box">
+                <h3>📢 Nuevos Videos Semanales</h3>
+                <p>No olvides suscribirte a nuestro canal de YouTube oficial para enterarte en primer lugar cuando subamos nuevos add-ons y trucos ocultos.</p>
+            </div>
+            <div class="extra-box">
+                <h3>🛠️ Corrección de Enlaces</h3>
+                <p>Todos los enlaces de MediaFire y MCPEDL han sido verificados para asegurar que funcionen correctamente sin errores de descarga.</p>
+            </div>
+        </div>
+        <br>
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
+    </section>
+</div>
+
+
+<!-- ================= VISTA NUEVA: FAQ (PREGUNTAS FRECUENTES) ================= -->
+<div id="vista-faq" class="view">
+    <section style="max-width: 800px; margin: 0 auto;">
+        <h2 class="section-title">❓ Preguntas Frecuentes</h2>
+        <p class="section-desc">Resuelve tus dudas habituales sobre las descargas y el uso de los mods.</p>
+
+        <div style="text-align: left; margin-top: 20px;">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">¿Cómo descargo los archivos de MediaFire? <span>▼</span></button>
+                <div class="faq-answer">Haz clic en el botón de descarga, espera los 10 segundos indicados en el modal de seguridad y haz clic en el botón verde para ir directamente al archivo.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">¿Los add-ons desactivan los logros en Bedrock? <span>▼</span></button>
+                <div class="faq-answer">La mayoría de add-ons normales pueden requerir trucos, pero revisa la descripción de cada video específico; algunos están diseñados precisamente para evitarlo.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">¿Qué versión de Minecraft necesito? <span>▼</span></button>
+                <div class="faq-answer">Cada tutorial y mod especifica en su sección correspondiente la versión recomendada para evitar fallos de compatibilidad o cierres inesperados.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">¿Cómo puedo contactar con soporte o reportar un enlace caído? <span>▼</span></button>
+                <div class="faq-answer">Puedes unirte a nuestra comunidad a través de los enlaces directos en la sección de Comunidad o redes sociales.</div>
+            </div>
+        </div>
+        <br>
+        <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </section>
 </div>
 
@@ -887,7 +1066,7 @@
 </div>
 
 
-<!-- SCRIPTS DE NAVEGACIÓN Y TEMPORIZADOR -->
+<!-- SCRIPTS DE NAVEGACIÓN, TEMPORIZADOR Y FAQ -->
 <script>
     let tiempoRestante = 10;
     let intervaloTimer = null;
@@ -948,6 +1127,11 @@
     function cerrarModal() {
         clearInterval(intervaloTimer);
         document.getElementById('modalEspera').style.display = 'none';
+    }
+
+    function toggleFaq(button) {
+        const item = button.parentElement;
+        item.classList.toggle('open');
     }
 </script>
 
