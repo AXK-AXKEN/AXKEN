@@ -676,7 +676,7 @@ section{
         <img src="logo.png" class="logo" alt="Logo AXKEN">
         <h1>AXKEN</h1>
         <h2>Minecraft Academy</h2>
-        <p>Explora todo el contenido especializado in tutoriales, add-ons, texture packs y shaders para tus versiones favoritas.</p>
+        <p>Explora todo el contenido especializado en tutoriales, add-ons, texture packs y shaders para tus versiones favoritas.</p>
     </div>
 
     <!-- BUSCADOR RÁPIDO EN INICIO -->
@@ -1046,6 +1046,129 @@ section{
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </section>
 </div>
+
+
+<!-- ================= MODAL DE ESPERA Y ANUNCIO ================= -->
+<div id="modalEspera" class="modal-overlay">
+    <div class="modal-card">
+        <h3>🔒 Verificación de Seguridad</h3>
+        <p id="textoContador">Por favor espera <span id="contadorSegundos">10</span> segundos para desbloquear tu enlace de descarga...</p>
+        
+        <div class="ad-box">
+            <!-- AQUÍ SE CARGA EL BANNER NATIVO -->
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '16fa8571b1eee7681486dc9444354e1e',
+                    'format' : 'iframe',
+                    'height' : 90,
+                    'width' : 728,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
+        </div>
+
+        <button id="btnIrEnlace" class="btn-modal-action" disabled onclick="irAlEnlace()">Esperando...</button>
+        <br>
+        <button class="btn-close-modal" onclick="cerrarModal()">Cancelar y Volver</button>
+    </div>
+</div>
+
+
+<!-- ================= SCRIPTS DE FUNCIONAMIENTO ================= -->
+<script>
+    let urlDestinoFinal = "";
+    let temporizador = null;
+
+    function mostrarVista(idVista) {
+        // Ocultar todas las vistas
+        const vistas = document.querySelectorAll('.view');
+        vistas.forEach(v => v.classList.remove('active'));
+
+        // Mostrar la vista seleccionada
+        const vistaSeleccionada = document.getElementById('vista-' + idVista);
+        if (vistaSeleccionada) {
+            vistaSeleccionada.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Actualizar pestañas activas del menú superior
+        const linksNav = document.querySelectorAll('nav a');
+        linksNav.forEach(l => l.classList.remove('active-tab'));
+        
+        const tabActiva = document.getElementById('tab-' + idVista);
+        if (tabActiva) {
+            tabActiva.classList.add('active-tab');
+        }
+    }
+
+    function iniciarEspera(url) {
+        urlDestinoFinal = url;
+        const modal = document.getElementById('modalEspera');
+        const btn = document.getElementById('btnIrEnlace');
+        const spanContador = document.getElementById('contadorSegundos');
+        
+        modal.style.display = 'flex';
+        btn.disabled = true;
+        btn.classList.remove('ready');
+        btn.innerText = "Espera unos segundos...";
+
+        let segundosRestantes = 10;
+        spanContador.innerText = segundosRestantes;
+
+        clearInterval(temporizador);
+        temporizador = setInterval(() => {
+            segundosRestantes--;
+            spanContador.innerText = segundosRestantes;
+
+            if (segundosRestantes <= 0) {
+                clearInterval(temporizador);
+                btn.disabled = false;
+                btn.classList.add('ready');
+                btn.innerText = "🚀 ¡Ir al Enlace de Descarga!";
+            }
+        }, 1000);
+    }
+
+    function irAlEnlace() {
+        if (urlDestinoFinal) {
+            window.open(urlDestinoFinal, '_blank');
+            cerrarModal();
+        }
+    }
+
+    function cerrarModal() {
+        clearInterval(temporizador);
+        document.getElementById('modalEspera').style.display = 'none';
+    }
+
+    function toggleFaq(elemento) {
+        const item = elemento.parentElement;
+        const estaActivo = item.classList.contains('active');
+        
+        // Cerrar todos los demás items
+        document.querySelectorAll('.faq-item').forEach(fi => fi.classList.remove('active'));
+
+        // Si no estaba activo, abrirlo
+        if (!estaActivo) {
+            item.classList.add('active');
+        }
+    }
+
+    function filtrarContenido() {
+        let input = document.getElementById('buscadorGlobal').value.toLowerCase();
+        let tarjetas = document.querySelectorAll('#vista-inicio .category-card');
+
+        tarjetas.forEach(tarjeta => {
+            let texto = tarjeta.innerText.toLowerCase();
+            if (texto.includes(input)) {
+                tarjeta.style.display = "block";
+            } else {
+                tarjeta.style.display = "none";
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
