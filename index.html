@@ -676,7 +676,7 @@ section{
         <img src="logo.png" class="logo" alt="Logo AXKEN">
         <h1>AXKEN</h1>
         <h2>Minecraft Academy</h2>
-        <p>Explora todo el contenido especializado en tutoriales, add-ons, texture packs y shaders para tus versiones favoritas.</p>
+        <p>Explora todo el contenido especializado in tutoriales, add-ons, texture packs y shaders para tus versiones favoritas.</p>
     </div>
 
     <!-- BUSCADOR RÁPIDO EN INICIO -->
@@ -803,6 +803,19 @@ section{
         <p class="section-desc">Guías de instalación y tutoriales en video para la versión de PC.</p>
 
         <div class="video-grid">
+            <!-- NUEVO VIDEO AGREGADO -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/ZuJhhXNJL7U" title="Cómo INSTALAR Minecraft Java Edition en PC" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="badge">📖 Tutorial Java</span>
+                <h3>Cómo INSTALAR Minecraft Java Edition en PC (Guía Fácil)</h3>
+                <p>Aprende paso a paso cómo instalar y configurar Minecraft Java Edition en tu PC utilizando la herramienta Process Explorer.</p>
+                <button class="btn-download" onclick="iniciarEspera('https://www.mediafire.com/file/1autw20qb7gu0u6/ProcessExplorer.zip/file')">
+                    📥 Descargar Process Explorer (ZIP)
+                </button>
+            </div>
+
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/K4pkbwErShk" title="Tutorial Complementos Java" frameborder="0" allowfullscreen></iframe>
@@ -1007,11 +1020,10 @@ section{
 
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">¿Dónde puedo reportar un enlace roto o pedir ayuda?</div>
-                <div class="faq-answer">Puedes unirte a nuestro servidor de Discord o dejarnos un comentario directamente en los videos recientes de nuestro canal oficial de YouTube (@Axken00).</div>
+                <div class="faq-answer">Puedes unirte a nuestro servidor de Discord o dejarnos un comentario directamente en los videos recientes de nuestro canal.</div>
             </div>
         </div>
 
-        <br>
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </section>
 </div>
@@ -1019,134 +1031,21 @@ section{
 
 <!-- ================= VISTA: COMUNIDAD ================= -->
 <div id="vista-comunidad" class="view">
-    <section class="community">
-        <h2 class="section-title">⚡ Comunidad AXKEN</h2>
-        <p class="section-desc">Forma parte de la comunidad en nuestras redes sociales:</p>
-
-        <div class="social-links">
-            <a href="https://www.youtube.com/@Axken00" target="_blank" class="btn-social">YouTube</a>
-            <a href="https://www.tiktok.com/@axken0000?is_from_webapp=1&sender_device=pc" target="_blank" class="btn-social">TikTok</a>
-            <a href="https://discord.gg/TU_LINK_DE_DISCORD" target="_blank" class="btn-social">Discord</a>
+    <section>
+        <div class="community">
+            <h2 class="section-title">🌍 Únete a la Comunidad</h2>
+            <p class="section-desc">Forma parte de nuestra comunidad gamer, comparte tus creaciones y entérate de las últimas novedades de Minecraft.</p>
+            
+            <div class="social-links">
+                <a href="#" class="btn-social" target="_blank">📺 Canal de YouTube</a>
+                <a href="#" class="btn-social" target="_blank">💬 Servidor de Discord</a>
+                <a href="#" class="btn-social" target="_blank">📱 Grupo de Telegram</a>
+            </div>
         </div>
-        <br>
+
         <button class="btn-back" onclick="mostrarVista('inicio')">← Volver al Inicio</button>
     </section>
 </div>
 
-
-<!-- ================= VENTANA FLOTANTE DE MONETIZACIÓN (MODAL) ================= -->
-<div class="modal-overlay" id="modalEspera">
-    <div class="modal-card">
-        <h3>⏳ Generando Enlace Seguro</h3>
-        <p>Tu archivo se está preparando. El botón de descarga se habilitará al finalizar el contador:</p>
-
-        <!-- BANNER PUBLICITARIO DE ADSTERRA -->
-        <div class="ad-box">
-            <div id="container-16fa8571b1eee7681486dc9444354e1e"></div>
-        </div>
-
-        <button id="btnModalDownload" class="btn-modal-action" disabled>
-            Espera <span id="contadorSegundos">10</span> segundos...
-        </button>
-
-        <button class="btn-close-modal" onclick="cerrarModal()">Cancelar</button>
-    </div>
-</div>
-
-
-<!-- SCRIPT DE NAVEGACIÓN, FAQ, BUSCADOR Y MODAL -->
-<script>
-    let tiempoRestante = 10;
-    let intervaloTimer = null;
-    let urlDestinoFinal = "";
-
-    function mostrarVista(nombreVista) {
-        const vistas = document.querySelectorAll('.view');
-        vistas.forEach(v => v.classList.remove('active'));
-
-        const tabs = document.querySelectorAll('nav a');
-        tabs.forEach(t => t.classList.remove('active-tab'));
-
-        const vistaSeleccionada = document.getElementById('vista-' + nombreVista);
-        if (vistaSeleccionada) {
-            vistaSeleccionada.classList.add('active');
-        }
-
-        const tabSeleccionado = document.getElementById('tab-' + nombreVista);
-        if (tabSeleccionado) {
-            tabSeleccionado.classList.add('active-tab');
-        }
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Funcionalidad para abrir y cerrar las preguntas frecuentes (FAQ)
-    function toggleFaq(elemento) {
-        const item = elemento.parentElement;
-        const estabaActivo = item.classList.contains('active');
-        
-        // Cerrar todos los demás
-        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
-        
-        // Si no estaba activo, abrirlo
-        if (!estabaActivo) {
-            item.classList.add('active');
-        }
-    }
-
-    // Buscador rápido interactivo en la página principal
-    function filtrarContenido() {
-        let input = document.getElementById('buscadorGlobal').value.toLowerCase();
-        let tarjetas = document.querySelectorAll('#contenedorCategorias .category-card');
-
-        tarjetas.forEach(card => {
-            let texto = card.innerText.toLowerCase();
-            if (texto.includes(input)) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
-        });
-    }
-
-    function iniciarEspera(urlDestino) {
-        urlDestinoFinal = urlDestino;
-        tiempoRestante = 10;
-
-        const modal = document.getElementById('modalEspera');
-        const contadorSpan = document.getElementById('contadorSegundos');
-        const btnModal = document.getElementById('btnModalDownload');
-
-        btnModal.disabled = true;
-        btnModal.classList.remove('ready');
-        btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
-        modal.style.display = 'flex';
-
-        clearInterval(intervaloTimer);
-        intervaloTimer = setInterval(() => {
-            tiempoRestante--;
-            if (contadorSpan) contadorSpan.innerText = tiempoRestante;
-            btnModal.innerText = `Espera ${tiempoRestante} segundos...`;
-
-            if (tiempoRestante <= 0) {
-                clearInterval(intervaloTimer);
-                btnModal.disabled = false;
-                btnModal.classList.add('ready');
-                btnModal.innerText = '🚀 ¡Ir al Enlace!';
-                btnModal.onclick = function() {
-                    window.open(urlDestinoFinal, '_blank');
-                    cerrarModal();
-                };
-            }
-        }, 1000);
-    }
-
-    function cerrarModal() {
-        clearInterval(intervaloTimer);
-        document.getElementById('modalEspera').style.display = 'none';
-    }
-</script>
-
 </body>
-
 </html>
