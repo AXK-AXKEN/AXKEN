@@ -1100,26 +1100,16 @@ section{
         btn.classList.remove('ready');
         btn.innerText = "Espera unos segundos...";
 
-        // Inyectar el anuncio de manera dinámica para forzar su renderizado cada vez que se abra el modal
-        adBox.innerHTML = '';
-        
-        let scriptOptions = document.createElement('script');
-        scriptOptions.type = 'text/javascript';
-        scriptOptions.innerHTML = `
-            atOptions = {
-                'key' : '16fa8571b1eee7681486dc9444354e1e',
-                'format' : 'iframe',
-                'height' : 90,
-                'width' : 728,
-                'params' : {}
-            };
+        // Inyectar de forma limpia tu script y contenedor nativo
+        adBox.innerHTML = `
+            <div id="container-16fa8571b1eee7681486dc9444354e1e"></div>
         `;
         
         let scriptInvoke = document.createElement('script');
-        scriptInvoke.type = 'text/javascript';
-        scriptInvoke.src = 'https://www.highperformanceformat.com/16fa8571b1eee7681486dc9444354e1e/invoke.js';
-
-        adBox.appendChild(scriptOptions);
+        scriptInvoke.async = true;
+        scriptInvoke.dataset.cfasync = "false";
+        scriptInvoke.src = "https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js";
+        
         adBox.appendChild(scriptInvoke);
 
         let segundosRestantes = 10;
