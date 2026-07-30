@@ -8,9 +8,6 @@
 
 <title>AXKEN Minecraft Academy | Cyber Gaming Edition</title>
 
-<!-- SCRIPT DEL BANNER NATIVO (DENTRO DEL MODAL) -->
-<script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
-
 <!-- SCRIPT DE TU SOCIAL BAR -->
 <script type="text/javascript" src="https://pl30504966.effectivecpmnetwork.com/8a/be/bb/8abebb4ed787cdd852523a03ef63786e.js"></script>
 
@@ -394,7 +391,7 @@ section{
     border: 1px solid rgba(0, 255, 136, 0.4);
     border-radius: 24px;
     padding: 30px 24px;
-    max-width: 460px;
+    max-width: 480px;
     width: 100%;
     text-align: center;
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 50px rgba(0, 255, 136, 0.25);
@@ -418,6 +415,7 @@ section{
 
 .ad-box {
     margin: 12px 0;
+    min-height: 90px;
     max-height: 220px;
     overflow-y: auto;
     display: flex;
@@ -466,7 +464,7 @@ section{
 }
 
 
-/* NUEVAS SECCIONES: FAQ (PREGUNTAS FRECUENTES) Y SOPORTE */
+/* FAQ Y SOPORTE */
 
 .faq-container {
     max-width: 800px;
@@ -803,7 +801,6 @@ section{
         <p class="section-desc">Guías de instalación y tutoriales en video para la versión de PC.</p>
 
         <div class="video-grid">
-            <!-- NUEVO VIDEO AGREGADO -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/ZuJhhXNJL7U" title="Cómo INSTALAR Minecraft Java Edition en PC" frameborder="0" allowfullscreen></iframe>
@@ -1054,19 +1051,8 @@ section{
         <h3>🔒 Verificación de Seguridad</h3>
         <p id="textoContador">Por favor espera <span id="contadorSegundos">10</span> segundos para desbloquear tu enlace de descarga...</p>
         
-        <div class="ad-box">
-            <!-- ANUNCIO NATIVO DENTRO DEL TIEMPO DE ESPERA -->
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : '16fa8571b1eee7681486dc9444354e1e',
-                    'format' : 'iframe',
-                    'height' : 90,
-                    'width' : 728,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="https://www.highperformanceformat.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
-        </div>
+        <!-- CONTENEDOR DINÁMICO DEL ANUNCIO -->
+        <div class="ad-box" id="contenedorAnuncioModal"></div>
 
         <button id="btnIrEnlace" class="btn-modal-action" disabled onclick="irAlEnlace()">Esperando...</button>
         <br>
@@ -1107,11 +1093,34 @@ section{
         const modal = document.getElementById('modalEspera');
         const btn = document.getElementById('btnIrEnlace');
         const spanContador = document.getElementById('contadorSegundos');
+        const adBox = document.getElementById('contenedorAnuncioModal');
         
         modal.style.display = 'flex';
         btn.disabled = true;
         btn.classList.remove('ready');
         btn.innerText = "Espera unos segundos...";
+
+        // Inyectar el anuncio de manera dinámica para forzar su renderizado cada vez que se abra el modal
+        adBox.innerHTML = '';
+        
+        let scriptOptions = document.createElement('script');
+        scriptOptions.type = 'text/javascript';
+        scriptOptions.innerHTML = `
+            atOptions = {
+                'key' : '16fa8571b1eee7681486dc9444354e1e',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+            };
+        `;
+        
+        let scriptInvoke = document.createElement('script');
+        scriptInvoke.type = 'text/javascript';
+        scriptInvoke.src = 'https://www.highperformanceformat.com/16fa8571b1eee7681486dc9444354e1e/invoke.js';
+
+        adBox.appendChild(scriptOptions);
+        adBox.appendChild(scriptInvoke);
 
         let segundosRestantes = 10;
         spanContador.innerText = segundosRestantes;
