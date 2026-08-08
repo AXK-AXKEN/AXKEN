@@ -27,21 +27,20 @@
             border: 1px solid #1f2937;
         }
 
-        /* Estilo de la foto de perfil (ACTUALIZADO) */
+        /* Foto de perfil */
         .profile-img-container {
             width: 130px;
             height: 130px;
-            margin: 0 auto 25px auto; /* Centrado y margen inferior */
+            margin: 0 auto 25px auto;
             position: relative;
         }
-        
         .profile-img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 4px solid #ef4444; /* Borde rojo */
-            box-shadow: 0 0 25px rgba(239, 68, 68, 0.5); /* Brillo rojo intenso */
-            object-fit: cover; /* Asegura que la imagen cubra el círculo sin deformarse */
+            border: 4px solid #ef4444;
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.5);
+            object-fit: cover;
             display: block;
         }
 
@@ -88,49 +87,29 @@
         
         .icon { font-size: 1.5em; }
 
-        /* Estilo del bloque de Anuncios */
+        /* Contenedor del Native Banner */
         .ad-container {
             margin-top: 45px;
-            padding: 20px;
+            padding: 15px;
             background-color: #030712;
-            border: 2px dashed #1f2937;
+            border: 1px solid #1f2937;
             border-radius: 12px;
             text-align: center;
-            min-height: 90px; /* Asegura un tamaño visible aunque no haya anuncio */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .ad-title {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            color: #4b5563;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-        .ad-placeholder-text {
-            color: #4b5563; 
-            font-size: 13px; 
-            margin: 0; 
-            font-style: italic;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- FOTO DE PERFIL (AHORA FUNCIONANDO) -->
+        <!-- FOTO DE PERFIL -->
         <div class="profile-img-container">
-            <!-- La imagen se carga directamente desde internet -->
             <img src="https://i.imgur.com/8R22fNf.png" alt="Foto de Perfil" class="profile-img">
         </div>
 
         <h2>Mi Mundo</h2>
         <p>Únete a la comunidad y sígueme en mis redes</p>
 
-        <!-- Discord (Tu enlace actualizado) -->
+        <!-- Discord -->
         <a href="https://discord.gg/dwRXGFBTjB" target="_blank" class="social-link discord">
             <span class="icon">🎮</span> Comunidad de Discord
         </a>
@@ -150,18 +129,16 @@
             <span class="icon">📧</span> Contacto / Colaboraciones
         </a>
 
-        <!-- BLOQUE DE MONETIZACIÓN -->
+        <!-- NATIVE BANNER INTEGRADO -->
         <div class="ad-container">
-            <div class="ad-title">Espacio Publicitario</div>
-            <p class="ad-placeholder-text">
-                (Aquí aparecerán tus anuncios cuando Google AdSense apruebe tu sitio)
-            </p>
-            <!-- INSTRUCCIONES: Cuando tengas tu código de AdSense, bórralo de arriba y pega tu script aquí:
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-..." crossorigin="anonymous"></script>
-            -->
+            <script async="async" data-cfasync="false" src="https://pl30504643.effectivecpmnetwork.com/16fa8571b1eee7681486dc9444354e1e/invoke.js"></script>
+            <div id="container-16fa8571b1eee7681486dc9444354e1e"></div>
         </div>
 
     </div>
+
+    <!-- SOCIAL BAR INTEGRADO (Se ejecuta de forma flotante/automática) -->
+    <script src="https://pl30504966.effectivecpmnetwork.com/8a/be/bb/8abebb4ed787cdd852523a03ef63786e.js"></script>
 
 </body>
 </html>
