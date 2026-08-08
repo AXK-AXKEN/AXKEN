@@ -27,29 +27,38 @@
             border: 1px solid #1f2937;
         }
 
-        /* Estilo de la foto de perfil */
+        /* Estilo de la foto de perfil (ACTUALIZADO) */
+        .profile-img-container {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 25px auto; /* Centrado y margen inferior */
+            position: relative;
+        }
+        
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
-            border: 4px solid #ef4444;
-            box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
-            margin-bottom: 20px;
-            object-fit: cover;
+            border: 4px solid #ef4444; /* Borde rojo */
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.5); /* Brillo rojo intenso */
+            object-fit: cover; /* Asegura que la imagen cubra el círculo sin deformarse */
+            display: block;
         }
 
         h2 {
             margin-bottom: 8px;
-            font-size: 28px;
+            font-size: 30px;
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 800;
+            letter-spacing: 1.5px;
+            font-weight: 900;
+            margin-top: 0;
         }
         p {
             color: #94a3b8;
-            font-size: 16px;
-            margin-bottom: 30px;
+            font-size: 17px;
+            margin-bottom: 35px;
+            margin-top: 5px;
         }
 
         .social-link {
@@ -59,57 +68,69 @@
             gap: 15px;
             color: #ffffff;
             text-decoration: none;
-            padding: 16px 24px;
-            margin: 15px 0;
-            border-radius: 12px;
+            padding: 18px 24px;
+            margin: 16px 0;
+            border-radius: 14px;
             font-weight: 700;
             transition: all 0.3s ease;
-            font-size: 17px;
+            font-size: 18px;
         }
         .social-link:hover {
             transform: translateY(-3px);
             filter: brightness(1.1);
         }
 
-        .discord { background-color: #5865F2; box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3); }
-        .whatsapp { background-color: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
-        .youtube { background-color: #FF0000; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); }
-        .email { background-color: #ea580c; box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3); }
+        /* Colores de botones */
+        .discord { background-color: #5865F2; box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4); }
+        .whatsapp { background-color: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+        .youtube { background-color: #FF0000; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4); }
+        .email { background-color: #ea580c; box-shadow: 0 4px 15px rgba(234, 88, 12, 0.4); }
         
-        .icon { font-size: 1.4em; }
+        .icon { font-size: 1.5em; }
 
+        /* Estilo del bloque de Anuncios */
         .ad-container {
-            margin-top: 40px;
+            margin-top: 45px;
             padding: 20px;
-            background: #030712;
+            background-color: #030712;
             border: 2px dashed #1f2937;
             border-radius: 12px;
             text-align: center;
-            min-height: 100px;
+            min-height: 90px; /* Asegura un tamaño visible aunque no haya anuncio */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
         .ad-title {
-            font-size: 11px;
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             color: #4b5563;
             margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .ad-placeholder-text {
+            color: #4b5563; 
+            font-size: 13px; 
+            margin: 0; 
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- FOTO DE PERFIL DE TIKTOK INTEGRADA -->
-        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////wgALCAABAAEBAREA/8QAFBABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQABPxA=" alt="Foto de Perfil" class="profile-img">
+        <!-- FOTO DE PERFIL (AHORA FUNCIONANDO) -->
+        <div class="profile-img-container">
+            <!-- La imagen se carga directamente desde internet -->
+            <img src="https://i.imgur.com/8R22fNf.png" alt="Foto de Perfil" class="profile-img">
+        </div>
 
         <h2>Mi Mundo</h2>
         <p>Únete a la comunidad y sígueme en mis redes</p>
 
-        <!-- Discord -->
+        <!-- Discord (Tu enlace actualizado) -->
         <a href="https://discord.gg/dwRXGFBTjB" target="_blank" class="social-link discord">
             <span class="icon">🎮</span> Comunidad de Discord
         </a>
@@ -129,12 +150,15 @@
             <span class="icon">📧</span> Contacto / Colaboraciones
         </a>
 
-        <!-- Anuncios -->
+        <!-- BLOQUE DE MONETIZACIÓN -->
         <div class="ad-container">
             <div class="ad-title">Espacio Publicitario</div>
-            <p style="color: #4b5563; font-size: 13px; margin: 0; font-style: italic;">
+            <p class="ad-placeholder-text">
                 (Aquí aparecerán tus anuncios cuando Google AdSense apruebe tu sitio)
             </p>
+            <!-- INSTRUCCIONES: Cuando tengas tu código de AdSense, bórralo de arriba y pega tu script aquí:
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-..." crossorigin="anonymous"></script>
+            -->
         </div>
 
     </div>
