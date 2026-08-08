@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidad y Contenido</title>
+    <title>Mi Mundo - Comunidad y Contenido</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f172a;
+            /* Fondo principal oscuro */
+            background-color: #030712;
             color: #f8fafc;
             margin: 0;
             padding: 40px 20px;
@@ -19,96 +20,133 @@
         .container {
             max-width: 480px;
             width: 100%;
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            /* Fondo del panel (un poco más claro que el body para dar profundidad) */
+            background-color: #111827;
+            padding: 40px;
+            border-radius: 20px;
+            /* Sombra suave */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
             text-align: center;
+            /* Borde sutil para el modo oscuro */
+            border: 1px solid #1f2937;
         }
+
+        /* Estilo de la foto de perfil personalizada */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #ef4444; /* Borde rojo estilo tus ojos */
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); /* Brillo rojo suave */
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
         h2 {
             margin-bottom: 8px;
-            font-size: 24px;
-            color: #38bdf8;
+            font-size: 28px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
         }
         p {
             color: #94a3b8;
-            font-size: 14px;
-            margin-bottom: 24px;
+            font-size: 16px;
+            margin-bottom: 30px;
         }
+
         .social-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
             color: #ffffff;
             text-decoration: none;
-            padding: 14px 20px;
-            margin: 12px 0;
-            border-radius: 10px;
-            font-weight: 600;
+            padding: 16px 24px;
+            margin: 15px 0;
+            border-radius: 12px;
+            font-weight: 700;
             transition: all 0.3s ease;
+            font-size: 17px;
         }
         .social-link:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
+            transform: translateY(-3px);
+            filter: brightness(1.1);
         }
-        .discord { background-color: #5865F2; }
-        .whatsapp { background-color: #25D366; }
-        .youtube { background-color: #FF0000; }
-        .email { background-color: #ea580c; }
+
+        /* Colores personalizados para tus redes */
+        .discord { background-color: #5865F2; box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3); }
+        .whatsapp { background-color: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+        .youtube { background-color: #FF0000; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); }
+        .email { background-color: #ea580c; box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3); }
+        
+        /* Íconos (puedes usar FontAwesome o emojis aquí, usaré emojis simples por ahora) */
+        .icon { font-size: 1.4em; }
 
         /* Estilo para el espacio de Monetización / Anuncios */
         .ad-container {
-            margin-top: 25px;
-            padding: 15px;
-            background: #0f172a;
-            border: 2px dashed #334155;
-            border-radius: 10px;
+            margin-top: 40px;
+            padding: 20px;
+            background: #030712; /* Fondo más oscuro para el bloque de anuncio */
+            border: 2px dashed #1f2937;
+            border-radius: 12px;
             text-align: center;
+            min-height: 100px; /* Altura mínima para que se note el bloque */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .ad-title {
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #64748b;
-            margin-bottom: 8px;
+            letter-spacing: 2px;
+            color: #4b5563;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Mi Comunidad</h2>
-        <p>Conéctate conmigo, mira mi contenido y colabora</p>
+        <!-- TU FOTO DE PERFIL PERSONALIZADA -->
+        <img src="image_0.png" alt="Tu Foto de Perfil" class="profile-img">
 
-        <!-- Enlace de Discord -->
-        <a href="TU_ENLACE_DE_DISCORD" target="_blank" class="social-link discord">
-            Comunidad de Discord
+        <h2>Mi Mundo</h2>
+        <p>Únete a la comunidad y sígueme en mis redes</p>
+
+        <!-- Enlace de Discord (ACTUALIZADO CON TU LINK) -->
+        <a href="https://discord.gg/dwRXGFBTjB" target="_blank" class="social-link discord">
+            <span class="icon">🎮</span> Comunidad de Discord
         </a>
 
         <!-- Enlace de WhatsApp -->
         <a href="TU_ENLACE_DE_WHATSAPP" target="_blank" class="social-link whatsapp">
-            Comunidad de WhatsApp
+            <span class="icon">📱</span> Comunidad de WhatsApp
         </a>
 
         <!-- Enlace de YouTube -->
         <a href="TU_ENLACE_DE_YOUTUBE" target="_blank" class="social-link youtube">
-            Canal de YouTube
+            <span class="icon">▶️</span> Canal de YouTube
         </a>
 
         <!-- Correo para Colaboraciones -->
-        <a href="mailto:tu-correo@example.com" class="social-link email">
-            Contacto / Colaboraciones
+        <a href="mailto:TU_CORREO@CORREO.COM" class="social-link email">
+            <span class="icon">📧</span> Contacto / Colaboraciones
         </a>
 
         <!-- BLOQUE DE MONETIZACIÓN (Espacio para anuncios) -->
         <div class="ad-container">
-            <div class="ad-title">Publicidad / Patrocinador</div>
-            <!-- Aquí reemplazas este comentario o bloque con tu código de Google AdSense, 
-                 banners de afiliados o script de monetización web -->
-            <p style="color: #64748b; font-size: 13px; margin: 0;">
-                [Espacio publicitario disponible para anuncios o monetización]
+            <div class="ad-title">Espacio Publicitario</div>
+            <p style="color: #4b5563; font-size: 13px; margin: 0; font-style: italic;">
+                (Aquí aparecerán tus anuncios cuando Google AdSense apruebe tu sitio)
             </p>
+            <!-- Ejemplo de dónde iría tu script de AdSense:
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-..." crossorigin="anonymous"></script>
+            <ins class="adsbygoogle" ...></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            -->
         </div>
 
     </div>
